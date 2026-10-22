@@ -1,6 +1,6 @@
-def maintain_set(numbers, number):
-    if number in numbers:
+def maintain_set(a_set, number):
+    if number in a_set:
         return number * 2
 
-    numbers.add(number)
-    return numbers
+    a_set.add(number)
+    return a_set
