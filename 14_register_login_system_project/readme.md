@@ -170,3 +170,117 @@ Sets are useful when you need to store unique elements and check whether an elem
 - **`return number * 2`** returns the doubled number when it is already present.
 
 The function uses these features to decide whether to return a calculated value or an updated set.
+
+# Initializing
+
+A user management system requires us to keep track of registered users and logged-in users.
+
+To do this, we need two data structures:
+
+- A **dictionary** to store registered users and their information.
+- A **set** to keep track of users who are currently logged in.
+
+## Challenge
+
+**Difficulty:** Easy
+
+Create a class named **`LoginSystem`** that doesn't receive anything in its constructor other than `self`.
+
+Inside `__init__(self)`, initialize the following variables:
+
+- `users` as an empty dictionary.
+- `logged_users` as an empty set.
+
+## Hints
+
+### Hint 1: Create an empty dictionary
+
+To create an empty dictionary, use:
+
+```python
+variable = {}
+```
+
+A dictionary stores data as key-value pairs. In our login system, it will be used to keep track of registered users.
+
+### Hint 2: Create an empty set
+
+To create an empty set, use:
+
+```python
+variable = set()
+```
+
+A set stores unique elements. In our login system, it will be used to track logged-in users without storing duplicates.
+
+## Solution
+
+```python
+class LoginSystem:
+    def __init__(self):
+        self.users = {}
+        self.logged_users = set()
+```
+
+## Explanation
+
+### 1. Define the class
+
+```python
+class LoginSystem:
+```
+
+This creates a class named `LoginSystem`, which will manage registered users and logged-in users.
+
+### 2. Define the constructor
+
+```python
+def __init__(self):
+```
+
+The `__init__` method is the constructor. Python calls it automatically when a new instance of the class is created.
+
+The `self` parameter refers to the current instance of the class.
+
+### 3. Initialize the registered users
+
+```python
+self.users = {}
+```
+
+This creates an empty dictionary named `users`.
+
+We use `self.users` so the dictionary belongs to the instance and can be accessed by other methods in the class.
+
+### 4. Initialize the logged-in users
+
+```python
+self.logged_users = set()
+```
+
+This creates an empty set named `logged_users`.
+
+A set is useful here because each user should appear only once in the collection of logged-in users.
+
+## Example
+
+```python
+system = LoginSystem()
+
+print(system.users)
+>>> {}
+
+print(system.logged_users)
+>>> set()
+```
+
+When we create a `LoginSystem` object, both data structures are initialized and ready to use.
+
+## Key Takeaway
+
+The `LoginSystem` class uses two different data structures for two different purposes:
+
+- `self.users = {}` stores registered users in a dictionary.
+- `self.logged_users = set()` tracks users who are currently logged in.
+
+This initializes the foundation of our user management system.
