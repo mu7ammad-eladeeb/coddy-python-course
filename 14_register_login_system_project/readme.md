@@ -284,3 +284,80 @@ The `LoginSystem` class uses two different data structures for two different pur
 - `self.logged_users = set()` tracks users who are currently logged in.
 
 This initializes the foundation of our user management system.
+
+# Register
+
+## Challenge
+
+**Difficulty:** Easy
+
+To allow users to register, create a method **`register(self, username, password)`** that receives a username and password.
+
+All registered users will be stored inside the **`users`** variable that we initialized in the previous lesson. The keys are the usernames, and the values are the passwords.
+
+The method should check whether a user is already registered in the system:
+
+- If the user is **not registered**, add the username and password to `self.users` and print `user registered successfully`.
+- If the user **is already registered**, print `user already exists`.
+
+## Hints
+
+**Hint 1:** To keep track of registered users, use the **`self.users`** variable.
+
+**Hint 2:** To check if a user is already in the system, use:
+
+```python
+if username in self.users:
+```
+
+## Solution
+
+```python
+class LoginSystem:
+    def __init__(self):
+        # Store registered users as username-password pairs
+        self.users = {}
+
+        # Track currently logged-in users
+        self.logged_users = set()
+
+    def register(self, username, password):
+        # Check if the username is already registered
+        if username in self.users:
+            print("user already exists")
+        else:
+            # Store the username as the key and password as the value
+            self.users[username] = password
+            print("user registered successfully")
+```
+
+## Explanation
+
+1. **Check whether the username exists:**  
+   `if username in self.users:` checks whether the username is already a key in the `users` dictionary.
+
+2. **Handle an existing user:**  
+   If the username is already in the dictionary, print `user already exists`. This prevents the same username from being registered twice.
+
+3. **Register a new user:**  
+   If the username is not in the dictionary, `self.users[username] = password` adds the username as the key and the password as its value.
+
+4. **Confirm successful registration:**  
+   Print `user registered successfully` to let the user know the registration worked.
+
+## Example
+
+```python
+system = LoginSystem()
+
+system.register("alice", "pass123")
+# Output: user registered successfully
+
+system.register("alice", "anotherpass")
+# Output: user already exists
+
+print(system.users)
+# Output: {'alice': 'pass123'}
+```
+
+**Key takeaway:** Use a dictionary (`self.users`) to store registered users, check whether a username already exists before adding it, and print the appropriate message for each outcome.
