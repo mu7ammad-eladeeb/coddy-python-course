@@ -174,6 +174,19 @@ In 1999, Guido van Rossum sent a funding proposal called *Computer Programming f
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
 
+## 2002
+
+### **EuroPython**
+
+The EuroPython conference series started in 2002 as a community initiative. Python and Zope users in Europe wanted a place to meet and share ideas. It is still organized by volunteers every year.
+
+* **EuroPython:** The official annual European conference for the Python programming language, established to bring together developers, researchers, and enthusiasts from across Europe and the globe.
+* **Zope:** An open-source, object-oriented web application server written in Python that played a foundational role in the early Python web development ecosystem and community.
+* **Python:** A versatile, high-level programming language known for its clear syntax and readability, which fostered a strong, collaborative international developer community.
+* **Volunteer Organization:** A decentralized community-driven model where conferences and events are planned, managed, and executed by passionate community members rather than corporate entities.
+
+**Source:** wiki.python.org (Added details by Gemini AI)
+
 ## 2003
 
 ### **The first PyCon**
