@@ -474,3 +474,126 @@ print(system.logged_users)
 The `users` dictionary stores registered usernames and passwords, while the `logged_users` set tracks users who have successfully logged in.
 
 **Important:** This example stores passwords as plain text for learning purposes. Real applications should store securely hashed passwords instead of plain-text passwords.
+
+# Sign out
+
+## Introduction
+
+After users register and log in, they might want to sign out of the system.
+
+## Challenge
+
+**Difficulty:** Easy
+
+Create a method named **`sign_out(self, username)`**. The method should check whether the user exists in the system and then check whether the user is logged in. If both conditions are met, the method will sign out the user.
+
+The method should print the following messages:
+
+- If the user does not exist in the system, print `user is not in the system`.
+- If the user is not logged in, print `user is not logged in`.
+- If the user signs out successfully, print `user signed out successfully`.
+
+## Solution
+
+```python
+class LoginSystem:
+    def __init__(self):
+        # Store registered users as username-password pairs
+        self.users = {}
+
+        # Track currently logged-in users
+        self.logged_users = set()
+
+    def register(self, username, password):
+        # Check if the username is already registered
+        if username in self.users:
+            print("user already exists")
+        else:
+            # Store the username as the key and password as the value
+            self.users[username] = password
+            print("user registered successfully")
+
+    def login(self, username, password):
+        # Check if the username exists in the system
+        if username not in self.users:
+            print("user isn't in the system")
+        elif password != self.users[username]:
+            print("password doesn't match")
+        else:
+            # Add the username to the logged-in users set
+            self.logged_users.add(username)
+            print("user logged in successfully")
+
+    def sign_out(self, username):
+        # Check if the username exists in the system
+        if username not in self.users:
+            print("user is not in the system")
+
+        # Check if the user is currently logged in
+        elif username not in self.logged_users:
+            print("user is not logged in")
+
+        else:
+            # Remove the username from the logged-in users set
+            self.logged_users.remove(username)
+            print("user signed out successfully")
+```
+
+## Explanation
+
+1. **Check whether the user exists**
+
+   ```python
+   if username not in self.users:
+   ```
+
+   The `users` dictionary stores all registered users. If the username is not a key in this dictionary, the user is not registered.
+
+2. **Check whether the user is logged in**
+
+   ```python
+   elif username not in self.logged_users:
+   ```
+
+   The `logged_users` set stores usernames of users who are currently logged in. If the username is not in this set, the user is not logged in.
+
+3. **Sign out the user**
+
+   ```python
+   self.logged_users.remove(username)
+   ```
+
+   If both checks pass, `remove()` deletes the username from the set, signing the user out.
+
+4. **Print the success message**
+
+   After removing the username, the method prints `user signed out successfully`.
+
+## Example
+
+```python
+system = LoginSystem()
+
+system.register("alice", "pass123")
+# Output: user registered successfully
+
+system.login("alice", "pass123")
+# Output: user logged in successfully
+
+system.sign_out("alice")
+# Output: user signed out successfully
+
+system.sign_out("alice")
+# Output: user is not logged in
+
+system.sign_out("bob")
+# Output: user is not in the system
+```
+
+## Key Takeaway
+
+- `self.users` keeps track of registered users.
+- `self.logged_users` keeps track of users who are logged in.
+- `self.logged_users.remove(username)` signs out a user by removing their username from the set.
+
+**Remember:** Signing out does not delete the user's account. It only removes the username from `logged_users`, so the user can log in again later.
