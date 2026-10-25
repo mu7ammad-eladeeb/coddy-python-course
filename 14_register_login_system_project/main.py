@@ -3,7 +3,7 @@ class LoginSystem:
         # Store registered users as username-password pairs
         self.users = {}
 
-        # Store usernames of users who are currently logged in
+        # Track currently logged-in users
         self.logged_users = set()
 
     def register(self, username, password):
@@ -11,21 +11,31 @@ class LoginSystem:
         if username in self.users:
             print("user already exists")
         else:
-            # Store the username and password
+            # Store the username as the key and password as the value
             self.users[username] = password
             print("user registered successfully")
 
     def login(self, username, password):
         # Check if the username exists in the system
-        if username in self.users:
-            # Check if the provided password matches the stored password
-            if self.users[username] == password:
-                # Add the username to the set of logged-in users
-                self.logged_users.add(username)
-                print("user logged in successfully")
-            else:
-                # The password is incorrect
-                print("password doesn't match")
-        else:
-            # The username is not registered
+        if username not in self.users:
             print("user isn't in the system")
+        elif password != self.users[username]:
+            print("password doesn't match")
+        else:
+            # Add the username to the logged-in users set
+            self.logged_users.add(username)
+            print("user logged in successfully")
+
+    def sign_out(self, username):
+        # Check if the username exists in the system
+        if username not in self.users:
+            print("user is not in the system")
+
+        # Check if the user is currently logged in
+        elif username not in self.logged_users:
+            print("user is not logged in")
+
+        else:
+            # Remove the username from the logged-in users set
+            self.logged_users.remove(username)
+            print("user signed out successfully")
