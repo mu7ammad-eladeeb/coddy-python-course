@@ -361,3 +361,116 @@ print(system.users)
 ```
 
 **Key takeaway:** Use a dictionary (`self.users`) to store registered users, check whether a username already exists before adding it, and print the appropriate message for each outcome.
+
+# Login
+
+## Challenge
+
+**Difficulty:** Easy
+
+Now that we can register users, it is time to create a method for logging them in.
+
+Create a method called `login(self, username, password)` that checks whether the user exists in the system. If the user exists, check whether the provided password matches the password stored in the system. If both conditions are met, store the username in the `logged_users` variable.
+
+The method should display the following messages:
+
+- If the user logs in successfully, print `user logged in successfully`.
+- If the user is not registered in the system, print `user isn't in the system`.
+- If the password doesn't match, print `password doesn't match`.
+
+## Hints
+
+**Hint 1:** To check if the user exists in the system, use:
+
+```python
+if username in self.users:
+```
+
+**Hint 2:** To add a user to the set, use:
+
+```python
+self.logged_users.add(username)
+```
+
+## Solution
+
+```python
+class LoginSystem:
+    def __init__(self):
+        # Store registered users as username-password pairs
+        self.users = {}
+
+        # Store usernames of users who are currently logged in
+        self.logged_users = set()
+
+    def register(self, username, password):
+        # Check if the username is already registered
+        if username in self.users:
+            print("user already exists")
+        else:
+            # Store the username and password
+            self.users[username] = password
+            print("user registered successfully")
+
+    def login(self, username, password):
+        # Check if the username exists in the system
+        if username in self.users:
+            # Check if the provided password matches the stored password
+            if self.users[username] == password:
+                # Add the username to the set of logged-in users
+                self.logged_users.add(username)
+                print("user logged in successfully")
+            else:
+                # The password is incorrect
+                print("password doesn't match")
+        else:
+            # The username is not registered
+            print("user isn't in the system")
+```
+
+## Explanation
+
+1. **Check whether the user exists**
+
+   `if username in self.users:` checks whether the username is a key in the `users` dictionary.
+
+2. **Check the password**
+
+   `self.users[username] == password` compares the provided password with the password stored for that username.
+
+3. **Add the user to `logged_users`**
+
+   If the username exists and the password matches, `self.logged_users.add(username)` adds the username to the set of logged-in users.
+
+   A set stores unique values, so the same username won't be added more than once.
+
+4. **Print the appropriate message**
+
+   The method prints a different message depending on whether the username is missing, the password is incorrect, or the login succeeds.
+
+## Example
+
+```python
+system = LoginSystem()
+
+system.register("alice", "pass123")
+# Output: user registered successfully
+
+system.login("alice", "pass123")
+# Output: user logged in successfully
+
+system.login("alice", "wrongpass")
+# Output: password doesn't match
+
+system.login("bob", "pass123")
+# Output: user isn't in the system
+
+print(system.logged_users)
+# Output: {'alice'}
+```
+
+## Key Takeaway
+
+The `users` dictionary stores registered usernames and passwords, while the `logged_users` set tracks users who have successfully logged in.
+
+**Important:** This example stores passwords as plain text for learning purposes. Real applications should store securely hashed passwords instead of plain-text passwords.
