@@ -597,3 +597,215 @@ system.sign_out("bob")
 - `self.logged_users.remove(username)` signs out a user by removing their username from the set.
 
 **Remember:** Signing out does not delete the user's account. It only removes the username from `logged_users`, so the user can log in again later.
+
+# Basic Password Encryption
+
+## Introduction
+
+Passwords are sensitive information. If someone unauthorized gains access to your passwords, they could perform malicious actions using your account. To help protect passwords, we can transform them into an encrypted format before storing them in the system.
+
+An encrypted password is transformed into a different representation using a rule or key.
+
+For example, let's assume my password is **`abc`** and we create a secret language where each letter is replaced by another letter:
+
+```text
+a -> x
+b -> c
+c -> v
+```
+
+Our encrypted password becomes **`xcv`**. This is what we would store in the system instead of the original password.
+
+If someone managed to steal the stored passwords, they would see the transformed values rather than the original passwords. However, a simple substitution like this is easy to break and does not provide real security.
+
+When a user tries to log in, they enter their normal password, such as `abc`. The system transforms the input using the same mapping and compares the result with the stored encrypted password.
+
+> **Note:** Never use this kind of encryption in real-life applications! A simple letter-substitution mapping is weak and easy to break. Real applications should store passwords using a dedicated password-hashing algorithm, such as Argon2id, bcrypt, or scrypt.
+
+## Challenge
+
+**Difficulty:** Medium
+
+Create a variable called **`self.mapping`** when initializing the system in `__init__`. It should store the encryption mapping provided below.
+
+```python
+mapping = {
+    "a": "i", "b": "l", "c": "q", "d": "f", "e": "z", "f": "s",
+    "g": "a", "h": "g", "i": "e", "j": "p", "k": "w", "l": "o",
+    "m": "v", "n": "u", "o": "b", "p": "j", "q": "k", "r": "n",
+    "s": "x", "t": "d", "u": "h", "v": "y", "w": "t", "x": "m",
+    "y": "r", "z": "c"
+}
+```
+
+Create a method called **`encrypt(self, password)`** that returns the encrypted password using the `self.mapping` dictionary.
+
+Finally, update the registration and login methods:
+
+- When registering a user, store the encrypted password instead of the original password in the `users` dictionary.
+- When a user tries to log in, encrypt the password they provide and check whether it matches the password stored in `users`.
+
+## Solution
+
+```python
+class LoginSystem:
+    def __init__(self):
+        # Store registered usernames and encrypted passwords
+        self.users = {}
+
+        # Track currently logged-in users
+        self.logged_users = set()
+
+        # Map each letter to its encrypted equivalent
+        self.mapping = {
+            "a": "i", "b": "l", "c": "q", "d": "f", "e": "z", "f": "s",
+            "g": "a", "h": "g", "i": "e", "j": "p", "k": "w", "l": "o",
+            "m": "v", "n": "u", "o": "b", "p": "j", "q": "k", "r": "n",
+            "s": "x", "t": "d", "u": "h", "v": "y", "w": "t", "x": "m",
+            "y": "r", "z": "c"
+        }
+
+    def encrypt(self, password):
+        # Store the encrypted characters
+        new_values = []
+
+        # Replace each character using the mapping
+        for char in password:
+            if char in self.mapping:
+                new_values.append(self.mapping[char])
+            else:
+                # Keep characters that are not in the mapping unchanged
+                new_values.append(char)
+
+        # Combine the characters into one string
+        return "".join(new_values)
+
+    def register(self, username, password):
+        # Check if the username is already registered
+        if username in self.users:
+            print("user already exists")
+        else:
+            # Encrypt the password before storing it
+            self.users[username] = self.encrypt(password)
+            print("user registered successfully")
+
+    def login(self, username, password):
+        # Check if the username exists
+        if username not in self.users:
+            print("user isn't in the system")
+        # Encrypt the input and compare it with the stored password
+        elif self.encrypt(password) != self.users[username]:
+            print("password doesn't match")
+        else:
+            # Add the username to the logged-in users set
+            self.logged_users.add(username)
+            print("user logged in successfully")
+
+    def sign_out(self, username):
+        # Check if the username exists
+        if username not in self.users:
+            print("user is not in the system")
+        # Check if the user is logged in
+        elif username not in self.logged_users:
+            print("user is not logged in")
+        else:
+            # Remove the username from the logged-in users set
+            self.logged_users.remove(username)
+            print("user signed out successfully")
+```
+
+## Explanation
+
+### 1. Initialize the mapping
+
+```python
+self.mapping = {
+    "a": "i", "b": "l", "c": "q",
+    # Remaining mappings...
+}
+```
+
+`self.mapping` is an instance attribute, so other methods in the class can access it using `self.mapping`.
+
+### 2. Encrypt the password
+
+```python
+def encrypt(self, password):
+    new_values = []
+
+    for char in password:
+        if char in self.mapping:
+            new_values.append(self.mapping[char])
+        else:
+            new_values.append(char)
+
+    return "".join(new_values)
+```
+
+- `new_values = []` creates an empty list to collect the encrypted characters.
+- `for char in password:` loops through the password one character at a time.
+- `self.mapping[char]` retrieves the encrypted equivalent of each character.
+- `new_values.append(...)` adds the encrypted character to the list.
+- `"".join(new_values)` combines all characters into one string without adding separators.
+- `return` sends the encrypted password back to the method that called `encrypt()`.
+
+For example, using the provided mapping:
+
+```python
+system = LoginSystem()
+
+print(system.encrypt("abc"))
+# Output: ilq
+```
+
+The mapping in this challenge converts `a` to `i`, `b` to `l`, and `c` to `q`, so the result is `ilq`.
+
+### 3. Encrypt passwords during registration
+
+```python
+self.users[username] = self.encrypt(password)
+```
+
+Instead of saving the original password, the method encrypts it first and stores the result in the `users` dictionary.
+
+### 4. Encrypt passwords during login
+
+```python
+elif self.encrypt(password) != self.users[username]:
+    print("password doesn't match")
+```
+
+The password entered during login is encrypted using the same mapping. If the result differs from the stored value, the login attempt fails.
+
+If the encrypted values match, the user is added to `self.logged_users`.
+
+## Example
+
+```python
+system = LoginSystem()
+
+system.register("alice", "abc")
+# Output: user registered successfully
+
+print(system.users)
+# Output: {'alice': 'ilq'}
+
+system.login("alice", "abc")
+# Output: user logged in successfully
+
+system.login("alice", "xyz")
+# Output: password doesn't match
+
+system.sign_out("alice")
+# Output: user signed out successfully
+```
+
+## Key Takeaways
+
+- **`self.mapping`** stores the character-substitution rules.
+- **`encrypt()`** transforms a password and returns the result.
+- **`register()`** stores the transformed password rather than the original.
+- **`login()`** transforms the submitted password before comparing it with the stored value.
+- **`self.logged_users`** tracks users who have successfully logged in.
+
+Remember: this mapping is useful for learning how transformation and comparison work, but it is not secure password storage. In real applications, use a purpose-built password-hashing algorithm with a unique salt for each password.
