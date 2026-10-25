@@ -809,3 +809,11 @@ system.sign_out("alice")
 - **`self.logged_users`** tracks users who have successfully logged in.
 
 Remember: this mapping is useful for learning how transformation and comparison work, but it is not secure password storage. In real applications, use a purpose-built password-hashing algorithm with a unique salt for each password.
+
+ # Final Words
+
+We learned how to create a basic login system. In this system, users can register, log in, sign out, and apply the encryption method we implemented to transform their passwords.
+
+Now, the next big step is to learn how the industry securely handles passwords so they can be used in real-world applications.
+
+Keep studying! You are on the right track.
