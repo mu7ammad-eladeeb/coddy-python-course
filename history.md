@@ -87,6 +87,20 @@ Tim Peters wrote 19 guiding principles for Python, like "Readability counts". In
 
 **Source:** peps.python.org (Added details by ChatGPT)
 
+## 2005
+
+### **Reddit switches to Python**
+
+Reddit launched in June 2005 with code written in Common Lisp. Later that year it was rewritten in Python using web.py, a framework by co-founder Aaron Swartz. He said the switch made the code simpler and easier to maintain.
+
+* **Reddit:** A massive social news aggregation, web content rating, and discussion website founded in 2005 by Steve Huffman and Alexis Ohanian, later joined by Aaron Swartz.
+* **Common Lisp:** A general-purpose, high-level, object-oriented, dynamic functional programming language in the Lisp family, characterized by a fully parenthesized prefix notation and powerful macro system.
+* **Python:** A high-level, interpreted programming language emphasizing code readability, developer productivity, and extensive library support, which enabled Reddit to scale rapidly in its early growth phase.
+* **web.py:** A minimalist, lightweight Python web framework designed to be clean, powerful, and easy to understand, created by Aaron Swartz.
+* **Aaron Swartz:** An American computer programmer, entrepreneur, writer, political organizer, and internet activist who co-founded Reddit and made foundational contributions to web standards and open access.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2019
 
 ### **The Steering Council**
