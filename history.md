@@ -189,6 +189,19 @@ The original PyCon was held in North America in 2003. Today there are PyCon conf
 
 **Source:** python.org, en.wikipedia.org (Added details by ChatGPT)
 
+## 2005
+
+### **Guido at Google**
+
+From 2005 to 2012, Guido van Rossum worked at Google, where he spent half of his time on the Python language. He also built Mondrian, a code review tool written in Python used inside Google.
+
+* **Guido van Rossum:** A Dutch computer scientist best known as the author of the Python programming language, for which he served as the "Benevolent Dictator For Life" (BDFL) until stepping down from the role in 2018.
+* **Google:** A multinational technology company specializing in internet-related services and products, where Guido worked for seven years to support and optimize Python for large-scale infrastructure.
+* **Python:** A high-level, interpreted programming language emphasizing code readability and dynamic typing, widely utilized in web development, data science, artificial intelligence, and software engineering.
+* **Mondrian:** A proprietary code review web application developed by Guido van Rossum at Google, written in Python, which served as a precursor and conceptual inspiration for modern code review platforms like Rietveld and Gerrit.
+
+**Source:** Source: en.wikipedia.org (Added details by Gemini AI)
+
 ## 2013
 
 ### **Guido at Dropbox**
