@@ -101,3 +101,84 @@ for i in range(6):
 ## Key Takeaway
 
 Unlike the row-of-stars challenge, you don't need `end=" "` here. The default behavior of `print()` automatically moves to a new line after each star.
+
+# Solid Square of Stars
+
+## Challenge
+
+**Difficulty:** Easy
+
+Your task is to write a program that prints a **solid square** of stars. The pattern consists of **6 rows and 6 columns**.
+
+### Expected Output Pattern
+
+```text
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+```
+
+## Hints
+
+1. Use **nested loops**—one for rows and one for columns—to control where stars are placed.
+2. Inside the inner loop, print a star followed by a space (`"* "`).
+3. Use `print()` without arguments after the inner loop to move to the next line for each row.
+4. Adjust `range(6)` to control the number of stars printed horizontally and vertically.
+
+## Solution
+
+```python
+for row in range(6):
+    for col in range(6):
+        print("*", end=" ")
+    print()
+```
+
+## Explanation
+
+### 1. The outer loop controls the rows
+
+```python
+for row in range(6):
+```
+
+The outer loop runs 6 times, creating the **6 rows** of the square.
+
+### 2. The inner loop controls the columns
+
+```python
+for col in range(6):
+    print("*", end=" ")
+```
+
+For each row, the inner loop runs 6 times, printing 6 stars.
+
+The argument `end=" "` adds a space after each star instead of moving to a new line. This keeps all 6 stars on the same row.
+
+### 3. Move to the next row
+
+```python
+print()
+```
+
+After the inner loop finishes, `print()` moves the output to a new line so the next iteration of the outer loop can print the next row.
+
+## How the Nested Loops Work
+
+- The outer loop runs **6 times**.
+- For every iteration of the outer loop, the inner loop runs **6 times**.
+- Each inner-loop iteration prints one star.
+- After each row is complete, `print()` moves to the next line.
+
+The total number of stars printed is:
+
+\[
+6 \times 6 = 36
+\]
+
+## Key Takeaway
+
+**Nested loops** are useful for printing patterns with rows and columns. The outer loop controls the number of rows, while the inner loop controls the number of stars in each row.
