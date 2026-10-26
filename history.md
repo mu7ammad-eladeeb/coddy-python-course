@@ -33,6 +33,21 @@ Guido named his language after Monty Python's Flying Circus, the British comedy 
 
 **Source:** docs.python.org (Added details by ChatGPT)
 
+## 1991
+
+### **Released to the world**
+
+In February 1991, Guido posted Python 0.9.0 to the alt.sources newsgroup. It already had classes, functions, exception handling and core types like lists and dictionaries.
+
+* **Guido van Rossum:** The Dutch programmer who created the Python programming language, serving as its "Benevolent Dictator For Life" (BDFL) until stepping down in 2018.
+* **Python 0.9.0:** The first public release of the Python programming language, published early in 1991 at CWI (Centrum Wiskunde & Informatica) in the Netherlands.
+* **alt.sources:** A Usenet newsgroup historically used for sharing and distributing software source code over the early internet before centralized platforms like GitHub existed.
+* **Classes & Functions:** Core programming paradigms; classes define blueprints for object-oriented programming (OOP), while functions provide modular, reusable blocks of code.
+* **Exception Handling:** A structured mechanism (`try...except`) allowing software to gracefully detect, catch, and respond to runtime errors without crashing.
+* **Lists & Dictionaries:** Python's built-in fundamental data structures; lists store ordered, mutable sequences of items, and dictionaries store key-value mapping pairs.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 1994
 
 ### **Python 1.0**
@@ -350,3 +365,17 @@ Instagram launched in October 2010, and its web backend was built with Django. I
 - **Database:** An organized collection of information that software can store, retrieve, and update.
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
+
+## 2012
+
+### **Ansible**
+
+Michael DeHaan created Ansible in 2012, and Red Hat bought it in 2015. Ansible configures many computers at once from simple text files. It needs only SSH and Python on the machines it manages.
+
+* **Ansible:** An open-source automation platform used for IT tasks such as configuration management, application deployment, and intra-service orchestration, designed to be agentless and simple to deploy.
+* **Michael DeHaan:** An open-source developer and author who founded the Ansible project in 2012, previously known for creating Cobbler and working on Fedora systems management.
+* **Red Hat:** A leading American enterprise software company specializing in open-source products, including Red Hat Enterprise Linux (RHEL), which acquired Ansible in October 2015 and later became a subsidiary of IBM in 2019.
+* **SSH (Secure Shell):** A cryptographic network protocol used for secure remote login and command execution over an unsecured network, serving as Ansible's primary transport layer to manage nodes without installing custom software.
+* **Python:** A high-level, general-purpose programming language; Ansible is written in Python and uses Python on remote managed nodes to execute its modules.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
