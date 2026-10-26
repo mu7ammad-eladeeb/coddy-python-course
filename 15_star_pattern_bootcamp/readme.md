@@ -61,3 +61,43 @@ for i in range(6):
 ### Key Takeaway
 
 The `for` loop controls how many stars are printed, while `end=" "` keeps them on the same line and separates them with spaces.
+
+# Column of Stars
+
+## Challenge
+
+**Difficulty:** Easy
+
+Your task is to write a program that prints a **single column** of stars. The pattern consists of **6 rows and 1 column**.
+
+### Expected Output Pattern
+
+```text
+*
+*
+*
+*
+*
+*
+```
+
+## Hint
+
+Use a `for` loop to repeat a print action.
+
+## Solution
+
+```python
+for i in range(6):
+    print("*")
+```
+
+## Explanation
+
+1. **`for i in range(6):`** repeats the loop 6 times. The variable `i` takes values from `0` to `5`.
+2. **`print("*")`** prints one star during each iteration.
+3. By default, `print()` ends with a newline (`"\n"`), so each star appears on a separate line.
+
+## Key Takeaway
+
+Unlike the row-of-stars challenge, you don't need `end=" "` here. The default behavior of `print()` automatically moves to a new line after each star.
