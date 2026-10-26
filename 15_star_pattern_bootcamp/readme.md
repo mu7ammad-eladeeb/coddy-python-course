@@ -23,3 +23,41 @@ In this series of challenges about **Patterns**, you will find tasks that enhanc
 To succeed in this course, it is important to **actively engage with the material**. Be sure to attempt the challenges on your own first. If you encounter difficulty, you can refer to the hints and eventually the solution, if necessary.
 
 > **Note:** This course is not for total beginners. You will need a good understanding of your preferred programming language. If you are a beginner, please check out topics related to conditional statements, nested loops, and functions in your preferred language.
+
+# Row of Stars
+
+## Challenge
+
+**Difficulty:** Easy
+
+Your first challenge is to create a simple yet iconic pattern using asterisks (`*`).
+
+Your task is to write a program that prints a **single row** of stars. The pattern consists of **1 row and 6 columns**.
+
+### Expected Output Pattern
+
+```text
+* * * * * *
+```
+
+## Hints
+
+1. Use a `for` loop to repeat a print action.
+2. Use the `end` argument with a space (`" "`) to separate the stars.
+
+## Solution
+
+```python
+for i in range(6):
+    print("*", end=" ")
+```
+
+## Explanation
+
+1. **`for i in range(6):`** repeats the loop 6 times because `range(6)` generates six values, from `0` to `5`.
+2. **`print("*", end=" ")`** prints one star followed by a space instead of moving to a new line.
+3. After all six iterations, the stars appear on a single row, separated by spaces.
+
+### Key Takeaway
+
+The `for` loop controls how many stars are printed, while `end=" "` keeps them on the same line and separates them with spaces.
