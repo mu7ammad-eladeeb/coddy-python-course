@@ -329,6 +329,19 @@ Olivia Mackall announced Mercurial on 19 April 2005. It is a distributed version
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
 
+## 2008
+
+### **The Django Software Foundation**
+
+In June 2008, it was announced that a new Django Software Foundation would look after Django. It is a non-profit organization in the United States. Django 1.0 followed in September of that year.
+
+* **Django Software Foundation (DSF):** A non-profit 501(c)(3) organization established to promote, support, and advance the Django web framework while protecting its intellectual property and copyright.
+* **Django:** A high-level, open-source Python web framework designed to enable rapid development of secure, maintainable, and scalable websites by following the model–template–views (MTV) architectural pattern.
+* **Django 1.0:** The first major stable release of the Django framework, published in September 2008, which stabilized the core API, URL dispatcher, ORM, and admin interface for production use.
+* **Non-Profit Organization:** A legal entity organized and operated for a collective, public, or social benefit rather than generating financial gain for owners or shareholders.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2010
 
 ### **Flask, the April Fools' joke**
