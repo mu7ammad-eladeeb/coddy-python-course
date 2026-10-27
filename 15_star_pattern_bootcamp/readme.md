@@ -182,3 +182,59 @@ The total number of stars printed is:
 ## Key Takeaway
 
 **Nested loops** are useful for printing patterns with rows and columns. The outer loop controls the number of rows, while the inner loop controls the number of stars in each row.
+
+# Right-Angle Triangle
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **right-angle triangle** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
+
+### Expected Output Pattern
+
+```text
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * * * *
+```
+
+## Hints
+
+1. Use `range(1, rows + 1)` to iterate from `1` to `rows` (inclusive).
+2. Use `"* " * i` to print `i` stars followed by spaces.
+3. Each row increases the number of stars printed by 1, creating a right-angle triangle pattern.
+
+## Solution
+
+```python
+rows = 6
+
+for i in range(1, rows + 1):
+    print("* " * i)
+```
+
+## Explanation
+
+1. **`rows = 6`** sets the number of rows in the triangle.
+2. **`range(1, rows + 1)`** generates the numbers from `1` to `6`. The upper limit is exclusive, so we use `rows + 1` to include `6`.
+3. **`"* " * i`** repeats the string `"* "` exactly `i` times.
+4. **`print()`** prints the repeated stars and moves to the next line.
+
+## How the Pattern Is Created
+
+| Iteration (`i`) | Expression | Stars printed |
+|---:|---|---|
+| 1 | `"* " * 1` | `*` |
+| 2 | `"* " * 2` | `* *` |
+| 3 | `"* " * 3` | `* * *` |
+| 4 | `"* " * 4` | `* * * *` |
+| 5 | `"* " * 5` | `* * * * *` |
+| 6 | `"* " * 6` | `* * * * * *` |
+
+## Key Takeaway
+
+You can create a growing star pattern using a single loop and string repetition. The loop variable `i` determines how many stars appear on each row, increasing from one star to six.
