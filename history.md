@@ -244,6 +244,19 @@ From 2005 to 2012, Guido van Rossum worked at Google, where he spent half of his
 
 **Source:** Source: en.wikipedia.org (Added details by Gemini AI)
 
+## 2011
+
+### **PyLadies: Empowering Women in the Python Community**
+
+PyLadies was founded in Los Angeles in April 2011 by seven women—Ada Fong, Audrey Roy Greenfeld, Christine Cheung, Esther Nam, Katharine Jarmul, Sophia Westwood, and Sandy Strong. The international mentorship network was created to help more women become active participants, contributors, and leaders in the Python open-source community. Later that year, in August, the movement began its global expansion with the launch of its second chapter in Washington, D.C.
+
+* **PyLadies:** An international mentorship network and developer group dedicated to encouraging women to participate, contribute, and take leadership roles within the Python open-source ecosystem.
+* **Python Software Foundation (PSF):** The non-profit organization behind the Python programming language that provides financial grants, infrastructure, and administrative backing for initiatives like PyLadies.
+* **Audrey Roy Greenfeld:** A software engineer, author, and co-founder of PyLadies, also widely recognized for creating Cookiecutter, a popular command-line utility for bootstrapping project templates.
+* **Open-Source Community:** A global network of developers who collaboratively build, maintain, and share software code publicly, relying on local meetups, conferences, and grants to foster diversity and inclusion.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2013
 
 ### **Guido at Dropbox**
