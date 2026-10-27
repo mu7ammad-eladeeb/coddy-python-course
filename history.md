@@ -203,6 +203,19 @@ In 1999, Guido van Rossum sent a funding proposal called *Computer Programming f
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
 
+## 2000
+
+### **BeOpen PythonLabs: A Pivotal Transition for Python's Core Team**
+
+In May 2000, Guido van Rossum and several core Python developers departed CNRI (Corporation for National Research Initiatives) to join BeOpen.com, forming the BeOpen PythonLabs team. The transition aimed to create an open-source business model around Python, leading to the release of Python 2.0 under BeOpen. However, the dot-com bubble burst led to the startup's rapid collapse by October of that same year. Following the shutdown, the core development team moved to Digital Creations, the company that later became Zope Corporation.
+
+* **BeOpen PythonLabs:** An open-source software venture formed by core Python developers in 2000 to commercialize services around Python while keeping the language open-source.
+* **Guido van Rossum:** The creator of the Python programming language, who led the core development team through multiple organizational transitions in the early 2000s.
+* **Python 2.0:** A major release of Python published in October 2000 that introduced list comprehensions, a cycle-detecting garbage collector, and enhanced Unicode support.
+* **Zope Corporation (formerly Digital Creations):** An open-source web application server company that hired the core Python team in late 2000, providing stability for Python's ongoing development.
+
+**Source:** docs.python.org, en.wikipedia.org (Added details by Gemini AI)
+
 ## 2002
 
 ### **EuroPython**
