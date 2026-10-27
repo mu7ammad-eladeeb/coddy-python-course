@@ -342,6 +342,19 @@ In June 2008, it was announced that a new Django Software Foundation would look 
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
+## 2008
+
+### **Google App Engine**
+
+Google App Engine launched as a preview in April 2008, introducing Python as its initial supported language. This Platform as a Service (PaaS) allowed developers to deploy and run web applications directly on Google's infrastructure without the need to manage physical or virtual server environments. Guido van Rossum, the creator of Python who was working at Google during this time, played a key role in showcasing and advocating for the platform.
+
+* **Google App Engine (GAE):** A cloud computing Platform as a Service (PaaS) offering by Google for developing and hosting web applications in Google-managed data centers.
+* **Python:** A high-level, interpreted programming language known for its readability, clear syntax, and extensive ecosystem, making it a popular choice for rapid web development.
+* **Platform as a Service (PaaS):** A cloud computing model where a third-party provider delivers hardware and software tools—usually those needed for application development—to users over the internet, handling background server management.
+* **Guido van Rossum:** The Dutch programmer best known as the creator of the Python programming language, who served as Python's "Benevolent Dictator For Life" (BDFL) until 2018.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2010
 
 ### **Flask, the April Fools' joke**
