@@ -238,3 +238,118 @@ for i in range(1, rows + 1):
 ## Key Takeaway
 
 You can create a growing star pattern using a single loop and string repetition. The loop variable `i` determines how many stars appear on each row, increasing from one star to six.
+
+# Left-Angle Triangle
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **left-angle triangle** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
+
+### Output Pattern
+
+```text
+          *
+        * *
+      * * *
+    * * * *
+  * * * * *
+* * * * * *
+```
+
+## Hints
+
+1. Use the first loop to iterate through rows and the second loop for leading whitespaces.
+2. The loop `for j in range(2 * (rows - i) - 1)` prints leading whitespaces to align stars properly.
+3. The loop `for k in range(i + 1)` prints the star (`"* "`) characters.
+4. Use `print()` after the inner loops to move to the next line for each row.
+
+## Solution 1: Using Nested Loops
+
+```python
+rows = 6
+
+for i in range(rows):
+    for j in range(2 * (rows - i) - 1):
+        print(" ", end="")
+
+    for k in range(i + 1):
+        print("* ", end="")
+
+    print()
+```
+
+### Explanation
+
+1. **`rows = 6`** sets the number of rows in the triangle.
+2. **`for i in range(rows)`** runs six times, with `i` going from `0` to `5`.
+3. **`for j in range(2 * (rows - i) - 1)`** prints leading spaces before the stars. The number of spaces decreases as the rows progress.
+4. **`for k in range(i + 1)`** prints the stars. Each new row contains one more star than the previous row.
+5. **`print("* ", end="")`** prints each star on the same line because `end=""` prevents `print()` from moving to a new line.
+6. **`print()`** moves to the next line after the spaces and stars for the current row have been printed.
+
+### How the Pattern Is Created
+
+| Row (`i`) | Leading spaces | Number of stars |
+|---:|---:|---:|
+| 0 | 11 | 1 |
+| 1 | 9 | 2 |
+| 2 | 7 | 3 |
+| 3 | 5 | 4 |
+| 4 | 3 | 5 |
+| 5 | 1 | 6 |
+
+The leading spaces decrease by two on each row, while the number of stars increases by one.
+
+## Solution 2: Using String Repetition and Slicing
+
+```python
+# Write code here
+stars = "*"
+spaces = "           "
+
+for i in range(6):
+    print(spaces + stars)
+    stars += " *"
+    spaces = spaces[:-2]
+```
+
+### Explanation
+
+1. **`stars = "*"`** initializes the pattern with one star.
+2. **`spaces = "           "`** creates a string containing 11 spaces to position the first star on the right.
+3. **`for i in range(6)`** repeats the process six times, creating six rows.
+4. **`print(spaces + stars)`** combines the leading spaces and the current star pattern, then prints them on one line.
+5. **`stars += " *"`** adds another star, preceded by a space, for the next row.
+6. **`spaces = spaces[:-2]`** removes the last two spaces from the leading-spaces string. This shifts the next row's stars two positions to the left.
+
+### How String Slicing Works
+
+The expression `spaces[:-2]` creates a new string containing everything except the last two characters.
+
+For example:
+
+```python
+spaces = "     "
+spaces = spaces[:-2]
+
+print(repr(spaces))
+```
+
+Output:
+
+```text
+'   '
+```
+
+The string now contains three spaces instead of five.
+
+## Key Takeaway
+
+Both solutions produce the same left-angle triangle, but they use different approaches:
+
+- **Solution 1** uses nested loops to control the number of leading spaces and stars on each row.
+- **Solution 2** builds the pattern by adding stars and shortening the spaces string on every iteration.
+
+The nested-loop solution gives you more explicit control over the pattern, while the string-based solution is shorter and demonstrates string concatenation and slicing.
