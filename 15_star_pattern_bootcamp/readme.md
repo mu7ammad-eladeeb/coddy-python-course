@@ -438,3 +438,96 @@ This solution uses **string manipulation** instead of nested loops.
 - **Solution 2** builds the pattern by modifying two strings: one for spaces and one for stars.
 - Both solutions produce the same inverted left-angle triangle.
 - The nested-loop approach is useful for practicing loops and pattern logic, while the string-manipulation approach is concise and easy to follow.
+
+# Rhombus Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **rhombus pattern** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
+
+### Output Pattern
+
+```text
+     * * * * * *
+    * * * * * *
+   * * * * * *
+  * * * * * *
+ * * * * * *
+* * * * * *
+```
+
+## Hints
+
+1. Use nested loops to control the placement of spaces and stars. One loop manages rows, while others handle spaces and stars within each row.
+2. Inside the outer loop, use another loop to print spaces before printing stars. Adjust loop parameters to ensure proper alignment.
+3. Use a loop to print stars after spaces. Maintain consistency in spacing and format.
+
+## Solution 1: Using Nested Loops
+
+```python
+rows = 6
+columns = 6
+
+for i in range(rows):
+    for j in range(rows - i - 1):
+        print(" ", end="")
+
+    for k in range(columns):
+        print("*", end=" ")
+
+    print()
+```
+
+### Explanation
+
+1. **`rows = 6`** sets the number of rows in the pattern.
+2. **`columns = 6`** sets the number of stars in each row.
+3. **`for i in range(rows)`** repeats the process six times, once for each row.
+4. **`for j in range(rows - i - 1)`** prints the leading spaces. The number of spaces decreases by one on each row.
+5. **`for k in range(columns)`** prints six stars on every row.
+6. **`print("*", end=" ")`** prints each star followed by a space without moving to a new line.
+7. **`print()`** moves to the next line after each row is complete.
+
+The result is a slanted square shape because each row contains six stars, while the leading spaces decrease from five to zero.
+
+## Solution 2: Using String Repetition
+
+```python
+spaces = 5
+stars = "* * * * * *"
+
+for i in range(6):
+    print(" " * spaces + stars)
+    spaces -= 1
+```
+
+### Explanation
+
+1. **`spaces = 5`** initializes the number of leading spaces for the first row.
+2. **`stars = "* * * * * *"`** stores the six stars and the spaces between them as a single string.
+3. **`for i in range(6)`** repeats the process six times.
+4. **`" " * spaces`** repeats the space character according to the current value of `spaces`.
+5. **`+ stars`** concatenates the leading spaces with the star pattern.
+6. **`spaces -= 1`** decreases the number of leading spaces by one after each row.
+
+### How the Pattern Changes
+
+| Row | Leading spaces | Stars |
+|---:|---:|---:|
+| 1 | 5 | 6 |
+| 2 | 4 | 6 |
+| 3 | 3 | 6 |
+| 4 | 2 | 6 |
+| 5 | 1 | 6 |
+| 6 | 0 | 6 |
+
+## Key Takeaway
+
+Both solutions produce the same rhombus pattern:
+
+- **Solution 1** uses nested loops to print spaces and stars separately.
+- **Solution 2** uses string repetition and concatenation to build each row more concisely.
+
+The main idea is to keep the number of stars constant while decreasing the leading spaces by one on every row.
