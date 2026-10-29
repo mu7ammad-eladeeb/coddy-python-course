@@ -355,6 +355,19 @@ Olivia Mackall announced Mercurial on 19 April 2005. It is a distributed version
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
 
+## 2005
+
+### **Django Goes Public: The Birth of a Modern Web Framework**
+
+Django was released as open-source software in July 2005 under a three-clause BSD license after initially being developed in 2003 by Adrian Holovaty and Simon Willison at the *Lawrence Journal-World* newspaper. Created to meet fast-paced newsroom deadlines and complex data requirements, the high-level Python framework was named in honor of the influential Romani-French jazz guitarist Django Reinhardt—a personal inspiration to Holovaty, who is also an accomplished jazz guitarist.
+
+* **Django:** A high-level, open-source Python web framework that encourages rapid development and clean, pragmatic design following the Model-Template-Views (MTV) architectural pattern.
+* **BSD License:** A family of permissive free-software licenses that imposes minimal restrictions on the redistribution and modification of covered software.
+* **Adrian Holovaty:** A software developer, journalist, and musician who co-created Django to streamline web publishing and pioneered data journalism applications.
+* **Django Reinhardt (1910–1953):** A pioneering Romani-French jazz guitarist and composer who co-founded the Quintette du Hot Club de France and popularized the "Gypsy Jazz" genre.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2008
 
 ### **The Django Software Foundation**
