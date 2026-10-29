@@ -353,3 +353,88 @@ Both solutions produce the same left-angle triangle, but they use different appr
 - **Solution 2** builds the pattern by adding stars and shortening the spaces string on every iteration.
 
 The nested-loop solution gives you more explicit control over the pattern, while the string-based solution is shorter and demonstrates string concatenation and slicing.
+
+# Inverted Left-Angle Triangle
+
+**Challenge**
+
+Easy
+
+Write a program that prints an **Inverted Left-Angle Triangle** of stars as shown below. The pattern consists of 6 rows and 6 columns.
+
+#### *Output Pattern:*
+
+```text
+* * * * * *
+  * * * * *
+    * * * *
+      * * *
+        * *
+          *
+```
+
+**Hints**
+
+Hint 1
+
+1. Use nested loops—one for controlling rows and one for controlling columns—to manage where characters (stars and spaces) are placed.
+2. Inside the inner loops, use print statements to output stars (`*`) and spaces based on the current row and column indices.
+3. Adjust loop ranges and index calculations to ensure correct placement of stars and spaces according to the pattern's requirements.
+4. Utilize formatting techniques such as print statements to control spacing and line breaks between rows of the pattern.
+
+## Solution 1: Using the Hint (Nested Loops)
+
+```python
+for i in range(6):
+    for j in range(i):
+        print(" ", end=" ")
+
+    for j in range(6 - i):
+        print("*", end=" ")
+
+    print()
+```
+
+### Explanation of Solution 1
+
+This solution uses **nested loops** to control the spaces and stars in each row.
+
+- `for i in range(6):` repeats the process 6 times, creating 6 rows.
+- `for j in range(i):` prints spaces before the stars. As `i` increases, the number of spaces increases.
+- `print(" ", end=" ")` prints a space without moving to a new line. The `end=" "` argument keeps the output on the same line.
+- `for j in range(6 - i):` prints the stars. Each new row contains one fewer star.
+- `print()` moves to the next line after each row is complete.
+
+The first row has 6 stars and no leading spaces. The last row has 1 star and 5 pairs of leading spaces.
+
+## Solution 2
+
+```python
+spaces = ""
+stars = "* * * * * *"
+
+for i in range(6):
+    print((spaces * 2) + stars)
+    stars = stars[:-2]
+    spaces += " "
+```
+
+### Explanation of Solution 2
+
+This solution uses **string manipulation** instead of nested loops.
+
+- `spaces = ""` initializes an empty string to hold the leading spaces.
+- `stars = "* * * * * *"` stores the initial pattern of 6 stars separated by spaces.
+- `for i in range(6):` repeats the process 6 times.
+- `print((spaces * 2) + stars)` prints the leading spaces followed by the current star pattern.
+  - `spaces * 2` doubles the number of spaces at the beginning of each row.
+  - `+ stars` joins the leading spaces and the star pattern into one string.
+- `stars = stars[:-2]` removes the last two characters from the star string: the final `*` and its preceding space. This leaves one fewer star for the next row.
+- `spaces += " "` adds one space to the `spaces` string. On the next iteration, `spaces * 2` adds two more leading spaces.
+
+### Key Takeaways
+
+- **Solution 1** uses nested loops to decide how many spaces and stars to print in each row.
+- **Solution 2** builds the pattern by modifying two strings: one for spaces and one for stars.
+- Both solutions produce the same inverted left-angle triangle.
+- The nested-loop approach is useful for practicing loops and pattern logic, while the string-manipulation approach is concise and easy to follow.
