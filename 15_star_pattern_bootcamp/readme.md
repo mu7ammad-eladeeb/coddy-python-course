@@ -671,3 +671,195 @@ The main idea behind a pyramid pattern is:
 - The number of leading spaces decreases by two on each row.
 - The number of stars increases by two on each row.
 - The number of stars is always odd: 1, 3, 5, 7, 9, and 11.
+
+# Inverted Pyramid
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints an **inverted pyramid pattern** of stars as shown below. The pattern consists of **6 rows and 11 columns**.
+
+### Output Pattern
+
+```text
+* * * * * * * * * * *
+  * * * * * * * * *
+    * * * * * * *
+      * * * * *
+        * * *
+          *
+```
+
+## Hints
+
+1. Use nested loops to control rows and columns:
+
+   ```python
+   for i in range(rows):
+       for j in range(2 * i):
+           # Print leading spaces
+
+       for k in range(2 * (rows - i) - 1):
+           # Print stars
+   ```
+
+2. Inside the outer loop (`i`), use an inner loop (`j`) to print leading spaces based on the current row index.
+3. Inside the outer loop (`i`), use another inner loop (`k`) to print stars (`*`) with appropriate spacing based on the current row index.
+
+## Solution 1: Using Nested Loops (Hint Solution)
+
+```python
+rows = 6
+
+for i in range(rows):
+    for j in range(2 * i):
+        print(" ", end="")
+
+    for k in range(2 * (rows - i) - 1):
+        print("*", end=" ")
+
+    print()
+```
+
+### Explanation
+
+1. **`rows = 6`** sets the number of rows in the inverted pyramid.
+2. **`for i in range(rows)`** repeats the process six times. The variable `i` goes from `0` to `5`.
+3. **`for j in range(2 * i)`** prints the leading spaces. Each row adds two more spaces:
+   - Row 1: 0 spaces
+   - Row 2: 2 spaces
+   - Row 3: 4 spaces
+   - Row 4: 6 spaces
+   - Row 5: 8 spaces
+   - Row 6: 10 spaces
+4. **`for k in range(2 * (rows - i) - 1)`** determines how many stars to print. The number of stars decreases by two on each row:
+   - Row 1: 11 stars
+   - Row 2: 9 stars
+   - Row 3: 7 stars
+   - Row 4: 5 stars
+   - Row 5: 3 stars
+   - Row 6: 1 star
+5. **`print("*", end=" ")`** prints each star followed by a space without moving to a new line.
+6. **`print()`** moves to the next line after completing each row.
+
+## Solution 2: Using String Slicing
+
+```python
+stars = "* * * * * * * * * * *"
+spaces = 0
+
+for row in range(6):
+    print((spaces * " ") + stars)
+    stars = stars[:-4]
+    spaces += 2
+```
+
+### Explanation
+
+1. **`stars = "* * * * * * * * * * *"`** initializes the pattern with 11 stars separated by spaces.
+2. **`spaces = 0`** initializes the number of leading spaces for the first row.
+3. **`for row in range(6)`** repeats the process six times.
+4. **`print((spaces * " ") + stars)`** prints the current number of leading spaces followed by the current star pattern.
+5. **`stars = stars[:-4]`** removes the last four characters from the star string:
+   - One star (`*`)
+   - One space before it
+   - Another star (`*`)
+
+   This effectively removes two stars and their separator, leaving the remaining pattern shorter by two stars.
+6. **`spaces += 2`** adds two leading spaces for the next row, shifting the pattern to the right.
+
+### How String Slicing Changes the Pattern
+
+| Row | Number of leading spaces | Number of stars |
+|---:|---:|---:|
+| 1 | 0 | 11 |
+| 2 | 2 | 9 |
+| 3 | 4 | 7 |
+| 4 | 6 | 5 |
+| 5 | 8 | 3 |
+| 6 | 10 | 1 |
+
+## Connecting Your Solution to the Hint Formulas
+
+The formulas used in the hint solution can be calculated directly from the behavior of your string-based solution.
+
+### 1. Leading Spaces Formula
+
+In your solution:
+
+```python
+spaces = 0
+spaces += 2
+```
+
+The number of spaces starts at `0` and increases by `2` on every iteration.
+
+Since the row index `i` starts at `0`, the formula is:
+
+```python
+2 * i
+```
+
+This is exactly the hint's formula:
+
+```python
+for j in range(2 * i):
+```
+
+The loop prints `2 * i` spaces.
+
+### 2. Number of Stars Formula
+
+In your solution, the initial pattern contains 11 stars, and you remove two stars on every iteration.
+
+The number of stars therefore follows this sequence:
+
+```text
+11, 9, 7, 5, 3, 1
+```
+
+Since there are 6 rows, the initial number of stars is:
+
+```python
+2 * rows - 1
+```
+
+Every iteration removes two stars, so the formula becomes:
+
+```python
+2 * rows - 1 - 2 * i
+```
+
+We can rearrange it:
+
+```python
+2 * (rows - i) - 1
+```
+
+This is exactly the hint's formula:
+
+```python
+for k in range(2 * (rows - i) - 1):
+```
+
+### Formula Comparison
+
+| Pattern component | Your solution | Hint formula |
+|---|---|---|
+| Leading spaces | Start at 0, add 2 | `2 * i` |
+| Number of stars | Start at 11, remove 2 | `2 * (rows - i) - 1` |
+
+## Key Takeaways
+
+Both solutions create the same inverted pyramid, but they approach the problem differently:
+
+- **Solution 1** calculates the number of spaces and stars using formulas inside nested loops.
+- **Solution 2** builds the pattern by modifying two strings: adding leading spaces and shortening the star string.
+
+**Important:** The hint formulas are not arbitrary. They are mathematical expressions describing the exact changes happening in your solution:
+
+- `2 * i` represents the increasing leading spaces.
+- `2 * (rows - i) - 1` represents the decreasing number of stars.
+
+Notice that you can get the formulas from the second solution numbers. Understanding how to derive these formulas from a working solution is a useful way to become more comfortable with nested loops and pattern problems.
