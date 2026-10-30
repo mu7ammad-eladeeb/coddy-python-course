@@ -283,6 +283,19 @@ From 2005 to 2012, Guido van Rossum worked at Google, where he spent half of his
 
 **Source:** Source: en.wikipedia.org (Added details by Gemini AI)
 
+## 2007
+
+### **import antigravity: The Iconic xkcd Easter Egg**
+
+In December 2007, Randall Munroe published xkcd comic #353 titled "Python," in which a character flies simply by importing a module called `antigravity`, humorously celebrating the language's elegance and ease of use. Python core developers commemorated the viral comic by officially adding a hidden `antigravity` module to the Python standard library starting with Python 3.0. Executing `import antigravity` opens the original comic webpage directly in the user's default web browser via the standard `webbrowser` module.
+
+* **`import antigravity`:** A famous easter egg built into the Python standard library that automatically launches xkcd comic #353 in a web browser when executed.
+* **xkcd:** A popular webcomic created by Randall Munroe in 2005 covering topics in computer science, technology, science, and mathematics.
+* **Standard Library:** The extensive collection of built-in modules and packages included with Python out of the box, fulfilling its "batteries included" philosophy.
+* **`webbrowser` Module:** A built-in Python module that provides a high-level interface to allow applications to display Web-based documents to users.
+
+**Source:** en.wikipedia.org, xkcd.com (Added details by Gemini AI)
+
 ## 2011
 
 ### **PyLadies: Empowering Women in the Python Community**
