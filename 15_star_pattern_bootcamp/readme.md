@@ -863,3 +863,312 @@ Both solutions create the same inverted pyramid, but they approach the problem d
 - `2 * (rows - i) - 1` represents the decreasing number of stars.
 
 Notice that you can get the formulas from the second solution numbers. Understanding how to derive these formulas from a working solution is a useful way to become more comfortable with nested loops and pattern problems.
+
+# Diamond Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **diamond pattern** of stars as shown below. The pattern consists of **6 rows in the upper half and 5 rows in the lower half**, making a total of 11 rows and 11 columns.
+
+### Expected Output Pattern
+
+```text
+           *
+         * * *
+       * * * * *
+     * * * * * * *
+   * * * * * * * * *
+ * * * * * * * * * * *
+   * * * * * * * * *
+     * * * * * * *
+       * * * * *
+         * * *
+           *
+```
+
+## Hints
+
+### Hint 1: Use Conditional Statements
+
+Use conditional statements (`if-else`) to dynamically assign values based on the current row number.
+
+Example:
+
+```python
+if i < n:
+    comp = 2 * (n - i) - 1
+else:
+    comp = 2 * (i - n + 1) + 1
+```
+
+### Hint 2: Print Leading Spaces
+
+Print leading spaces dynamically before printing stars.
+
+```python
+print(" " * comp, end="")
+```
+
+### Hint 3: Print Stars
+
+Print stars (`*`) using a loop or repeated print statements to form the desired pattern.
+
+```python
+print("* " * (2 * n - comp), end="")
+```
+
+### Hint 4: Move to the Next Line
+
+Use `print()` after printing each row of stars to move to the next line and maintain the pattern structure.
+
+## Solution 1: Using the Hint (If-Else Statements)
+
+This solution uses one loop for the entire diamond. An `if-else` statement determines whether the current row belongs to the upper or lower half.
+
+```python
+rows = 6
+
+for i in range(2 * rows - 1):
+    if i < rows:
+        comp = 2 * (rows - i) - 1
+    else:
+        comp = 2 * (i - rows + 1) + 1
+
+    print(" " * comp, end="")
+    print("* " * (2 * rows - comp))
+```
+
+### Explanation
+
+1. **`rows = 6`** sets the number of rows in the upper half of the diamond.
+2. **`for i in range(2 * rows - 1)`** runs 11 times, creating 11 rows in total.
+3. **`if i < rows`** checks whether the current row belongs to the upper half.
+   - If true, `comp = 2 * (rows - i) - 1` calculates the leading spaces. They decrease as the pyramid grows.
+4. **`else`** handles the lower half.
+   - `comp = 2 * (i - rows + 1) + 1` calculates the leading spaces. They increase as the pyramid shrinks.
+5. **`print(" " * comp, end="")`** prints the calculated leading spaces without moving to a new line.
+6. **`print("* " * (2 * rows - comp))`** calculates and prints the stars. Their number increases in the upper half and decreases in the lower half.
+7. The second `print()` automatically moves to the next line.
+
+### How the `comp` Variable Works
+
+| Row (`i`) | Half | `comp` (spaces) | Number of stars |
+|---:|---|---:|---:|
+| 0 | Upper | 11 | 1 |
+| 1 | Upper | 9 | 3 |
+| 2 | Upper | 7 | 5 |
+| 3 | Upper | 5 | 7 |
+| 4 | Upper | 3 | 9 |
+| 5 | Upper | 1 | 11 |
+| 6 | Lower | 3 | 9 |
+| 7 | Lower | 5 | 7 |
+| 8 | Lower | 7 | 5 |
+| 9 | Lower | 9 | 3 |
+| 10 | Lower | 11 | 1 |
+
+**Important:** The `comp` variable represents the number of leading spaces. The expression `2 * rows - comp` calculates the number of stars.
+
+## Solution 2: Using Nested Loops (Upper and Lower Halves)
+
+This solution separates the diamond into two parts: an upper pyramid and a lower inverted pyramid.
+
+```python
+
+rows = 6
+
+# Upper half of the diamond
+for i in range(6):
+    for j in range(2 * (rows - i) - 1):
+        print(" ", end="")
+
+    for k in range(i * 2 + 1):
+        print("*", end=" ")
+
+    print()
+
+# Lower half of the diamond
+for i in range(1, 6):
+    for j in range(i * 2 + 1):
+        print(" ", end="")
+
+    for k in range(2 * (rows - i) - 1):
+        print("*", end=" ")
+
+    print()
+```
+
+### Explanation
+
+The diamond consists of two parts:
+
+1. **Upper half:** The number of stars increases on each row, while the leading spaces decrease.
+2. **Lower half:** The number of stars decreases on each row, while the leading spaces increase.
+
+#### Upper Half
+
+```python
+for i in range(6):
+    for j in range(2 * (rows - i) - 1):
+        print(" ", end="")
+
+    for k in range(i * 2 + 1):
+        print("*", end=" ")
+
+    print()
+```
+
+- **`for i in range(6)`** creates the six rows of the upper half.
+- **`2 * (rows - i) - 1`** calculates the number of leading spaces. It decreases by two on each row.
+- **`i * 2 + 1`** calculates the number of stars. It increases by two on each row.
+- **`print("*", end=" ")`** prints stars on the same line, with a space after each star.
+- **`print()`** moves to the next row.
+
+#### Lower Half
+
+```python
+for i in range(1, 6):
+    for j in range(i * 2 + 1):
+        print(" ", end="")
+
+    for k in range(2 * (rows - i) - 1):
+        print("*", end=" ")
+
+    print()
+```
+
+- **`for i in range(1, 6)`** creates the five rows of the lower half. We start at `1` because the widest row has already been printed in the upper half.
+- **`i * 2 + 1`** calculates the leading spaces. They increase by two on each row.
+- **`2 * (rows - i) - 1`** calculates the number of stars. They decrease by two on each row.
+- **`print()`** moves to the next row.
+
+### How the Pattern Changes
+
+| Part | Row | Leading spaces | Number of stars |
+|---|---:|---:|---:|
+| Upper | 1 | 11 | 1 |
+| Upper | 2 | 9 | 3 |
+| Upper | 3 | 7 | 5 |
+| Upper | 4 | 5 | 7 |
+| Upper | 5 | 3 | 9 |
+| Upper | 6 | 1 | 11 |
+| Lower | 1 | 3 | 9 |
+| Lower | 2 | 5 | 7 |
+| Lower | 3 | 7 | 5 |
+| Lower | 4 | 9 | 3 |
+| Lower | 5 | 11 | 1 |
+
+## Solution 3: Using String Repetition and Slicing
+
+This solution builds the upper half by adding stars and removing leading spaces. Then it builds the lower half by removing stars and adding leading spaces.
+
+```python
+stars = "*"
+spaces = 11
+
+# Upper half
+for row in range(6):
+    print((spaces * " ") + stars)
+
+    if spaces == 1:
+        break
+
+    stars += " * *"
+    spaces -= 2
+
+# Lower half
+for row in range(5):
+    stars = stars[:-4]
+    spaces += 2
+    print((spaces * " ") + stars)
+```
+
+### Explanation
+
+#### Initial Values
+
+```python
+stars = "*"
+spaces = 11
+```
+
+- **`stars = "*"`** starts with one star.
+- **`spaces = 11`** starts with 11 leading spaces.
+
+#### Building the Upper Half
+
+```python
+for row in range(6):
+    print((spaces * " ") + stars)
+
+    if spaces == 1:
+        break
+
+    stars += " * *"
+    spaces -= 2
+```
+
+1. **`print((spaces * " ") + stars)`** prints the current leading spaces followed by the star pattern.
+2. **`if spaces == 1:`** checks whether we have reached the widest row.
+3. **`break`** stops the loop after printing the widest row. This prevents adding more stars when the upper half is complete.
+4. **`stars += " * *"`** adds two stars to the pattern, including the spaces between them.
+5. **`spaces -= 2`** removes two leading spaces before the next row.
+
+The upper half grows like this:
+
+| Row | Stars | Leading spaces |
+|---:|---|---:|
+| 1 | `*` | 11 |
+| 2 | `* * *` | 9 |
+| 3 | `* * * * *` | 7 |
+| 4 | `* * * * * * *` | 5 |
+| 5 | `* * * * * * * * *` | 3 |
+| 6 | `* * * * * * * * * * *` | 1 |
+
+#### Building the Lower Half
+
+```python
+for row in range(5):
+    stars = stars[:-4]
+    spaces += 2
+    print((spaces * " ") + stars)
+```
+
+1. **`stars = stars[:-4]`** removes the last four characters from the star string. This removes two stars and their separating spaces.
+2. **`spaces += 2`** adds two leading spaces, shifting the pattern to the right.
+3. **`print((spaces * " ") + stars)`** prints the shortened star pattern with the increased leading spaces.
+
+The lower half shrinks like this:
+
+| Row | Stars | Leading spaces |
+|---:|---|---:|
+| 1 | `* * * * * * * * *` | 3 |
+| 2 | `* * * * * * *` | 5 |
+| 3 | `* * * * *` | 7 |
+| 4 | `* * *` | 9 |
+| 5 | `*` | 11 |
+
+## Connecting the Three Solutions
+
+All three solutions follow the same mathematical pattern, even though they use different techniques.
+
+| Pattern component | Hint solution | Nested-loop solution | String-based solution |
+|---|---|---|---|
+| Upper leading spaces | `2 * (rows - i) - 1` | `2 * (rows - i) - 1` | Start at 11, subtract 2 |
+| Upper stars | `2 * rows - comp` | `2 * i + 1` | Add `" * *"` |
+| Lower leading spaces | `2 * (i - rows + 1) + 1` | `i * 2 + 1` | Add 2 |
+| Lower stars | `2 * rows - comp` | `2 * (rows - i) - 1` | Remove 4 characters using `[:-4]` |
+
+The formulas in the first two solutions describe the same changes that the string-based solution performs step by step.
+
+## Key Takeaways
+
+- A diamond pattern consists of an upper pyramid and a lower inverted pyramid.
+- In the upper half, stars increase while leading spaces decrease.
+- In the lower half, stars decrease while leading spaces increase.
+- **Solution 1** uses `if-else` statements to handle both halves in one loop.
+- **Solution 2** uses nested loops to calculate and print spaces and stars separately.
+- **Solution 3** uses string concatenation and slicing to build the pattern by modifying existing strings.
+
+**Important:** Understanding how the formulas in the hint solution describe the changes in your string-based solution helps you develop a stronger understanding of loops, conditions, and pattern problems.
