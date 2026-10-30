@@ -531,3 +531,143 @@ Both solutions produce the same rhombus pattern:
 - **Solution 2** uses string repetition and concatenation to build each row more concisely.
 
 The main idea is to keep the number of stars constant while decreasing the leading spaces by one on every row.
+
+# Pyramid of Stars
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **pyramid pattern** of stars as shown below. The pattern consists of **6 rows and 11 columns**.
+
+### Output Pattern
+
+```text
+           *
+         * * *
+       * * * * *
+     * * * * * * *
+   * * * * * * * * *
+ * * * * * * * * * * *
+```
+
+## Hints
+
+1. Use an outer loop to manage rows and nested inner loops to handle spaces and stars within each row.
+2. The first inner loop controls the number of spaces printed before the stars:
+
+   ```python
+   for j in range(2 * (rows - i) - 1):
+       print(" ", end="")
+   ```
+
+3. The second inner loop prints stars (`*`) followed by a space:
+
+   ```python
+   for k in range(2 * i + 1):
+       print("*", end=" ")
+   ```
+
+## Solution 1: Using Nested Loops (Hint Solution)
+
+```python
+rows = 6
+
+for i in range(rows):
+    for j in range(2 * (rows - i) - 1):
+        print(" ", end="")
+
+    for k in range(2 * i + 1):
+        print("*", end=" ")
+
+    print()
+```
+
+### Explanation
+
+1. **`rows = 6`** sets the number of rows in the pyramid.
+2. **`for i in range(rows)`** repeats the process six times. The variable `i` goes from `0` to `5`.
+3. **`for j in range(2 * (rows - i) - 1)`** controls the leading spaces. The number of spaces decreases by two on each row:
+   - Row 1: 11 spaces
+   - Row 2: 9 spaces
+   - Row 3: 7 spaces
+   - Row 4: 5 spaces
+   - Row 5: 3 spaces
+   - Row 6: 1 space
+4. **`for k in range(2 * i + 1)`** controls the number of stars. It generates an odd number of stars on each row: 1, 3, 5, 7, 9, and 11.
+5. **`print("*", end=" ")`** prints a star followed by a space without moving to a new line.
+6. **`print()`** moves to the next line after completing each row.
+
+### How the Pattern Is Created
+
+| Row (`i`) | Leading spaces | Number of stars |
+|---:|---:|---:|
+| 0 | 11 | 1 |
+| 1 | 9 | 3 |
+| 2 | 7 | 5 |
+| 3 | 5 | 7 |
+| 4 | 3 | 9 |
+| 5 | 1 | 11 |
+
+The leading spaces decrease by two, while the number of stars increases by two on every row.
+
+## Solution 2: Using String Repetition and Concatenation
+
+```python
+spaces = 11
+stars = "*"
+
+for row in range(6):
+    print((spaces * " ") + stars)
+    stars += " * *"
+    spaces -= 2
+```
+
+### Explanation
+
+1. **`spaces = 11`** initializes the number of leading spaces for the first row.
+2. **`stars = "*"`** initializes the pattern with one star.
+3. **`for row in range(6)`** repeats the process six times.
+4. **`spaces * " "`** repeats the space character 11 times initially.
+5. **`+ stars`** concatenates the leading spaces with the current star pattern.
+6. **`stars += " * *"`** adds two more stars, with spaces between them, to the pattern for the next row.
+7. **`spaces -= 2`** decreases the number of leading spaces by two after each row.
+
+### How String Concatenation Builds the Pyramid
+
+The `stars` variable changes on every iteration:
+
+| Row | Value of `stars` |
+|---:|---|
+| 1 | `*` |
+| 2 | `* * *` |
+| 3 | `* * * * *` |
+| 4 | `* * * * * * *` |
+| 5 | `* * * * * * * * *` |
+| 6 | `* * * * * * * * * * *` |
+
+At the same time, `spaces` decreases by two:
+
+| Row | Leading spaces |
+|---:|---:|
+| 1 | 11 |
+| 2 | 9 |
+| 3 | 7 |
+| 4 | 5 |
+| 5 | 3 |
+| 6 | 1 |
+
+This creates the pyramid shape by expanding the stars outward while shifting each row to the left.
+
+## Key Takeaways
+
+Both solutions produce the same pyramid pattern, but they use different approaches:
+
+- **Solution 1** uses nested loops to control spaces and stars separately.
+- **Solution 2** builds the pattern using string concatenation and repetition.
+
+The main idea behind a pyramid pattern is:
+
+- The number of leading spaces decreases by two on each row.
+- The number of stars increases by two on each row.
+- The number of stars is always odd: 1, 3, 5, 7, 9, and 11.
