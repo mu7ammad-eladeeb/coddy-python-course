@@ -116,6 +116,19 @@ Reddit launched in June 2005 with code written in Common Lisp. Later that year i
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
+## 2008
+
+### **Python 3.0: A Major Language Redesign**
+
+Python 3.0 (also known as "Py3K" or "Python 3000") was officially released in December 2008 after years of development led by Guido van Rossum. Designed to clean up the language by rectifying accumulated architectural flaws, it intentionally broke backward compatibility with Python 2.x to avoid legacy constraints. Among many foundational changes, the most instantly recognizable syntax modification was converting the `print` statement into a built-in `print()` function, requiring explicit parentheses.
+
+* **Python 3.0 (Py3K):** A major version release of the Python programming language that prioritized code consistency, cleaner abstractions, and the removal of duplicate features over backward compatibility.
+* **Backward Compatibility:** A design property allowing older code or software versions to run unmodified on newer iterations of a platform or language runtime.
+* **Print Function:** A fundamental built-in function introduced in Python 3 to handle standard output, replacing the flexible but syntactically inconsistent `print` statement of Python 2.
+* **Unicode Defaults:** A core architectural shift in Python 3 that made all standard string types (`str`) default to UTF-8 encoded Unicode, separating textual data cleanly from raw binary bytes (`bytes`).
+
+**Source:** docs.python.org (Added details by Gemini AI)
+
 ## 2019
 
 ### **The Steering Council**
@@ -132,6 +145,19 @@ After Guido stepped down, Python's core developers voted for a new model: a five
 - **Guido van Rossum:** The creator of Python, who stepped down as its BDFL in 2018 but joined the first Steering Council in 2019.
 
 **Source:** peps.python.org (Added details by ChatGPT)
+
+## 2020
+
+### **Goodbye, Python 2: The End of an Era**
+
+On January 1, 2020, Python 2 officially reached its End of Life (EOL) after running concurrently with Python 3 for over 11 years. Originally scheduled for retirement in 2015, the legacy platform's sunset was extended by half a decade to grant organizations sufficient time to migrate their codebases. The final bug-fix and maintenance release, Python 2.7.18, was officially published in April 2020, marking the permanent conclusion of core security updates and active maintenance from the Python Software Foundation.
+
+* **End of Life (EOL):** The date after which a software platform or operating system no longer receives official security updates, feature enhancements, or maintenance support from its developers.
+* **Python 2.7.18:** The final bug-fix and maintenance release of the Python 2 branch, published in April 2020 as a symbolic closure to Python 2's 20-year history.
+* **Migration Tools (e.g., `2to3`):** Automated refactoring utilities designed to parse Python 2.x source code and transform it into valid Python 3.x syntax to assist developers during phase-out transitions.
+* **Python Software Foundation (PSF):** The non-profit organization that manages Python's intellectual property rights and coordinated the community-wide transition strategy to retire Python 2.
+
+**Source:** python.org (Added details by Gemini AI)
 
 ## 2022
 
