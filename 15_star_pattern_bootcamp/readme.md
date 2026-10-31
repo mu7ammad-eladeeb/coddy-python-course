@@ -1430,3 +1430,207 @@ This produces 5, 4, 3, 2, and 1 stars.
 - Use `"* "` to print stars with consistent spacing.
 - `n - i - 1` decreases the number of stars or leading spaces as the loop progresses.
 - The middle row is printed only once, so the final pattern contains exactly 11 rows.
+
+
+# Plus Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **Plus Pattern** of stars as shown below. The pattern consists of **7 rows and 7 columns**.
+
+### Expected Output Pattern
+
+```text
+   *   
+   *   
+   *   
+*******
+   *   
+   *   
+   *
+```
+
+## Hints
+
+1. Use nested loops to iterate through rows and columns to control where stars (`*`) and spaces (`" "`) are placed.
+2. Use an `if` statement inside the inner loop to decide whether to print a star (`*`) or a space (`" "`).
+3. Adjust the loop variables (`row` and `col`) to control the size and shape of the pattern.
+4. Use `print()` with appropriate arguments to control new lines and ensure the pattern is formatted correctly.
+
+## Solution 1: Using the Hint (Nested Loops)
+
+```python
+size = 7
+
+for row in range(size):
+    for col in range(size):
+        if row == 3 or col == 3:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()
+```
+
+### Explanation
+
+This solution uses two nested loops to create the plus sign.
+
+**1. Initialize the size**
+
+```python
+size = 7
+```
+
+The pattern has 7 rows and 7 columns, so we use `size = 7`.
+
+**2. Loop through the rows and columns**
+
+```python
+for row in range(size):
+    for col in range(size):
+```
+
+- The outer loop controls the rows.
+- The inner loop controls the columns.
+- Both loops run 7 times, creating a 7 × 7 pattern.
+
+**3. Decide where to print stars**
+
+```python
+if row == 3 or col == 3:
+    print("*", end="")
+else:
+    print(" ", end="")
+```
+
+The condition checks two things:
+
+- `row == 3`: If the current row is the fourth row (the middle row), print a star in every column. This creates the horizontal line.
+- `col == 3`: If the current column is the fourth column (the middle column), print a star in every row. This creates the vertical line.
+
+The `or` operator means that either condition can be true for a star to be printed.
+
+If neither condition is true, a space is printed.
+
+**4. Move to the next row**
+
+```python
+print()
+```
+
+This statement is outside the inner loop, so it runs after all 7 columns have been processed. It moves the output to the next line.
+
+## Solution 2: Using One Loop and If Statements
+
+```python
+rows = 13
+
+for i in range(rows, 0, -1):
+    if (i < 7 or i > 7) and i % 2 == 1:
+        print("   *", end='')
+
+    if (i < 7 or i > 7) and i % 2 == 0:
+        print()
+
+    if i == 7:
+        print("*******", end='')
+```
+
+### Explanation
+
+This solution uses one loop, three `if` statements, and the remainder operator (`%`) to create the plus pattern.
+
+**1. Initialize the number of iterations**
+
+```python
+rows = 13
+```
+
+We use 13 iterations because the loop needs to alternate between printing a vertical star and moving to a new line, with one special iteration for the horizontal line.
+
+**2. Loop backward from 13 to 1**
+
+```python
+for i in range(rows, 0, -1):
+```
+
+- `rows` is the starting value (13).
+- `0` is the stopping value, which is excluded.
+- `-1` decreases `i` by one each time.
+
+Therefore, `i` takes the values from 13 down to 1.
+
+**3. Print the upper and lower vertical lines**
+
+```python
+if (i < 7 or i > 7) and i % 2 == 1:
+    print("   *", end='')
+```
+
+This condition has two parts:
+
+- `(i < 7 or i > 7)` checks that `i` is not equal to 7. This excludes the middle iteration because it will print the horizontal line.
+- `i % 2 == 1` checks whether `i` is odd.
+
+When both conditions are true, the program prints three spaces followed by a star.
+
+The `end=''` argument prevents `print()` from automatically moving to a new line. This allows the next condition to control the line break.
+
+**4. Move to the next line**
+
+```python
+if (i < 7 or i > 7) and i % 2 == 0:
+    print()
+```
+
+This condition checks whether `i` is even and not equal to 7.
+
+When it is true, `print()` moves the output to a new line.
+
+This works together with the previous condition:
+- Odd values print the vertical star.
+- The following even values move to the next line.
+
+**5. Print the horizontal line**
+
+```python
+if i == 7:
+    print("*******", end='')
+```
+
+When `i` reaches 7, the program prints seven consecutive stars.
+
+This creates the horizontal part of the plus sign.
+
+The next iteration has `i = 6`, so the second condition executes and moves the output to a new line before the lower vertical stars are printed.
+
+### Understanding the Loop
+
+| Value of `i` | Action |
+|---:|---|
+| 13 | Print vertical star |
+| 12 | Move to next line |
+| 11 | Print vertical star |
+| 10 | Move to next line |
+| 9 | Print vertical star |
+| 8 | Move to next line |
+| 7 | Print horizontal stars |
+| 6 | Move to next line |
+| 5 | Print vertical star |
+| 4 | Move to next line |
+| 3 | Print vertical star |
+| 2 | Move to next line |
+| 1 | Print vertical star |
+
+The result is three vertical stars above the horizontal line, one horizontal line of seven stars, and three vertical stars below it.
+
+## Key Takeaways
+
+- Nested loops can be used to control the position of every character in a pattern.
+- The `or` operator allows a condition to be true when either of two expressions is true.
+- The modulo operator (`%`) gives the remainder after division. `i % 2 == 1` identifies odd numbers, while `i % 2 == 0` identifies even numbers.
+- `end=''` prevents `print()` from automatically starting a new line.
+- An empty `print()` moves the output to the next line.
+- Both solutions create the same plus pattern using different approaches.
