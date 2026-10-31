@@ -1315,3 +1315,118 @@ The lower half prints 6, 5, 4, 3, 2, and 1 stars.
 - The `"* " * stars` expression repeats the star string according to the value of `stars`.
 - The `+= 1` operator increases a variable by one, while `-= 1` decreases it by one.
 - Both solutions produce the same 11-row arrow pattern.
+
+
+# Left Direction Arrow
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **Left Direction Arrow** of stars as shown below. The pattern consists of **11 rows and 6 columns**.
+
+### Expected Output Pattern
+
+```text
+          * 
+        * * 
+      * * * 
+    * * * * 
+  * * * * * 
+* * * * * * 
+  * * * * * 
+    * * * * 
+      * * * 
+        * * 
+          * 
+```
+
+## Hints
+
+**Hint 1: Use two loops**
+
+- Use two loops: one for the upper half and one for the lower half of the pattern.
+- You can use a loop for rows and a nested loop for columns to manage star placement.
+
+**Hint 2: Control spaces and stars**
+
+- Use `" "` for spaces and `"* "` for stars to control formatting.
+- Combine spaces and stars to align the stars correctly within each row.
+- Print stars incrementally in the upper half of the pattern, starting with fewer stars and increasing their count as you move down the rows.
+
+**Hint 3: Reverse the star pattern**
+
+- Decrease the number of stars as you move down the rows after the midpoint.
+- The lower half should be the reverse of the upper half, excluding the middle row.
+
+## Solution: Using Two Loops
+
+```python
+n = 6
+
+# Upper half: increase stars and decrease spaces
+for i in range(n):
+    print("  " * (n - i - 1) + "* " * (i + 1))
+
+# Lower half: decrease stars and increase spaces
+for i in range(n - 1):
+    print("  " * (i + 1) + "* " * (n - i - 1))
+```
+
+## Explanation
+
+The pattern is made up of two parts:
+
+1. **Upper half:** The number of stars increases from 1 to 6, while the number of leading spaces decreases.
+2. **Lower half:** The number of stars decreases from 5 to 1, while the number of leading spaces increases.
+
+### 1. Initialize the variable
+
+```python
+n = 6
+```
+
+The variable `n` represents the maximum number of stars in the middle row.
+
+### 2. Create the upper half
+
+```python
+for i in range(n):
+    print("  " * (n - i - 1) + "* " * (i + 1))
+```
+
+- `range(n)` repeats the loop 6 times.
+- `"  " * (n - i - 1)` prints the leading spaces. The number of spaces decreases with each row.
+- `"* " * (i + 1)` prints the stars. The number of stars increases with each row.
+
+For example:
+
+| `i` | Leading spaces | Stars |
+|---:|---:|---:|
+| 0 | 5 pairs | 1 |
+| 1 | 4 pairs | 2 |
+| 2 | 3 pairs | 3 |
+| 3 | 2 pairs | 4 |
+| 4 | 1 pair | 5 |
+| 5 | 0 pairs | 6 |
+
+### 3. Create the lower half
+
+```python
+for i in range(n - 1):
+    print("  " * (i + 1) + "* " * (n - i - 1))
+```
+
+- `range(n - 1)` repeats the loop 5 times because the middle row has already been printed.
+- `"  " * (i + 1)` increases the leading spaces with each row.
+- `"* " * (n - i - 1)` decreases the number of stars with each row.
+
+This produces 5, 4, 3, 2, and 1 stars.
+
+## Key Takeaways
+
+- Use two loops to create the increasing and decreasing halves of a pattern.
+- Use `"  "` to create two-character indentation spaces, keeping the stars aligned.
+- Use `"* "` to print stars with consistent spacing.
+- `n - i - 1` decreases the number of stars or leading spaces as the loop progresses.
+- The middle row is printed only once, so the final pattern contains exactly 11 rows.
