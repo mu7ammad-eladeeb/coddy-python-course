@@ -1172,3 +1172,146 @@ The formulas in the first two solutions describe the same changes that the strin
 - **Solution 3** uses string concatenation and slicing to build the pattern by modifying existing strings.
 
 **Important:** Understanding how the formulas in the hint solution describe the changes in your string-based solution helps you develop a stronger understanding of loops, conditions, and pattern problems.
+
+
+# Right Direction Arrow
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **Right Direction Arrow** of stars as shown below. The pattern consists of **11 rows and 6 columns**.
+
+### Expected Output Pattern
+
+```text
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * *   
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+```
+
+## Hints
+
+Use two loops—one for the upper half and one for the lower half—to create a symmetric pattern.
+
+1. In the first loop (`for i in range(n):`), increase the number of stars per line using `"* " * (i + 1)`.
+2. In the second loop (`for i in range(n - 1):`), decrease the number of stars per line using `"* " * (n - i - 1)`.
+3. Print stars using `"* "` to maintain alignment and create the desired pattern.
+
+## Solution 1: Using the Hint
+
+```python
+n = 6
+
+# Upper half: increase the number of stars
+for i in range(n):
+    print("* " * (i + 1))
+
+# Lower half: decrease the number of stars
+for i in range(n - 1):
+    print("* " * (n - i - 1))
+```
+
+### Explanation
+
+We use two separate loops to create the arrow's symmetric shape.
+
+**1. Upper half**
+
+```python
+for i in range(n):
+    print("* " * (i + 1))
+```
+
+- `range(n)` repeats the loop 6 times.
+- `i + 1` determines how many stars are printed on each row.
+- The number of stars increases from 1 to 6.
+
+**2. Lower half**
+
+```python
+for i in range(n - 1):
+    print("* " * (n - i - 1))
+```
+
+- `range(n - 1)` repeats the loop 5 times.
+- `n - i - 1` decreases the number of stars on each row.
+- The number of stars decreases from 5 to 1.
+
+The two loops produce 11 rows in total: 6 rows in the upper half and 5 in the lower half.
+
+## Solution 2: Using If Statements and a Counter
+
+```python
+rows = 11
+stars = 1
+
+for i in range(rows):
+    if i < 5:
+        print("* " * stars)
+        stars += 1
+
+    if i >= 5:
+        print("* " * stars)
+        stars -= 1
+```
+
+### Explanation
+
+This solution uses one loop, two `if` statements, and a variable named `stars` to control the number of stars printed.
+
+**1. Initialize the variables**
+
+```python
+rows = 11
+stars = 1
+```
+
+- `rows = 11` means the loop will run 11 times.
+- `stars = 1` means the first row starts with one star.
+
+**2. Create the upper half**
+
+```python
+if i < 5:
+    print("* " * stars)
+    stars += 1
+```
+
+- `i < 5` identifies the first five iterations (`i` goes from 0 to 4).
+- `print("* " * stars)` prints the current number of stars.
+- `stars += 1` increases the number of stars by one after each row.
+
+The upper half prints 1, 2, 3, 4, and 5 stars.
+
+**3. Create the middle and lower half**
+
+```python
+if i >= 5:
+    print("* " * stars)
+    stars -= 1
+```
+
+- `i >= 5` identifies the remaining six iterations (`i` goes from 5 to 10).
+- The first time this condition is true, `stars` is 6, so the middle row prints 6 stars.
+- `stars -= 1` decreases the number of stars by one after each row.
+
+The lower half prints 6, 5, 4, 3, 2, and 1 stars.
+
+**Note:** The middle row belongs to the second condition, which is why the first condition uses `i < 5` rather than `i <= 5`.
+
+## Key Takeaways
+
+- Use two loops when you want to build an increasing and decreasing pattern separately.
+- Use one loop with conditions when you want to control different stages of a pattern.
+- The `"* " * stars` expression repeats the star string according to the value of `stars`.
+- The `+= 1` operator increases a variable by one, while `-= 1` decreases it by one.
+- Both solutions produce the same 11-row arrow pattern.
