@@ -142,6 +142,19 @@ Python 3.0 (also known as "Py3K" or "Python 3000") was officially released in De
 
 **Source:** docs.python.org (Added details by Gemini AI)
 
+## 2018
+
+### **The Dictator Steps Down: Guido van Rossum's Resignation**
+
+In July 2018, Guido van Rossum announced his departure from his role as Python's "Benevolent Dictator For Life" (BDFL), ending nearly three decades of absolute authority over the language's core design decisions. The decision followed months of intense debate within the Python developer community over PEP 572, which proposed the introduction of assignment expressions (commonly known as the "walrus operator"). Following his stepping down, the Python community established a new democratic governance model centered around a five-person Steering Council to oversee the language's evolution.
+
+* **BDFL (Benevolent Dictator For Life):** A title humorously given to open-source software authors who retain final decision-making power over a project's technical direction and development.
+* **PEP 572 (Assignment Expressions):** The controversial Python Enhancement Proposal that introduced the `:=` operator, allowing variable assignment directly inside expressions such as `if` statements and loops.
+* **Python Steering Council:** A five-member elected governance body created in 2019 to replace the BDFL model, responsible for managing PEP approvals, language decisions, and core project direction.
+* **PEP (Python Enhancement Proposal):** A standardized design document providing information to the Python community or describing a new feature, process, or environment specification for Python.
+
+**Source:** mail.python.org (Added details by Gemini AI)
+
 ## 2019
 
 ### **The Steering Council**
