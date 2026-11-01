@@ -2,6 +2,19 @@
 
 ## 1989
 
+### **A Hobby Project Over Christmas: The Origins of Python**
+
+In December 1989, Dutch programmer Guido van Rossum sought a side project to keep himself occupied during the Christmas week holiday. While employed at the Centrum Wiskunde & Informatica (CWI) research institute in Amsterdam, he decided to write an interpreter for a new scripting language he had been conceiving. He envisioned Python as a successor to the ABC programming language that would appeal to Unix/C hackers, combining clean syntax, robust exception handling, and seamless interaction with OS system calls.
+
+* **Guido van Rossum:** The Dutch computer scientist who created the Python programming language and served as its "Benevolent Dictator For Life" (BDFL) until July 2018.
+* **CWI (Centrum Wiskunde & Informatica):** The national research institute for mathematics and computer science in the Netherlands, where early development of Python took place.
+* **ABC Programming Language:** An imperative general-purpose language developed at CWI that heavily influenced Python's emphasis on clean syntax, indentation-based code blocks, and ease of learning.
+* **Interpreter:** A computer program that directly executes instructions written in a programming or scripting language line-by-line without requiring prior compilation into machine code.
+
+**Source:** python.org (Added details by Gemini AI)
+
+## 1989
+
 ### **Learning from ABC**
 
 Python borrowed many ideas from ABC, a language for beginners that Guido had helped build at CWI. He kept what worked, like readable code grouped by indentation, and fixed what held ABC back, such as being hard to extend.
