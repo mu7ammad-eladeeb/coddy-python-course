@@ -97,6 +97,19 @@ Python 2.0, released in October 2000, introduced list comprehensions and a garba
 
 **Source:** docs.python.org (Added details by ChatGPT)
 
+## 2001
+
+### **The Python Software Foundation: Securing Python's Future**
+
+In March 2001, the Python Software Foundation (PSF) was incorporated as a 501(c)(3) non-profit organization dedicated to advancing open-source technology related to Python. Formed to manage the intellectual property, copyrights, and trademarks of the language independently of corporate entities, the PSF provides financial grants to global initiatives, manages the python.org platform, and organizes PyCon US—the flagship annual gathering of the international Python community.
+
+* **Python Software Foundation (PSF):** A non-profit membership organization holding the intellectual property rights to the Python language and supporting its global development, grants, and diversity programs.
+* **PyCon US:** The largest annual conference for the Python community, sponsored and hosted by the PSF to bring together developers, core contributors, and educators worldwide.
+* **501(c)(3) Organization:** A tax-exempt non-profit legal status in the United States designated for educational, charitable, or scientific organizations, ensuring public accountability and community orientation.
+* **Open-Source Governance:** A structured framework through which communities, boards, and non-profits collectively maintain and protect software source code, trademarks, and infrastructure.
+
+**Source:** python.org (Added details by Gemini AI)
+
 ## 2004
 
 ### **The Zen of Python**
