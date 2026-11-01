@@ -1634,3 +1634,161 @@ The result is three vertical stars above the horizontal line, one horizontal lin
 - `end=''` prevents `print()` from automatically starting a new line.
 - An empty `print()` moves the output to the next line.
 - Both solutions create the same plus pattern using different approaches.
+
+
+# X Pattern
+
+## Challenge
+
+**Difficulty:** Medium
+
+Write a program that prints an **X Pattern** of stars as shown below. The pattern consists of **7 rows and 7 columns**.
+
+### Expected Output Pattern
+
+```text
+*     *
+ *   * 
+  * *  
+   *   
+  * *  
+ *   * 
+*     *
+```
+
+## Hints
+
+1. Use nested loops—one for rows and one for columns—to iterate through each position in the grid.
+2. Use an `if` statement inside the inner loop to determine when to print a star (`*`).
+3. Print a star when either of these conditions is true:
+   - `row == col`: This represents the main diagonal, running from the top-left to the bottom-right.
+   - `row + col == size - 1`: This represents the reverse diagonal, running from the top-right to the bottom-left.
+4. Inside the inner loop, print a star (`*`) when the condition is met; otherwise, print a space (`" "`).
+5. Adjust the `size` variable to control the dimensions of the pattern. Larger values will create larger X patterns.
+
+## Solution: Using Nested Loops
+
+```python
+size = 7
+
+for row in range(size):
+    for col in range(size):
+        # Print * if on the diagonal or reverse diagonal
+        if row == col or row + col == size - 1:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()  # Move to the next line after each row
+```
+
+## Explanation
+
+This solution uses two nested loops to check every position in a 7 × 7 grid and decide whether to print a star or a space.
+
+### 1. Initialize the size
+
+```python
+size = 7
+```
+
+The variable `size` determines the number of rows and columns. Since the challenge requires a 7 × 7 pattern, we set it to `7`.
+
+### 2. Iterate through the rows and columns
+
+```python
+for row in range(size):
+    for col in range(size):
+```
+
+- The outer loop controls the rows.
+- The inner loop controls the columns.
+- Both loops run 7 times, checking all 49 positions in the grid.
+
+The variables `row` and `col` start at `0` and end at `6`.
+
+### 3. Identify the diagonal positions
+
+```python
+if row == col or row + col == size - 1:
+```
+
+This is the most important part of the solution. We use two conditions to identify the positions where stars should be printed.
+
+**First condition: `row == col`**
+
+This condition identifies the main diagonal, which goes from the top-left corner to the bottom-right corner.
+
+For example:
+
+| Row | Column | Result |
+|---:|---:|---|
+| 0 | 0 | `*` |
+| 1 | 1 | `*` |
+| 2 | 2 | `*` |
+| 3 | 3 | `*` |
+| 4 | 4 | `*` |
+| 5 | 5 | `*` |
+| 6 | 6 | `*` |
+
+**Second condition: `row + col == size - 1`**
+
+This condition identifies the reverse diagonal, which goes from the top-right corner to the bottom-left corner.
+
+Since `size = 7`, the expression `size - 1` equals `6`.
+
+Therefore, the condition becomes:
+
+```python
+row + col == 6
+```
+
+For example:
+
+| Row | Column | Result |
+|---:|---:|---|
+| 0 | 6 | `*` |
+| 1 | 5 | `*` |
+| 2 | 4 | `*` |
+| 3 | 3 | `*` |
+| 4 | 2 | `*` |
+| 5 | 1 | `*` |
+| 6 | 0 | `*` |
+
+The `or` operator means that a star is printed if either condition is true.
+
+Notice that the middle position `(3, 3)` satisfies both conditions, but it is printed only once because both conditions are part of the same `if` statement.
+
+### 4. Print stars or spaces
+
+```python
+if row == col or row + col == size - 1:
+    print("*", end="")
+else:
+    print(" ", end="")
+```
+
+- If the current position belongs to either diagonal, print `*`.
+- Otherwise, print a space.
+- `end=""` prevents `print()` from moving to a new line after every character.
+
+This allows all 7 characters of a row to be printed on the same line.
+
+### 5. Move to the next row
+
+```python
+print()
+```
+
+This statement is outside the inner loop, so it executes after all 7 columns have been checked.
+
+It moves the output to the next line, allowing the next row to be printed.
+
+## Key Takeaways
+
+- Nested loops allow us to examine every position in a two-dimensional grid.
+- `row == col` identifies the main diagonal.
+- `row + col == size - 1` identifies the reverse diagonal.
+- The `or` operator combines both conditions.
+- `end=""` keeps characters on the same line.
+- An empty `print()` moves the output to the next line.
+- By changing `size`, we can create larger or smaller X patterns.
