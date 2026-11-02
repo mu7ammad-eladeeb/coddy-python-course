@@ -397,6 +397,19 @@ The TIOBE index tracks how popular programming languages are. Each year it names
 
 # Built with Python
 
+## 2001
+
+### **BitTorrent: Revolutionizing Peer-to-Peer File Sharing**
+
+Bram Cohen designed the BitTorrent peer-to-peer (P2P) file sharing protocol in April 2001 and released the first implementation in Python in July 2001. Unlike traditional client-server download models where a single server delivers data to all users, BitTorrent allowed users ("peers") to simultaneously upload and download pieces of a file from each other. Python's clean syntax and extensive standard library allowed Cohen to rapidly build, iterate, and deploy the initial client, which quickly scaled to handle massive global network traffic.
+
+* **BitTorrent Protocol:** A communications protocol for peer-to-peer file sharing used to distribute data and electronic files efficiently over the internet without centralized server bandwidth constraints.
+* **Bram Cohen:** An American computer programmer who designed the BitTorrent protocol and co-founded BitTorrent, Inc. to commercialize P2P technologies.
+* **Peer-to-Peer (P2P):** A decentralized communications model where every node (peer) on the network can act as both a client and a server, sharing system resources like bandwidth and storage.
+* **Swarm / Seeders & Leechers:** In BitTorrent terminology, a "swarm" is the collection of peers sharing a file, where "seeders" have the complete file and "leechers" are actively downloading pieces while uploading to others.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2003
 
 ### **Django at a newspaper**
