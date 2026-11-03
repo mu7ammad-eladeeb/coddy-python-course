@@ -1792,3 +1792,221 @@ It moves the output to the next line, allowing the next row to be printed.
 - `end=""` keeps characters on the same line.
 - An empty `print()` moves the output to the next line.
 - By changing `size`, we can create larger or smaller X patterns.
+
+
+# Upper Butterfly Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints the **Upper part of a Butterfly Pattern** of stars as shown below. The pattern consists of **5 rows and 10 columns**.
+
+### Expected Output Pattern
+
+```text
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+```
+
+## Hints
+
+1. Use nested loops to manage rows and columns independently. The outer loop (`for i`) controls rows, while inner loops (`for j`) handle stars and spaces within each row.
+2. Inside loops, use `print('*', end=' ')` for stars and `print(' ', end=' ')` for spaces to control the pattern's layout.
+3. Use loop ranges like `range(i + 1)` and `range(2 * (n - i - 1))` to dynamically adjust the number of stars and spaces based on the current row (`i`).
+
+## Solution 1: Using the Hint
+
+```python
+n = 5
+
+for i in range(n):
+    # Print the left stars
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    # Print the middle spaces
+    for j in range(2 * (n - i - 1)):
+        print(" ", end=" ")
+
+    # Print the right stars
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    # Move to the next row
+    print()
+```
+
+## Explanation
+
+The upper butterfly pattern consists of two groups of stars that expand toward the center. The spaces between the groups decrease on each row.
+
+### 1. Initialize the number of rows
+
+```python
+n = 5
+```
+
+The variable `n` controls the number of rows. Since the pattern has 5 rows, we set `n = 5`.
+
+### 2. Loop through the rows
+
+```python
+for i in range(n):
+```
+
+The outer loop runs 5 times. The value of `i` starts at `0` and increases to `4`.
+
+### 3. Print the left stars
+
+```python
+for j in range(i + 1):
+    print("*", end=" ")
+```
+
+The expression `i + 1` determines the number of stars on the left side.
+
+- Row 1 prints 1 star.
+- Row 2 prints 2 stars.
+- Row 3 prints 3 stars.
+- Row 4 prints 4 stars.
+- Row 5 prints 5 stars.
+
+The `end=" "` argument keeps the stars on the same line and adds a space after each star.
+
+### 4. Print the middle spaces
+
+```python
+for j in range(2 * (n - i - 1)):
+    print(" ", end=" ")
+```
+
+This loop creates the gap between the left and right groups of stars.
+
+The expression `2 * (n - i - 1)` decreases the number of spaces as `i` increases.
+
+- The first row has 8 pairs of spaces.
+- The second row has 6 pairs.
+- The third row has 4 pairs.
+- The fourth row has 2 pairs.
+- The fifth row has no middle spaces.
+
+### 5. Print the right stars
+
+```python
+for j in range(i + 1):
+    print("*", end=" ")
+```
+
+This loop prints the same number of stars as the left side, creating a symmetrical pattern.
+
+### 6. Move to the next row
+
+```python
+print()
+```
+
+After printing the left stars, middle spaces, and right stars, `print()` moves the output to the next line.
+
+## Solution 2: Using Counters and String Repetition
+
+```python
+rows = 5
+spaces = 16
+stars = 1
+
+for i in range(rows):
+    print(stars * "* ", end="")
+
+    for j in range(spaces):
+        print(" ", end="")
+
+    spaces -= 4
+
+    print(stars * "* ", end="")
+    stars += 1
+
+    print()
+```
+
+## Explanation
+
+This solution uses a single outer loop, a nested loop for the middle spaces, and two variables (`counter` and `stars`) to control the pattern.
+
+### 1. Initialize the variables
+
+```python
+rows = 5
+counter = 16
+stars = 1
+```
+
+- `rows = 5` determines how many lines the pattern has.
+- `counter = 16` sets the initial number of spaces between the two star groups.
+- `stars = 1` sets the initial number of stars on each side.
+
+### 2. Print the left group of stars
+
+```python
+print(stars * "* ", end="")
+```
+
+The expression `stars * "* "` repeats the string `"* "` according to the value of `stars`.
+
+For example:
+
+```python
+1 * "* "  # "* "
+2 * "* "  # "* * "
+3 * "* "  # "* * * "
+```
+
+The `end=""` argument prevents the output from moving to a new line.
+
+### 3. Print the middle spaces
+
+```python
+for j in range(counter):
+    print(" ", end="")
+```
+
+The nested loop prints the spaces between the two groups of stars.
+
+Initially, `counter` is `16`. After each row, the value decreases by 4:
+
+```python
+counter -= 4
+```
+
+This gradually narrows the gap between the star groups.
+
+### 4. Print the right group of stars
+
+```python
+print(stars * "* ", end="")
+stars += 1
+```
+
+The right group uses the same `stars` value as the left group, keeping both sides symmetrical.
+
+After printing the stars, `stars += 1` increases the number of stars for the next row.
+
+### 5. Move to the next row
+
+```python
+print()
+```
+
+This moves the output to the next line after both star groups have been printed.
+
+## Key Takeaways
+
+- The outer loop controls the number of rows.
+- Nested loops can print stars and spaces separately.
+- String repetition (`"* " * stars`) is a simple way to print multiple stars.
+- The middle gap decreases as the star groups expand.
+- Both solutions create the same upper butterfly pattern using different approaches.
+
