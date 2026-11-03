@@ -281,6 +281,19 @@ In May 2000, Guido van Rossum and several core Python developers departed CNRI (
 
 **Source:** docs.python.org, en.wikipedia.org (Added details by Gemini AI)
 
+## 2001
+
+### **Not a Chance: Python's Famous Indentation Joke**
+
+In April 2001, Python 2.1 introduced the `future` module (PEP 236) to let developers opt into upcoming language features on a per-module basis before they become standard. As an Easter egg embedded by the core developers, attempting to import curly braces using `from future import braces` raises an immediate `SyntaxError: not a chance`. This humorously reinforces Python's core design philosophy that code blocks must be defined using whitespace indentation rather than curly braces.
+
+* **`future` Module (PEP 236):** A special standard library module that enables backward-compatible forward references to features scheduled for release in future Python versions.
+* **SyntaxError: not a chance:** A famous hidden error message in Python created to explicitly reject brace-delimited code blocks in favor of Python's clean indentation rules.
+* **Off-Side Rule / Indentation:** A language design property where block boundaries and scope are defined using leading whitespace and tab formatting rather than explicit keywords or curly braces (`{}`).
+* **Easter Egg:** An intentional joke, hidden message, or secret feature placed inside software by its developers for users to discover.
+
+**Source:** peps.python.org, en.wikipedia.org (Added details by Gemini AI)
+
 ## 2002
 
 ### **EuroPython**
