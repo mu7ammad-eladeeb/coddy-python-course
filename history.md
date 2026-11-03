@@ -562,6 +562,19 @@ Michael DeHaan created Ansible in 2012, and Red Hat bought it in 2015. Ansible c
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
+## 2012
+
+### **The Pi in Raspberry Pi: Python on Single-Board Computers**
+
+The Raspberry Pi, a credit-card-sized single-board computer developed by the Raspberry Pi Foundation, officially went on sale in February 2012 to encourage basic computer science education in schools and developing countries. The naming convention followed early computer industry traditions of using fruit names (such as Apple and Acorn), while "Pi" served as a direct nod to Python—the primary programming language intended to be taught on the hardware. Supported by Raspberry Pi OS, Python remains the default language for hardware prototyping, robotics, and educational programming on the platform.
+
+* **Raspberry Pi:** A series of affordable, low-power, single-board computers created by the Raspberry Pi Foundation to promote hands-on computing and electronics education globally.
+* **Single-Board Computer (SBC):** A complete, fully functional computer built on a single circuit board, containing a microprocessor, memory, input/output interfaces, and storage connections.
+* **Eben Upton:** A British computer scientist and entrepreneur who co-founded the Raspberry Pi Foundation and led the original architecture and hardware design of the platform.
+* **Raspberry Pi OS (formerly Raspbian):** A Debian-based Linux distribution officially optimized for Raspberry Pi hardware, featuring pre-installed Python IDEs like Thonny and IDLE.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2018
 
 ### **FastAPI: Modern, High-Performance Python Web APIs**
