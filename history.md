@@ -395,6 +395,19 @@ The TIOBE index tracks how popular programming languages are. Each year it names
 
 **Source:** en.wikipedia.org (Added details by ChatGPT)
 
+## 2025
+
+### **Python 3.14 and Pi: A Mathematical Milestone Release**
+
+Python 3.14 was officially released on October 7, 2025, reaching a version number that deliberately mirrors the first three digits of the mathematical constant π (3.14159...). This milestone release introduced template strings (PEP 750) for more flexible, custom string interpolation, along with significant performance improvements from the ongoing Faster CPython initiative and improved debugging capabilities in the standard library.
+
+* **Python 3.14:** A major feature release of the Python 3.x series whose version number symbolically aligns with Pi (π ≈ 3.14159).
+* **Template Strings (PEP 750):** A language feature introduced to enable safe, customizable string formatting and evaluation beyond standard f-strings, facilitating secure HTML escaping and domain-specific string transformations.
+* **Faster CPython Initiative:** An ongoing multi-release project within the core Python development team focused on optimizing the CPython interpreter for speed and runtime efficiency.
+* **Pi (π):** The mathematical constant representing the ratio of a circle's circumference to its diameter, approximately equal to 3.14159.
+
+**Source:** peps.python.org (Added details by Gemini AI)
+
 # Built with Python
 
 ## 2001
