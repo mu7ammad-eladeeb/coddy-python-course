@@ -2010,3 +2010,141 @@ This moves the output to the next line after both star groups have been printed.
 - The middle gap decreases as the star groups expand.
 - Both solutions create the same upper butterfly pattern using different approaches.
 
+
+# Lower Butterfly Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints the **Lower part of a Butterfly Pattern** of stars as shown below. The pattern consists of **5 rows and 10 columns**.
+
+### Expected Output Pattern
+
+```text
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+```
+
+## Hints
+
+1. Use nested loops to manage different parts of the pattern.
+2. Inside each loop, use `print('*', end=' ')` for stars and `print(' ', end=' ')` for spaces.
+3. Adjust loop ranges like `range(n - i)` and `range(2 * i)` to control how many stars and spaces are printed in each row.
+
+### Hint Code
+
+```python id
+for j in range(n - i):
+    print('*', end=' ')
+
+for j in range(2 * i):
+    print(' ', end=' ')
+
+for j in range(n - i):
+    print('*', end=' ')
+```
+
+## Solution: Using Nested Loops
+
+```python
+n = 5
+
+for i in range(n):
+    # Print the left stars
+    for j in range(n - i):
+        print("*", end=" ")
+
+    # Print the middle spaces
+    for j in range(2 * i):
+        print(" ", end=" ")
+
+    # Print the right stars
+    for j in range(n - i):
+        print("*", end=" ")
+
+    # Move to the next row
+    print()
+```
+
+## Explanation
+
+The lower butterfly pattern is the reverse of the upper butterfly pattern. The two groups of stars become smaller as the rows progress, while the middle gap becomes wider.
+
+### 1. Initialize the number of rows
+
+```python id="c5h6rf"
+n = 5
+```
+
+The variable `n` determines the number of rows. Since the pattern has 5 rows, we set `n = 5`.
+
+### 2. Loop through the rows
+
+```python id="v6gdw8"
+for i in range(n):
+```
+
+The outer loop runs 5 times. The value of `i` starts at `0` and increases to `4`.
+
+### 3. Print the left stars
+
+```python id="z8hwqy"
+for j in range(n - i):
+    print("*", end=" ")
+```
+
+The expression `n - i` determines the number of stars on the left side.
+
+- Row 1 prints 5 stars.
+- Row 2 prints 4 stars.
+- Row 3 prints 3 stars.
+- Row 4 prints 2 stars.
+- Row 5 prints 1 star.
+
+The number of stars decreases by one each row.
+
+### 4. Print the middle spaces
+
+```python id="xq4cwv"
+for j in range(2 * i):
+    print(" ", end=" ")
+```
+
+The expression `2 * i` controls the width of the gap between the two groups of stars.
+
+- The first row has no middle spaces.
+- The second row has 2 iterations.
+- The third row has 4 iterations.
+- The fourth row has 6 iterations.
+- The fifth row has 8 iterations.
+
+Each iteration prints two spaces because of `end=" "` combined with the `" "` being printed.
+
+### 5. Print the right stars
+
+```python id="p7k3rv"
+for j in range(n - i):
+    print("*", end=" ")
+```
+
+This loop prints the same number of stars as the left side, keeping the pattern symmetrical.
+
+### 6. Move to the next row
+
+```python id="q9x5ts"
+print()
+```
+
+After printing the left stars, middle spaces, and right stars, this statement moves the output to the next line.
+
+## Key Takeaways
+
+- `range(n - i)` decreases the number of stars in each row.
+- `range(2 * i)` increases the gap between the two groups.
+- Using the same star count on both sides creates symmetry.
+- Nested loops allow each part of the pattern to be controlled independently.
+- The lower butterfly pattern narrows the wings while widening the middle gap.
