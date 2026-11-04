@@ -601,6 +601,19 @@ The Raspberry Pi, a credit-card-sized single-board computer developed by the Ras
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
+## 2016
+
+### **Python on the micro:bit: Bringing MicroPython to UK Classrooms**
+
+In 2016, the British Broadcasting Corporation (BBC) launched the BBC micro:bit initiative, distributing a small pocket-sized programmable microcontroller board free to approximately one million 7th-grade students (UK Year 7) across the United Kingdom. Designed to foster STEM education and digital literacy, the micro:bit featured official support for MicroPython—a lean, efficient implementation of Python 3 optimized for microcontrollers. Using a web-based code editor, students could write Python scripts directly in their browser and flash the compiled code onto the device to control LEDs, sensors, and Bluetooth modules.
+
+* **BBC micro:bit:** An open-source, ARM-based embedded system designed by the BBC in collaboration with tech companies for use in computer science education.
+* **MicroPython:** A compact software implementation of Python 3 written in C that is optimized to run efficiently on resource-constrained microcontrollers and embedded systems.
+* **Microcontroller:** A compact integrated circuit designed to govern a specific operation in an embedded system, typically combining a processor, memory, and programmable input/output (I/O) peripherals on a single chip.
+* **Damien George:** The Australian creator and core developer who created MicroPython in 2013, enabling Python to run on hardware devices with minimal RAM and flash memory.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 2018
 
 ### **FastAPI: Modern, High-Performance Python Web APIs**
