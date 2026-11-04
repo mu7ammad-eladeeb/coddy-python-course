@@ -2148,3 +2148,148 @@ After printing the left stars, middle spaces, and right stars, this statement mo
 - Using the same star count on both sides creates symmetry.
 - Nested loops allow each part of the pattern to be controlled independently.
 - The lower butterfly pattern narrows the wings while widening the middle gap.
+
+
+# Full Butterfly Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **Full Butterfly Pattern** of stars as shown below. The pattern consists of **10 rows and 10 columns**.
+
+### Expected Output Pattern
+
+```text
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+```
+
+## Hints
+
+1. Use nested loops to handle rows and columns separately for the upper and lower halves of the pattern.
+2. Inside loops, alternate between printing stars (`"* "`) and spaces (`" "`), adjusting loop ranges to control positions.
+3. Ensure symmetry by printing stars in increasing order in the upper half and decreasing order in the lower half, with spaces in the middle.
+4. Use variables (`i`, `j`, etc.) to control loop iterations and manage star and space printing effectively.
+
+## Solution: Using Nested Loops
+
+```python
+n = 5
+
+# Upper half
+for i in range(n):
+    # Print the left stars
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    # Print the middle spaces
+    for j in range(2 * (n - i - 1)):
+        print(" ", end=" ")
+
+    # Print the right stars
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    print()
+
+# Lower half
+for i in range(n):
+    # Print the left stars
+    for j in range(n - i):
+        print("*", end=" ")
+
+    # Print the middle spaces
+    for j in range(2 * i):
+        print(" ", end=" ")
+
+    # Print the right stars
+    for j in range(n - i):
+        print("*", end=" ")
+
+    print()
+```
+
+## Explanation
+
+The full butterfly pattern combines the upper and lower butterfly patterns.
+
+- The **upper half** starts with 1 star on each side and increases to 5 stars.
+- The **lower half** starts with 5 stars on each side and decreases to 1 star.
+- The spaces between the wings decrease in the upper half and increase in the lower half.
+
+### 1. Initialize the number of rows
+
+```python
+n = 5
+```
+
+Each half contains 5 rows, so the total number of rows is:
+
+```python
+2 * n  # 10 rows
+```
+
+### 2. Create the upper half
+
+```python
+for i in range(n):
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    for j in range(2 * (n - i - 1)):
+        print(" ", end=" ")
+
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    print()
+```
+
+The expression `i + 1` increases the number of stars on each side.
+
+The expression `2 * (n - i - 1)` decreases the middle gap as the star groups grow.
+
+### 3. Create the lower half
+
+```python
+for i in range(n):
+    for j in range(n - i):
+        print("*", end=" ")
+
+    for j in range(2 * i):
+        print(" ", end=" ")
+
+    for j in range(n - i):
+        print("*", end=" ")
+
+    print()
+```
+
+The expression `n - i` decreases the number of stars on each side.
+
+The expression `2 * i` increases the middle gap as the star groups become smaller.
+
+### 4. Keep the pattern symmetrical
+
+Both halves use matching star counts on the left and right sides. The lower half reverses the progression of the upper half.
+
+The widest star row appears twice in the middle, creating the complete butterfly shape.
+
+## Key Takeaways
+
+- The full butterfly consists of an upper half and a lower half.
+- `range(i + 1)` increases the number of stars.
+- `range(n - i)` decreases the number of stars.
+- `2 * (n - i - 1)` decreases the upper-half gap.
+- `2 * i` increases the lower-half gap.
+- The two halves together produce 10 rows.
+
