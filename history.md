@@ -236,6 +236,19 @@ Python 3.13, released in October 2024, added an experimental build without the G
 
 ## 1995
 
+### **From Amsterdam to Virginia: Python's Relocation to CNRI**
+
+In 1995, Guido van Rossum moved from the Netherlands to the United States to join the Corporation for National Research Initiatives (CNRI) in Reston, Virginia. Sponsored by research funding, Guido and a small team continued developing Python at CNRI, releasing several key versions (from Python 1.3 up through Python 1.6). This relocation shifted Python's development hub from Amsterdam to the US, broadening its adoption among American research institutions, government projects, and tech companies.
+
+* **CNRI (Corporation for National Research Initiatives):** A non-profit research organization in Virginia focused on strategic development in network-based information technologies that hosted the core Python team in the late 1990s.
+* **Guido van Rossum:** The creator of Python whose move to CNRI catalyzed the language's transition from a European research project to a globally recognized open-source platform.
+* **Python 1.3–1.6:** Key early updates of the Python language released during the CNRI era that introduced refined keyword arguments, module enhancements, and early licensing revisions.
+* **Reston, Virginia:** A major technology hub in Northern Virginia near Washington, D.C., which served as the primary epicenter for Python's development during the mid-to-late 1990s.
+
+**Source:** docs.python.org (Added details by Gemini AI)
+
+## 1995
+
 ### **The first BDFL**
 
 The title Benevolent Dictator For Life, or BDFL, is thought to have been first used in 1995 for Guido van Rossum. Ken Manheimer wrote Benevolent Dictator in an email after a meeting. Barry Warsaw added For Life.
