@@ -2293,3 +2293,165 @@ The widest star row appears twice in the middle, creating the complete butterfly
 - `2 * i` increases the lower-half gap.
 - The two halves together produce 10 rows.
 
+
+# Inverted Butterfly Pattern
+
+## Challenge
+
+**Difficulty:** Medium
+
+Write a program that prints an **inverted butterfly pattern** of stars as shown below. The pattern consists of 10 rows and 10 columns.
+
+### Expected Output Pattern
+
+```text
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+```
+
+## Hints
+
+1. Use nested loops to control printing stars and spaces in each row.
+
+   ```python
+   for i in range():
+       print("*", end=" ")
+   ```
+
+2. Adjust loop variables (`i` and `j`) and ranges (`range(n - i)`, `range(2 * i)`, etc.) to control the shape and size of the pattern.
+
+3. Ensure symmetry by printing stars on both sides of the middle spaces, adjusting loop ranges accordingly.
+
+4. Use `print()` in Python to move to the next line after each row is printed.
+
+---
+
+## Solution
+
+```python
+n = 5
+
+# Upper half of the inverted butterfly
+for i in range(n):
+    for j in range(n - i):
+        print("*", end=" ")
+
+    for j in range(2 * i):
+        print(" ", end=" ")
+
+    for j in range(n - i):
+        print("*", end=" ")
+
+    print()
+
+# Lower half of the inverted butterfly
+for i in range(n):
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    for j in range(2 * (n - i - 1)):
+        print(" ", end=" ")
+
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    print()
+```
+
+## Explanation
+
+### 1. Understanding `n`
+
+```python
+n = 5
+```
+
+The pattern contains 10 rows in total. We divide it into two halves:
+
+- The upper half has 5 rows.
+- The lower half has 5 rows.
+
+Therefore, `n` is set to `5`.
+
+### 2. Printing the upper half
+
+```python
+for i in range(n):
+    for j in range(n - i):
+        print("*", end=" ")
+
+    for j in range(2 * i):
+        print(" ", end=" ")
+
+    for j in range(n - i):
+        print("*", end=" ")
+
+    print()
+```
+
+The upper half begins with the widest row and gradually decreases the number of stars.
+
+- `range(n - i)` prints the stars on the left side.
+- `range(2 * i)` controls the middle space.
+- The second `range(n - i)` prints the stars on the right side.
+- `print()` moves to the next row.
+
+As `i` increases:
+- The number of stars on each side decreases by one.
+- The middle gap increases by four spaces.
+
+### 3. Printing the lower half
+
+```python
+for i in range(n):
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    for j in range(2 * (n - i - 1)):
+        print(" ", end=" ")
+
+    for j in range(i + 1):
+        print("*", end=" ")
+
+    print()
+```
+
+The lower half reverses the upper half's behavior.
+
+- `range(i + 1)` prints an increasing number of stars on each side.
+- `range(2 * (n - i - 1))` controls the decreasing middle gap.
+- `print()` moves to the next row.
+
+As `i` increases:
+- The number of stars on each side increases by one.
+- The middle gap decreases by four spaces.
+
+### 4. Why the pattern is symmetrical
+
+Both halves use the same logic but in opposite directions:
+
+| Upper half | Lower half |
+|---|---|
+| Stars decrease | Stars increase |
+| Middle gap increases | Middle gap decreases |
+| Starts with the widest row | Ends with the widest row |
+
+This creates the inverted butterfly shape.
+
+## Key Takeaways
+
+- Use nested loops to control stars and spaces independently.
+- Use `n - i` when the number of stars decreases.
+- Use `i + 1` when the number of stars increases.
+- Use `2 * i` to expand the middle gap.
+- Use `2 * (n - i - 1)` to shrink the middle gap.
+- Splitting a complex pattern into upper and lower halves makes it easier to understand and solve.
+
