@@ -2455,3 +2455,141 @@ This creates the inverted butterfly shape.
 - Use `2 * (n - i - 1)` to shrink the middle gap.
 - Splitting a complex pattern into upper and lower halves makes it easier to understand and solve.
 
+
+# Sand Glass Pattern
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **sand glass pattern** of stars as shown below. The pattern consists of 9 rows and 9 columns.
+
+### Expected Output Pattern
+
+```text
+ * * * * * * * * * 
+   * * * * * * * 
+     * * * * * 
+       * * * 
+         * 
+       * * * 
+     * * * * * 
+   * * * * * * * 
+ * * * * * * * * * 
+```
+
+## Hints
+
+1. Utilize nested loops—one for iterating through each row and another for managing columns—to control the placement of stars (`*`) and spaces.
+2. Calculate the number of leading spaces (`comp`) dynamically based on the current row index (`i`).
+3. Print the leading spaces before printing the stars.
+4. Adjust the loop range to `range(2 * rows - 1)` to control the total number of rows.
+
+---
+
+## Solution
+
+```python
+rows = 5
+
+for i in range(2 * rows - 1):
+    if i < rows:
+        comp = i
+    else:
+        comp = 2 * rows - 2 - i
+
+    spaces = 2 * comp + 1
+    stars = 2 * rows - 1 - 2 * comp
+
+    print(" " * spaces + "* " * stars)
+```
+
+## Explanation
+
+### 1. Understanding `rows`
+
+```python
+rows = 5
+```
+
+The pattern contains 9 rows. We use `rows = 5` because the sand glass has 5 rows in each half, with the middle row shared.
+
+The total number of rows is:
+
+```python
+2 * rows - 1
+```
+
+For `rows = 5`:
+
+```python
+2 * 5 - 1 = 9
+```
+
+### 2. Calculating `comp`
+
+```python
+if i < rows:
+    comp = i
+else:
+    comp = 2 * rows - 2 - i
+```
+
+The variable `comp` controls how far the pattern is indented.
+
+For `rows = 5`, its values are:
+
+```text
+0, 1, 2, 3, 4, 3, 2, 1, 0
+```
+
+It increases in the upper half and decreases in the lower half.
+
+### 3. Calculating the leading spaces
+
+```python
+spaces = 2 * comp + 1
+```
+
+The expected leading spaces are:
+
+```text
+1, 3, 5, 7, 9, 7, 5, 3, 1
+```
+
+Each increase in `comp` adds two leading spaces.
+
+The `+ 1` ensures that the widest rows begin with one leading space, matching the expected output.
+
+### 4. Calculating the number of stars
+
+```python
+stars = 2 * rows - 1 - 2 * comp
+```
+
+The number of star repetitions is:
+
+```text
+9, 7, 5, 3, 1, 3, 5, 7, 9
+```
+
+As the leading spaces increase, the number of stars decreases. The lower half reverses this behavior.
+
+### 5. Printing each row
+
+```python
+print(" " * spaces + "* " * stars)
+```
+
+- `" " * spaces` prints the leading spaces.
+- `"* " * stars` prints the stars.
+- `print()` moves to the next line.
+
+## Key Takeaways
+
+- Use `2 * rows - 1` to calculate the total number of rows.
+- Use `comp` to control the indentation symmetrically.
+- Use `2 * comp + 1` to calculate the leading spaces.
+- Use `2 * rows - 1 - 2 * comp` to calculate the number of stars.
+- Test the pattern against the exact expected output, because spaces are important in star-pattern challenges.
+
