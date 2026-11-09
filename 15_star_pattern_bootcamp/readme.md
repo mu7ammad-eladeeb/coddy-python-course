@@ -2593,3 +2593,184 @@ print(" " * spaces + "* " * stars)
 - Use `2 * rows - 1 - 2 * comp` to calculate the number of stars.
 - Test the pattern against the exact expected output, because spaces are important in star-pattern challenges.
 
+
+# Heart Pattern
+
+## Challenge
+
+**Difficulty:** Medium
+
+Write a program that prints a **heart pattern** of stars as shown below. The pattern consists of 8 rows and 11 columns.
+
+### Expected Output Pattern
+
+```text
+ ***   ***
+***** *****
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+```
+
+## Hints
+
+1. Utilize nested loops to handle different parts of the heart pattern: one for the upper part and another for the bottom part.
+2. Adjust loop ranges (`range()` or equivalent) to control the size and shape of the heart pattern.
+3. Inside loops, use print statements to output characters (`"*"` and `" "`) in the desired pattern.
+
+---
+
+## Solution 1: Using String Repetition
+
+```python
+# Upper part of the heart
+print(" ***   ***")
+print("***** *****")
+print("***********")
+
+# Lower part of the heart
+for i in range(5):
+    print(" " * (i + 1) + "*" * (9 - 2 * i))
+```
+
+### Explanation
+
+The upper part is printed directly because its three rows have a fixed structure.
+
+The lower part uses a loop to create the pointed bottom.
+
+```python
+for i in range(5):
+    print(" " * (i + 1) + "*" * (9 - 2 * i))
+```
+
+- `range(5)` creates five rows.
+- `i + 1` calculates the leading spaces.
+- `9 - 2 * i` calculates the number of stars.
+
+As `i` increases:
+- Leading spaces increase by 1.
+- Stars decrease by 2.
+
+| `i` | Leading spaces | Stars |
+|---:|---:|---:|
+| 0 | 1 | 9 |
+| 1 | 2 | 7 |
+| 2 | 3 | 5 |
+| 3 | 4 | 3 |
+| 4 | 5 | 1 |
+
+---
+
+## Solution 2: Using Nested Loops
+
+```python
+# Upper part of the heart
+patterns = [
+    " ***   ***",
+    "***** *****",
+    "***********"
+]
+
+for pattern in patterns:
+    for char in pattern:
+        print(char, end="")
+    print()
+
+# Lower part of the heart
+for i in range(5):
+    for j in range(i + 1):
+        print(" ", end="")
+
+    for j in range(9 - 2 * i):
+        print("*", end="")
+
+    print()
+```
+
+### Explanation
+
+### 1. Printing the upper part
+
+```python
+patterns = [
+    " ***   ***",
+    "***** *****",
+    "***********"
+]
+```
+
+Each string represents one row of the upper heart.
+
+The outer loop selects each row:
+
+```python
+for pattern in patterns:
+```
+
+The inner loop prints each character in that row:
+
+```python
+for char in pattern:
+    print(char, end="")
+```
+
+`end=""` prevents Python from moving to a new line after every character.
+
+After the inner loop finishes, `print()` moves to the next row.
+
+### 2. Printing the lower part
+
+```python
+for i in range(5):
+    for j in range(i + 1):
+        print(" ", end="")
+
+    for j in range(9 - 2 * i):
+        print("*", end="")
+
+    print()
+```
+
+The outer loop controls the five rows.
+
+The first inner loop prints the leading spaces:
+
+```python
+for j in range(i + 1):
+    print(" ", end="")
+```
+
+The second inner loop prints the stars:
+
+```python
+for j in range(9 - 2 * i):
+    print("*", end="")
+```
+
+The number of spaces increases while the number of stars decreases.
+
+### 3. Why use nested loops?
+
+Nested loops allow us to control each part of a row independently:
+
+- The outer loop controls the rows.
+- The first inner loop controls the spaces.
+- The second inner loop controls the stars.
+- `print()` moves to the next line.
+
+This approach is useful when you want to practice loop-based pattern construction.
+
+---
+
+## Key Takeaways
+
+- The heart can be divided into an upper part and a lower part.
+- String repetition (`"*" * count`) is a concise way to print patterns.
+- Nested loops allow you to print individual spaces and stars.
+- `i + 1` increases the leading spaces.
+- `9 - 2 * i` decreases the number of stars by 2 each row.
+- Both solutions produce the same expected output.
