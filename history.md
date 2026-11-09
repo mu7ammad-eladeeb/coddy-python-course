@@ -643,6 +643,19 @@ Python 3.3, released in September 2012, officially integrated the `venv` module 
 
 **Source:** peps.python.org (Added details by Gemini AI)
 
+# 2014
+
+## **A Statistics Module: Built-In Data Analysis for Python**
+
+Python 3.4, released in March 2014, officially introduced the `statistics` module into the standard library via PEP 450, authored by Steven D'Aprano. The module provided built-in mathematical statistics functions for calculating metrics such as `mean()`, `median()`, `mode()`, and `stdev()` directly out of the box. It was explicitly designed to fulfill Python's "batteries included" philosophy, giving everyday users, educators, and light data analysts immediate statistical capabilities without needing to install heavy external scientific libraries like NumPy or SciPy.
+
+* **`statistics` Module:** A standard library module providing basic numerical statistics functions for real-valued data streams and datasets.
+* **PEP 450 (Adding a Statistics Module):** The Python Enhancement Proposal that specified standard library statistical capabilities aimed at accessibility, exact precision for decimal inputs, and zero external dependencies.
+* **Steven D'Aprano:** A prominent Python educator, core contributor, and author of PEP 450 who advocated for basic mathematical tools directly within the CPython standard library.
+* **Batteries Included:** A core design philosophy of Python emphasizing a comprehensive standard library so developers can perform common tasks without downloading third-party packages.
+
+**Source:** peps.python.org (Added details by Gemini AI)
+
 # pip, PyPI and Packages
 
 # 2008
