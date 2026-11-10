@@ -2774,3 +2774,229 @@ This approach is useful when you want to practice loop-based pattern constructio
 - `i + 1` increases the leading spaces.
 - `9 - 2 * i` decreases the number of stars by 2 each row.
 - Both solutions produce the same expected output.
+
+
+# Hollow Square
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **hollow square pattern** of stars as shown below. The pattern consists of 6 rows and 6 columns.
+
+### Expected Output Pattern
+
+```text
+* * * * * * 
+*         * 
+*         * 
+*         * 
+*         * 
+* * * * * * 
+```
+
+## Hints
+
+1. Use nested loops (`for` loops within `for` loops) to iterate through the rows and columns of the square.
+2. Use an `if` statement inside the inner loop to decide whether to print a star (`*`) or a space.
+3. Identify the edges of the square using these conditions:
+   - `i == 0`: First row.
+   - `i == size - 1`: Last row.
+   - `j == 0`: First column.
+   - `j == size - 1`: Last column.
+
+The main condition is:
+
+```python
+if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+    print("*", end=" ")
+else:
+    print(" ", end=" ")
+```
+
+---
+
+## Solution 1: Using Nested Loops (Intended Solution)
+
+```python
+size = 6
+
+for i in range(size):
+    for j in range(size):
+        if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+            print("*", end=" ")
+        else:
+            print(" ", end=" ")
+    print()
+```
+
+### Explanation
+
+#### 1. Understanding the variables
+
+```python
+size = 6
+```
+
+The variable `size` represents the number of rows and columns in the square.
+
+We use two loops:
+
+- The outer loop (`i`) controls the rows.
+- The inner loop (`j`) controls the columns.
+
+```python
+for i in range(size):
+    for j in range(size):
+```
+
+Both loops run 6 times, creating a 6 × 6 square.
+
+#### 2. Identifying the square's borders
+
+```python
+if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+```
+
+This condition checks whether the current position is on one of the four edges.
+
+- `i == 0`: The first row.
+- `i == size - 1`: The last row.
+- `j == 0`: The first column.
+- `j == size - 1`: The last column.
+
+If any condition is true, we print a star.
+
+#### 3. Printing stars and spaces
+
+```python
+if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+    print("*", end=" ")
+else:
+    print(" ", end=" ")
+```
+
+- Border positions print `*`.
+- Interior positions print spaces.
+- `end=" "` keeps the output on the same line and adds spacing between columns.
+
+After the inner loop finishes:
+
+```python
+print()
+```
+
+Python moves to the next row.
+
+---
+
+## Solution 2: Using String Repetition and a Loop
+
+```python
+side_length = 6
+
+# Print the top border
+print("* " * side_length, end="")
+print()
+
+# Print the hollow middle rows
+for j in range(side_length - 2):
+    print("*" + " " * (side_length * 2 - 3) + "*")
+
+# Print the bottom border
+print("* " * side_length, end="")
+```
+
+### Explanation
+
+#### 1. Understanding `side_length`
+
+```python
+side_length = 6
+```
+
+This variable determines the width and height of the square.
+
+#### 2. Printing the top border
+
+```python
+print("* " * side_length, end="")
+print()
+```
+
+`"* " * side_length` repeats the string `* ` six times.
+
+The result is:
+
+```text
+* * * * * *
+```
+
+The second `print()` moves to the next line.
+
+#### 3. Printing the hollow middle rows
+
+```python
+for j in range(side_length - 2):
+    print("*" + " " * (side_length * 2 - 3) + "*")
+```
+
+We use `side_length - 2` because the top and bottom borders have already been printed.
+
+For a square with 6 rows:
+
+```python
+range(6 - 2)
+```
+
+The loop runs 4 times, producing the four middle rows.
+
+Let's understand the expression:
+
+```python
+"*" + " " * (side_length * 2 - 3) + "*"
+```
+
+- The first `"*"` prints the left border.
+- `" " * (side_length * 2 - 3)` prints the interior spaces.
+- The last `"*"` prints the right border.
+
+Why `side_length * 2 - 3`?
+
+Each column normally occupies two character positions because we use `* `.
+
+For a side length of 6:
+
+```python
+6 * 2 - 3 = 9
+```
+
+Therefore, we print 9 spaces between the two border stars.
+
+#### 4. Printing the bottom border
+
+```python
+print("* " * side_length, end="")
+```
+
+This repeats the same operation used for the top border, completing the square.
+
+---
+
+## Comparing Both Solutions
+
+| Solution 1 | Solution 2 |
+|---|---|
+| Uses nested loops | Uses string repetition |
+| Checks every row and column | Prints the borders separately |
+| Uses conditions to identify edges | Uses formulas to calculate spaces |
+| Works for different square sizes | Works for different square sizes |
+
+## Key Takeaways
+
+- A hollow square contains stars only on its borders.
+- Nested loops allow you to inspect every position in a pattern.
+- Use `or` when any one of several conditions can make the condition true.
+- `size - 2` calculates the number of interior rows.
+- String repetition (`"* " * size`) is a concise way to print repeated characters.
+- Both solutions generate the same hollow square, but use different approaches.
