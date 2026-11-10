@@ -630,6 +630,19 @@ Sebastián Ramírez released FastAPI in December 2018, leveraging modern Python 
 
 # Batteries Included
 
+# 2003
+
+## **The `datetime` Module: Native Date and Time Handling**
+
+Python 2.3, released in July 2003, introduced the `datetime` module into the standard library, establishing a standardized set of object types for manipulating dates, times, and time intervals. Prior to its inclusion, developers primarily relied on raw integer or floating-point timestamps representing seconds since the Unix Epoch via the legacy `time` module. The introduction of `datetime` provided intuitive object-oriented abstractions—such as `date`, `time`, `datetime`, and `timedelta`—making date arithmetic, formatting, and timezone calculations significantly cleaner and less error-prone.
+
+* **`datetime` Module:** A core standard library module supplying concrete classes for manipulating dates, times, and combined date-time instances in both simple and timezone-aware contexts.
+* **`timedelta` Object:** A class within the `datetime` module that represents the duration or difference between two dates or times, simplifying arithmetic like adding days or subtracting hours.
+* **Unix Epoch:** The reference point of 00:00:00 UTC on 1 January 1970, commonly used by lower-level system interfaces to measure time as a single numeric counter of elapsed seconds.
+* **Python 2.3:** A milestone release of Python 2 that, alongside `datetime`, introduced set concepts via the `sets` module, extended slicing, and the Boolean data type (`True`/`False`) into full language integration.
+
+**Source:** docs.python.org (Added details by Gemini AI)
+
 # 2012
 
 ## **`venv`: Isolated Virtual Environments in Python**
