@@ -3042,11 +3042,11 @@ for i in range(rows):
     # Print the pyramid
     for k in range(2 * i + 1):
         if i == rows - 1:
-            print("*", end=" ")
+            print(" *", end="")
         elif k == 0 or k == 2 * i:
-            print("*", end=" ")
+            print(" *", end="")
         else:
-            print(" ", end=" ")
+            print("  ", end="")
 
     print()
 ```
