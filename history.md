@@ -630,9 +630,9 @@ Sebastián Ramírez released FastAPI in December 2018, leveraging modern Python 
 
 # Batteries Included
 
-# 2003
+## 2003
 
-## **The `datetime` Module: Native Date and Time Handling**
+### **The `datetime` Module: Native Date and Time Handling**
 
 Python 2.3, released in July 2003, introduced the `datetime` module into the standard library, establishing a standardized set of object types for manipulating dates, times, and time intervals. Prior to its inclusion, developers primarily relied on raw integer or floating-point timestamps representing seconds since the Unix Epoch via the legacy `time` module. The introduction of `datetime` provided intuitive object-oriented abstractions—such as `date`, `time`, `datetime`, and `timedelta`—making date arithmetic, formatting, and timezone calculations significantly cleaner and less error-prone.
 
@@ -643,9 +643,9 @@ Python 2.3, released in July 2003, introduced the `datetime` module into the sta
 
 **Source:** docs.python.org (Added details by Gemini AI)
 
-# 2012
+## 2012
 
-## **`venv`: Isolated Virtual Environments in Python**
+### **`venv`: Isolated Virtual Environments in Python**
 
 Python 3.3, released in September 2012, officially integrated the `venv` module into the standard library through PEP 405. This feature allowed developers to create lightweight, isolated virtual environments—standalone directory trees containing a specific Python executable along with an independent set of installed packages. By isolating project dependencies, `venv` solved the long-standing "dependency hell" problem, enabling different projects on the same machine to use distinct package versions without system-wide conflicts.
 
@@ -656,9 +656,9 @@ Python 3.3, released in September 2012, officially integrated the `venv` module 
 
 **Source:** peps.python.org (Added details by Gemini AI)
 
-# 2014
+## 2014
 
-## **A Statistics Module: Built-In Data Analysis for Python**
+### **A Statistics Module: Built-In Data Analysis for Python**
 
 Python 3.4, released in March 2014, officially introduced the `statistics` module into the standard library via PEP 450, authored by Steven D'Aprano. The module provided built-in mathematical statistics functions for calculating metrics such as `mean()`, `median()`, `mode()`, and `stdev()` directly out of the box. It was explicitly designed to fulfill Python's "batteries included" philosophy, giving everyday users, educators, and light data analysts immediate statistical capabilities without needing to install heavy external scientific libraries like NumPy or SciPy.
 
@@ -671,9 +671,9 @@ Python 3.4, released in March 2014, officially introduced the `statistics` modul
 
 # pip, PyPI and Packages
 
-# 2008
+## 2008
 
-## **`pip` Begins as `pyinstall`: A New Era for Python Package Management**
+### **`pip` Begins as `pyinstall`: A New Era for Python Package Management**
 
 In 2008, developer Ian Bicking—creator of `virtualenv`—released an open-source tool called `pyinstall` to replace `easy_install`, which lacked features like clean uninstalls and reliable environment isolation. Shortly after its initial release, Bicking selected the name `pip` from user suggestions on his blog. The name functions as a recursive acronym for "Pip Installs Packages" (or "Preferred Installer Program"), laying the groundwork for what would become Python's standard package manager.
 
@@ -681,5 +681,20 @@ In 2008, developer Ian Bicking—creator of `virtualenv`—released an open-sour
 * **Ian Bicking:** An influential Python developer who created foundational ecosystem utilities including `pip`, `virtualenv`, and `Paste`.
 * **`easy_install`:** An older package manager introduced in 2004 as part of `setuptools` that automated downloads from PyPI but lacked crucial features like uninstall capabilities and tracking installed files.
 * **PyPI (Python Package Index):** The official third-party software repository for Python, hosting hundreds of thousands of user-contributed packages accessible via `pip`.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
+# Other Pythons
+
+## 1999
+
+### **JPython Becomes Jython: Python on the Java Virtual Machine**
+
+In 1999, the JPython project—originally created by Jim Hugunin in 1997 to run Python code seamlessly on the Java Virtual Machine (JVM)—was officially renamed Jython. Jython compiled Python code directly into Java bytecode, allowing Python programs to instantiate and call Java classes transparently and vice versa. As alternative implementations of Python emerged, the core reference implementation written in C came to be explicitly referred to as "CPython" to distinguish it from variant runtimes like Jython, IronPython (for .NET), and PyPy.
+
+* **Jython (formerly JPython):** An implementation of the Python programming language designed to compile Python source code to Java Virtual Machine (JVM) bytecode for seamless Java interoperability.
+* **CPython:** The default, reference implementation of the Python programming language written in C, maintained by core Python developers and hosted at `python.org`.
+* **Java Virtual Machine (JVM):** An abstract computing machine that enables a computer to run programs compiled into Java bytecode regardless of the underlying operating system.
+* **Jim Hugunin:** An American software engineer who created JPython (and later IronPython for Microsoft's .NET framework) to enable high-level scripting languages within strongly typed virtual machine platforms.
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
