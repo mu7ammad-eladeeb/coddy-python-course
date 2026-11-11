@@ -3000,3 +3000,167 @@ This repeats the same operation used for the top border, completing the square.
 - `size - 2` calculates the number of interior rows.
 - String repetition (`"* " * size`) is a concise way to print repeated characters.
 - Both solutions generate the same hollow square, but use different approaches.
+
+
+# Hollow Full Pyramid
+
+## Challenge
+
+**Difficulty:** Easy
+
+Write a program that prints a **hollow full pyramid pattern** of stars as shown below. The pattern consists of 5 rows and 9 columns.
+
+### Expected Output Pattern
+
+```text
+         * 
+       *   * 
+     *       * 
+   *           * 
+ * * * * * * * * * 
+```
+
+## Hints
+
+1. Use nested loops to manage rows (`i`) and columns (`j` and `k`) independently.
+2. Adjust the number of leading spaces based on the current row index (`i`).
+3. Conditionally print stars (`*`) and spaces (`" "`) based on the position (`k`) relative to the row (`i`).
+4. Use variables (`rows`, `i`, `j`, `k`) effectively to control loop iterations and conditions.
+
+---
+
+## Solution: Using Nested Loops (Hint-Based Solution)
+
+```python
+rows = 5
+
+for i in range(rows):
+    # Print leading spaces
+    for j in range(rows - i - 1):
+        print("  ", end="")
+
+    # Print the pyramid
+    for k in range(2 * i + 1):
+        if i == rows - 1:
+            print("*", end=" ")
+        elif k == 0 or k == 2 * i:
+            print("*", end=" ")
+        else:
+            print(" ", end=" ")
+
+    print()
+```
+
+## Explanation
+
+### 1. Understanding `rows`
+
+```python
+rows = 5
+```
+
+The variable `rows` determines the height of the pyramid.
+
+The pattern has 5 rows, and the number of positions in each row increases by 2:
+
+```text
+1, 3, 5, 7, 9
+```
+
+### 2. Printing the leading spaces
+
+```python
+for j in range(rows - i - 1):
+    print("  ", end="")
+```
+
+This loop controls how far the pyramid is shifted to the right.
+
+The formula `rows - i - 1` calculates the number of leading-space pairs in each row.
+
+| `i` | Calculation | Leading-space pairs |
+|---:|---|---:|
+| 0 | `5 - 0 - 1` | 4 |
+| 1 | `5 - 1 - 1` | 3 |
+| 2 | `5 - 2 - 1` | 2 |
+| 3 | `5 - 3 - 1` | 1 |
+| 4 | `5 - 4 - 1` | 0 |
+
+Each iteration prints two spaces, so the actual leading spaces are `8, 6, 4, 2, 0`.
+
+### 3. Printing the pyramid positions
+
+```python
+for k in range(2 * i + 1):
+```
+
+This loop controls the positions inside each row.
+
+The formula `2 * i + 1` calculates how many positions each row contains.
+
+| `i` | Calculation | Positions |
+|---:|---|---:|
+| 0 | `2 * 0 + 1` | 1 |
+| 1 | `2 * 1 + 1` | 3 |
+| 2 | `2 * 2 + 1` | 5 |
+| 3 | `2 * 3 + 1` | 7 |
+| 4 | `2 * 4 + 1` | 9 |
+
+### 4. Identifying where to print stars
+
+```python
+if i == rows - 1:
+    print("*", end=" ")
+elif k == 0 or k == 2 * i:
+    print("*", end=" ")
+else:
+    print(" ", end=" ")
+```
+
+We have three cases:
+
+**Case 1: The last row**
+
+```python
+if i == rows - 1:
+```
+
+When `i` reaches the last row, we print stars at every position to create the solid bottom border.
+
+**Case 2: The left and right edges**
+
+```python
+elif k == 0 or k == 2 * i:
+```
+
+- `k == 0` identifies the first position (left edge).
+- `k == 2 * i` identifies the last position (right edge).
+
+We print stars only at these two positions.
+
+**Case 3: The interior**
+
+```python
+else:
+    print(" ", end=" ")
+```
+
+All positions between the two edges are empty, creating the hollow area.
+
+### 5. Moving to the next row
+
+```python
+print()
+```
+
+After finishing the inner loop, `print()` moves to the next line.
+
+## Key Takeaways
+
+- Use nested loops to control the leading spaces and pyramid positions separately.
+- `rows - i - 1` calculates the number of leading-space pairs.
+- `2 * i + 1` calculates the number of positions in each row.
+- `k == 0` identifies the left edge.
+- `k == 2 * i` identifies the right edge.
+- `i == rows - 1` identifies the bottom row, which must be completely filled with stars.
+- Combining conditions allows you to create hollow patterns without printing unnecessary characters.
