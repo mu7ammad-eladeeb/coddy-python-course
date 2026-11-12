@@ -630,6 +630,19 @@ Sebastián Ramírez released FastAPI in December 2018, leveraging modern Python 
 
 # Batteries Included
 
+## 2001
+
+### **Two Ways to Test: `doctest` and `unittest` Join Python**
+
+Python 2.1, released in April 2001, brought built-in testing frameworks directly into the standard library with the addition of `doctest` and `unittest`. Created by Tim Peters, `doctest` pioneered literate testing by executing interactive Python session examples embedded directly inside module and function docstrings. Alongside it, `unittest` (originally developed as PyUnit by Steve Purcell) introduced an object-oriented testing framework modeled after Kent Beck and Erich Gamma's JUnit for Java, giving Python developers structured test cases, fixtures, and assertion methods out of the box.
+
+* **`doctest` Module:** A standard library testing module written by Tim Peters that parses docstrings for interactive Python sessions, executes them, and verifies that the output matches expectations.
+* **`unittest` Module (PyUnit):** Python's built-in object-oriented unit testing framework created by Steve Purcell, supporting test automation, shared setup/teardown code, and test aggregation into suites.
+* **xUnit Architecture:** A family of unit testing frameworks originating from SUnit and JUnit that standardized concepts like test runners, test cases, test fixtures, and assertions across programming languages.
+* **Docstring:** A string literal specified in Python source code as the first statement in a module, function, class, or method definition to document its behavior and serve as live executable examples.
+
+**Source:** docs.python.org (Added details by Gemini AI)
+
 ## 2003
 
 ### **The `datetime` Module: Native Date and Time Handling**
