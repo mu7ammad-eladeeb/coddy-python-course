@@ -1,4 +1,6 @@
-# Introduction
+# Overview
+
+## Introduction
 
 Star patterns are an excellent way for beginners to master the fundamentals of programming logic, loops, and conditional statements.
 
@@ -10,7 +12,7 @@ In this series of challenges about **Patterns**, you will find tasks that enhanc
 
 **Happy Coding!**
 
-# Instructions to Follow
+## Instructions to Follow
 
 **Follow the instructions below to get the desired output pattern:**
 
@@ -24,9 +26,11 @@ To succeed in this course, it is important to **actively engage with the materia
 
 > **Note:** This course is not for total beginners. You will need a good understanding of your preferred programming language. If you are a beginner, please check out topics related to conditional statements, nested loops, and functions in your preferred language.
 
-# Row of Stars
+# Beginner Level Pattern's
 
-## Challenge
+## Row of Stars
+
+### Challenge
 
 **Difficulty:** Easy
 
@@ -34,43 +38,43 @@ Your first challenge is to create a simple yet iconic pattern using asterisks (`
 
 Your task is to write a program that prints a **single row** of stars. The pattern consists of **1 row and 6 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * * * * * *
 ```
 
-## Hints
+### Hints
 
 1. Use a `for` loop to repeat a print action.
 2. Use the `end` argument with a space (`" "`) to separate the stars.
 
-## Solution
+### Solution
 
 ```python
 for i in range(6):
     print("*", end=" ")
 ```
 
-## Explanation
+### Explanation
 
 1. **`for i in range(6):`** repeats the loop 6 times because `range(6)` generates six values, from `0` to `5`.
 2. **`print("*", end=" ")`** prints one star followed by a space instead of moving to a new line.
 3. After all six iterations, the stars appear on a single row, separated by spaces.
 
-### Key Takeaway
+#### Key Takeaway
 
 The `for` loop controls how many stars are printed, while `end=" "` keeps them on the same line and separates them with spaces.
 
-# Column of Stars
+## Column of Stars
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Your task is to write a program that prints a **single column** of stars. The pattern consists of **6 rows and 1 column**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 *
@@ -81,36 +85,36 @@ Your task is to write a program that prints a **single column** of stars. The pa
 *
 ```
 
-## Hint
+### Hint
 
 Use a `for` loop to repeat a print action.
 
-## Solution
+### Solution
 
 ```python
 for i in range(6):
     print("*")
 ```
 
-## Explanation
+### Explanation
 
 1. **`for i in range(6):`** repeats the loop 6 times. The variable `i` takes values from `0` to `5`.
 2. **`print("*")`** prints one star during each iteration.
 3. By default, `print()` ends with a newline (`"\n"`), so each star appears on a separate line.
 
-## Key Takeaway
+### Key Takeaway
 
 Unlike the row-of-stars challenge, you don't need `end=" "` here. The default behavior of `print()` automatically moves to a new line after each star.
 
-# Solid Square of Stars
+## Solid Square of Stars
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Your task is to write a program that prints a **solid square** of stars. The pattern consists of **6 rows and 6 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * * * * * *
@@ -121,14 +125,14 @@ Your task is to write a program that prints a **solid square** of stars. The pat
 * * * * * *
 ```
 
-## Hints
+### Hints
 
 1. Use **nested loops**—one for rows and one for columns—to control where stars are placed.
 2. Inside the inner loop, print a star followed by a space (`"* "`).
 3. Use `print()` without arguments after the inner loop to move to the next line for each row.
 4. Adjust `range(6)` to control the number of stars printed horizontally and vertically.
 
-## Solution
+### Solution
 
 ```python
 for row in range(6):
@@ -137,9 +141,9 @@ for row in range(6):
     print()
 ```
 
-## Explanation
+### Explanation
 
-### 1. The outer loop controls the rows
+#### 1. The outer loop controls the rows
 
 ```python
 for row in range(6):
@@ -147,7 +151,7 @@ for row in range(6):
 
 The outer loop runs 6 times, creating the **6 rows** of the square.
 
-### 2. The inner loop controls the columns
+#### 2. The inner loop controls the columns
 
 ```python
 for col in range(6):
@@ -158,7 +162,7 @@ For each row, the inner loop runs 6 times, printing 6 stars.
 
 The argument `end=" "` adds a space after each star instead of moving to a new line. This keeps all 6 stars on the same row.
 
-### 3. Move to the next row
+#### 3. Move to the next row
 
 ```python
 print()
@@ -166,7 +170,7 @@ print()
 
 After the inner loop finishes, `print()` moves the output to a new line so the next iteration of the outer loop can print the next row.
 
-## How the Nested Loops Work
+### How the Nested Loops Work
 
 - The outer loop runs **6 times**.
 - For every iteration of the outer loop, the inner loop runs **6 times**.
@@ -179,19 +183,19 @@ The total number of stars printed is:
 6 \times 6 = 36
 \]
 
-## Key Takeaway
+### Key Takeaway
 
 **Nested loops** are useful for printing patterns with rows and columns. The outer loop controls the number of rows, while the inner loop controls the number of stars in each row.
 
-# Right-Angle Triangle
+## Right-Angle Triangle
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **right-angle triangle** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 *
@@ -202,13 +206,13 @@ Write a program that prints a **right-angle triangle** of stars as shown below. 
 * * * * * *
 ```
 
-## Hints
+### Hints
 
 1. Use `range(1, rows + 1)` to iterate from `1` to `rows` (inclusive).
 2. Use `"* " * i` to print `i` stars followed by spaces.
 3. Each row increases the number of stars printed by 1, creating a right-angle triangle pattern.
 
-## Solution
+### Solution
 
 ```python
 rows = 6
@@ -217,14 +221,14 @@ for i in range(1, rows + 1):
     print("* " * i)
 ```
 
-## Explanation
+### Explanation
 
 1. **`rows = 6`** sets the number of rows in the triangle.
 2. **`range(1, rows + 1)`** generates the numbers from `1` to `6`. The upper limit is exclusive, so we use `rows + 1` to include `6`.
 3. **`"* " * i`** repeats the string `"* "` exactly `i` times.
 4. **`print()`** prints the repeated stars and moves to the next line.
 
-## How the Pattern Is Created
+### How the Pattern Is Created
 
 | Iteration (`i`) | Expression | Stars printed |
 |---:|---|---|
@@ -235,19 +239,19 @@ for i in range(1, rows + 1):
 | 5 | `"* " * 5` | `* * * * *` |
 | 6 | `"* " * 6` | `* * * * * *` |
 
-## Key Takeaway
+### Key Takeaway
 
 You can create a growing star pattern using a single loop and string repetition. The loop variable `i` determines how many stars appear on each row, increasing from one star to six.
 
-# Left-Angle Triangle
+## Left-Angle Triangle
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **left-angle triangle** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
 
-### Output Pattern
+#### Output Pattern
 
 ```text
           *
@@ -258,14 +262,14 @@ Write a program that prints a **left-angle triangle** of stars as shown below. T
 * * * * * *
 ```
 
-## Hints
+### Hints
 
 1. Use the first loop to iterate through rows and the second loop for leading whitespaces.
 2. The loop `for j in range(2 * (rows - i) - 1)` prints leading whitespaces to align stars properly.
 3. The loop `for k in range(i + 1)` prints the star (`"* "`) characters.
 4. Use `print()` after the inner loops to move to the next line for each row.
 
-## Solution 1: Using Nested Loops
+### Solution 1: Using Nested Loops
 
 ```python
 rows = 6
@@ -280,7 +284,7 @@ for i in range(rows):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 1. **`rows = 6`** sets the number of rows in the triangle.
 2. **`for i in range(rows)`** runs six times, with `i` going from `0` to `5`.
@@ -289,7 +293,7 @@ for i in range(rows):
 5. **`print("* ", end="")`** prints each star on the same line because `end=""` prevents `print()` from moving to a new line.
 6. **`print()`** moves to the next line after the spaces and stars for the current row have been printed.
 
-### How the Pattern Is Created
+#### How the Pattern Is Created
 
 | Row (`i`) | Leading spaces | Number of stars |
 |---:|---:|---:|
@@ -302,7 +306,7 @@ for i in range(rows):
 
 The leading spaces decrease by two on each row, while the number of stars increases by one.
 
-## Solution 2: Using String Repetition and Slicing
+### Solution 2: Using String Repetition and Slicing
 
 ```python
 # Write code here
@@ -315,7 +319,7 @@ for i in range(6):
     spaces = spaces[:-2]
 ```
 
-### Explanation
+#### Explanation
 
 1. **`stars = "*"`** initializes the pattern with one star.
 2. **`spaces = "           "`** creates a string containing 11 spaces to position the first star on the right.
@@ -324,7 +328,7 @@ for i in range(6):
 5. **`stars += " *"`** adds another star, preceded by a space, for the next row.
 6. **`spaces = spaces[:-2]`** removes the last two spaces from the leading-spaces string. This shifts the next row's stars two positions to the left.
 
-### How String Slicing Works
+#### How String Slicing Works
 
 The expression `spaces[:-2]` creates a new string containing everything except the last two characters.
 
@@ -345,7 +349,7 @@ Output:
 
 The string now contains three spaces instead of five.
 
-## Key Takeaway
+### Key Takeaway
 
 Both solutions produce the same left-angle triangle, but they use different approaches:
 
@@ -354,9 +358,9 @@ Both solutions produce the same left-angle triangle, but they use different appr
 
 The nested-loop solution gives you more explicit control over the pattern, while the string-based solution is shorter and demonstrates string concatenation and slicing.
 
-# Inverted Left-Angle Triangle
+## Inverted Left-Angle Triangle
 
-**Challenge**
+### **Challenge**
 
 Easy
 
@@ -373,7 +377,7 @@ Write a program that prints an **Inverted Left-Angle Triangle** of stars as show
           *
 ```
 
-**Hints**
+#### **Hints**
 
 Hint 1
 
@@ -382,7 +386,7 @@ Hint 1
 3. Adjust loop ranges and index calculations to ensure correct placement of stars and spaces according to the pattern's requirements.
 4. Utilize formatting techniques such as print statements to control spacing and line breaks between rows of the pattern.
 
-## Solution 1: Using the Hint (Nested Loops)
+### Solution 1: Using the Hint (Nested Loops)
 
 ```python
 for i in range(6):
@@ -395,7 +399,7 @@ for i in range(6):
     print()
 ```
 
-### Explanation of Solution 1
+#### Explanation of Solution 1
 
 This solution uses **nested loops** to control the spaces and stars in each row.
 
@@ -407,7 +411,7 @@ This solution uses **nested loops** to control the spaces and stars in each row.
 
 The first row has 6 stars and no leading spaces. The last row has 1 star and 5 pairs of leading spaces.
 
-## Solution 2
+### Solution 2
 
 ```python
 spaces = ""
@@ -419,7 +423,7 @@ for i in range(6):
     spaces += " "
 ```
 
-### Explanation of Solution 2
+#### Explanation of Solution 2
 
 This solution uses **string manipulation** instead of nested loops.
 
@@ -432,22 +436,22 @@ This solution uses **string manipulation** instead of nested loops.
 - `stars = stars[:-2]` removes the last two characters from the star string: the final `*` and its preceding space. This leaves one fewer star for the next row.
 - `spaces += " "` adds one space to the `spaces` string. On the next iteration, `spaces * 2` adds two more leading spaces.
 
-### Key Takeaways
+#### Key Takeaways
 
 - **Solution 1** uses nested loops to decide how many spaces and stars to print in each row.
 - **Solution 2** builds the pattern by modifying two strings: one for spaces and one for stars.
 - Both solutions produce the same inverted left-angle triangle.
 - The nested-loop approach is useful for practicing loops and pattern logic, while the string-manipulation approach is concise and easy to follow.
 
-# Rhombus Pattern
+## Rhombus Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **rhombus pattern** of stars as shown below. The pattern consists of **6 rows and 6 columns**.
 
-### Output Pattern
+#### Output Pattern
 
 ```text
      * * * * * *
@@ -458,13 +462,13 @@ Write a program that prints a **rhombus pattern** of stars as shown below. The p
 * * * * * *
 ```
 
-## Hints
+### Hints
 
 1. Use nested loops to control the placement of spaces and stars. One loop manages rows, while others handle spaces and stars within each row.
 2. Inside the outer loop, use another loop to print spaces before printing stars. Adjust loop parameters to ensure proper alignment.
 3. Use a loop to print stars after spaces. Maintain consistency in spacing and format.
 
-## Solution 1: Using Nested Loops
+### Solution 1: Using Nested Loops
 
 ```python
 rows = 6
@@ -480,7 +484,7 @@ for i in range(rows):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 1. **`rows = 6`** sets the number of rows in the pattern.
 2. **`columns = 6`** sets the number of stars in each row.
@@ -503,7 +507,7 @@ for i in range(6):
     spaces -= 1
 ```
 
-### Explanation
+#### Explanation
 
 1. **`spaces = 5`** initializes the number of leading spaces for the first row.
 2. **`stars = "* * * * * *"`** stores the six stars and the spaces between them as a single string.
@@ -512,7 +516,7 @@ for i in range(6):
 5. **`+ stars`** concatenates the leading spaces with the star pattern.
 6. **`spaces -= 1`** decreases the number of leading spaces by one after each row.
 
-### How the Pattern Changes
+#### How the Pattern Changes
 
 | Row | Leading spaces | Stars |
 |---:|---:|---:|
@@ -523,7 +527,7 @@ for i in range(6):
 | 5 | 1 | 6 |
 | 6 | 0 | 6 |
 
-## Key Takeaway
+### Key Takeaway
 
 Both solutions produce the same rhombus pattern:
 
@@ -532,15 +536,17 @@ Both solutions produce the same rhombus pattern:
 
 The main idea is to keep the number of stars constant while decreasing the leading spaces by one on every row.
 
-# Pyramid of Stars
+# Intermediate Level Pattern's
 
-## Challenge
+## Pyramid of Stars
+
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **pyramid pattern** of stars as shown below. The pattern consists of **6 rows and 11 columns**.
 
-### Output Pattern
+#### Output Pattern
 
 ```text
            *
@@ -551,7 +557,7 @@ Write a program that prints a **pyramid pattern** of stars as shown below. The p
  * * * * * * * * * * *
 ```
 
-## Hints
+#### Hints
 
 1. Use an outer loop to manage rows and nested inner loops to handle spaces and stars within each row.
 2. The first inner loop controls the number of spaces printed before the stars:
@@ -568,7 +574,7 @@ Write a program that prints a **pyramid pattern** of stars as shown below. The p
        print("*", end=" ")
    ```
 
-## Solution 1: Using Nested Loops (Hint Solution)
+### Solution 1: Using Nested Loops (Hint Solution)
 
 ```python
 rows = 6
@@ -583,7 +589,7 @@ for i in range(rows):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 1. **`rows = 6`** sets the number of rows in the pyramid.
 2. **`for i in range(rows)`** repeats the process six times. The variable `i` goes from `0` to `5`.
@@ -611,7 +617,7 @@ for i in range(rows):
 
 The leading spaces decrease by two, while the number of stars increases by two on every row.
 
-## Solution 2: Using String Repetition and Concatenation
+### Solution 2: Using String Repetition and Concatenation
 
 ```python
 spaces = 11
@@ -623,7 +629,7 @@ for row in range(6):
     spaces -= 2
 ```
 
-### Explanation
+#### Explanation
 
 1. **`spaces = 11`** initializes the number of leading spaces for the first row.
 2. **`stars = "*"`** initializes the pattern with one star.
@@ -633,7 +639,7 @@ for row in range(6):
 6. **`stars += " * *"`** adds two more stars, with spaces between them, to the pattern for the next row.
 7. **`spaces -= 2`** decreases the number of leading spaces by two after each row.
 
-### How String Concatenation Builds the Pyramid
+**How String Concatenation Builds the Pyramid**
 
 The `stars` variable changes on every iteration:
 
@@ -659,7 +665,7 @@ At the same time, `spaces` decreases by two:
 
 This creates the pyramid shape by expanding the stars outward while shifting each row to the left.
 
-## Key Takeaways
+### Key Takeaways
 
 Both solutions produce the same pyramid pattern, but they use different approaches:
 
@@ -672,15 +678,15 @@ The main idea behind a pyramid pattern is:
 - The number of stars increases by two on each row.
 - The number of stars is always odd: 1, 3, 5, 7, 9, and 11.
 
-# Inverted Pyramid
+## Inverted Pyramid
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints an **inverted pyramid pattern** of stars as shown below. The pattern consists of **6 rows and 11 columns**.
 
-### Output Pattern
+#### Output Pattern
 
 ```text
 * * * * * * * * * * *
@@ -691,7 +697,7 @@ Write a program that prints an **inverted pyramid pattern** of stars as shown be
           *
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to control rows and columns:
 
@@ -707,7 +713,7 @@ Write a program that prints an **inverted pyramid pattern** of stars as shown be
 2. Inside the outer loop (`i`), use an inner loop (`j`) to print leading spaces based on the current row index.
 3. Inside the outer loop (`i`), use another inner loop (`k`) to print stars (`*`) with appropriate spacing based on the current row index.
 
-## Solution 1: Using Nested Loops (Hint Solution)
+### Solution 1: Using Nested Loops (Hint Solution)
 
 ```python
 rows = 6
@@ -722,7 +728,7 @@ for i in range(rows):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 1. **`rows = 6`** sets the number of rows in the inverted pyramid.
 2. **`for i in range(rows)`** repeats the process six times. The variable `i` goes from `0` to `5`.
@@ -743,7 +749,7 @@ for i in range(rows):
 5. **`print("*", end=" ")`** prints each star followed by a space without moving to a new line.
 6. **`print()`** moves to the next line after completing each row.
 
-## Solution 2: Using String Slicing
+### Solution 2: Using String Slicing
 
 ```python
 stars = "* * * * * * * * * * *"
@@ -755,7 +761,7 @@ for row in range(6):
     spaces += 2
 ```
 
-### Explanation
+#### Explanation
 
 1. **`stars = "* * * * * * * * * * *"`** initializes the pattern with 11 stars separated by spaces.
 2. **`spaces = 0`** initializes the number of leading spaces for the first row.
@@ -769,7 +775,7 @@ for row in range(6):
    This effectively removes two stars and their separator, leaving the remaining pattern shorter by two stars.
 6. **`spaces += 2`** adds two leading spaces for the next row, shifting the pattern to the right.
 
-### How String Slicing Changes the Pattern
+**How String Slicing Changes the Pattern**
 
 | Row | Number of leading spaces | Number of stars |
 |---:|---:|---:|
@@ -780,11 +786,11 @@ for row in range(6):
 | 5 | 8 | 3 |
 | 6 | 10 | 1 |
 
-## Connecting Your Solution to the Hint Formulas
+**Connecting Your Solution to the Hint Formulas**
 
 The formulas used in the hint solution can be calculated directly from the behavior of your string-based solution.
 
-### 1. Leading Spaces Formula
+**1. Leading Spaces Formula**
 
 In your solution:
 
@@ -809,7 +815,7 @@ for j in range(2 * i):
 
 The loop prints `2 * i` spaces.
 
-### 2. Number of Stars Formula
+**2. Number of Stars Formula**
 
 In your solution, the initial pattern contains 11 stars, and you remove two stars on every iteration.
 
@@ -843,14 +849,14 @@ This is exactly the hint's formula:
 for k in range(2 * (rows - i) - 1):
 ```
 
-### Formula Comparison
+**Formula Comparison**
 
 | Pattern component | Your solution | Hint formula |
 |---|---|---|
 | Leading spaces | Start at 0, add 2 | `2 * i` |
 | Number of stars | Start at 11, remove 2 | `2 * (rows - i) - 1` |
 
-## Key Takeaways
+### Key Takeaways
 
 Both solutions create the same inverted pyramid, but they approach the problem differently:
 
@@ -864,15 +870,15 @@ Both solutions create the same inverted pyramid, but they approach the problem d
 
 Notice that you can get the formulas from the second solution numbers. Understanding how to derive these formulas from a working solution is a useful way to become more comfortable with nested loops and pattern problems.
 
-# Diamond Pattern
+## Diamond Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **diamond pattern** of stars as shown below. The pattern consists of **6 rows in the upper half and 5 rows in the lower half**, making a total of 11 rows and 11 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
            *
@@ -888,9 +894,9 @@ Write a program that prints a **diamond pattern** of stars as shown below. The p
            *
 ```
 
-## Hints
+#### Hints
 
-### Hint 1: Use Conditional Statements
+**Hint 1: Use Conditional Statements**
 
 Use conditional statements (`if-else`) to dynamically assign values based on the current row number.
 
@@ -903,7 +909,7 @@ else:
     comp = 2 * (i - n + 1) + 1
 ```
 
-### Hint 2: Print Leading Spaces
+**Hint 2: Print Leading Spaces**
 
 Print leading spaces dynamically before printing stars.
 
@@ -911,7 +917,7 @@ Print leading spaces dynamically before printing stars.
 print(" " * comp, end="")
 ```
 
-### Hint 3: Print Stars
+**Hint 3: Print Stars**
 
 Print stars (`*`) using a loop or repeated print statements to form the desired pattern.
 
@@ -919,11 +925,11 @@ Print stars (`*`) using a loop or repeated print statements to form the desired 
 print("* " * (2 * n - comp), end="")
 ```
 
-### Hint 4: Move to the Next Line
+**Hint 4: Move to the Next Line**
 
 Use `print()` after printing each row of stars to move to the next line and maintain the pattern structure.
 
-## Solution 1: Using the Hint (If-Else Statements)
+### Solution 1: Using the Hint (If-Else Statements)
 
 This solution uses one loop for the entire diamond. An `if-else` statement determines whether the current row belongs to the upper or lower half.
 
@@ -940,7 +946,7 @@ for i in range(2 * rows - 1):
     print("* " * (2 * rows - comp))
 ```
 
-### Explanation
+#### Explanation
 
 1. **`rows = 6`** sets the number of rows in the upper half of the diamond.
 2. **`for i in range(2 * rows - 1)`** runs 11 times, creating 11 rows in total.
@@ -952,7 +958,7 @@ for i in range(2 * rows - 1):
 6. **`print("* " * (2 * rows - comp))`** calculates and prints the stars. Their number increases in the upper half and decreases in the lower half.
 7. The second `print()` automatically moves to the next line.
 
-### How the `comp` Variable Works
+**How the `comp` Variable Works**
 
 | Row (`i`) | Half | `comp` (spaces) | Number of stars |
 |---:|---|---:|---:|
@@ -970,7 +976,7 @@ for i in range(2 * rows - 1):
 
 **Important:** The `comp` variable represents the number of leading spaces. The expression `2 * rows - comp` calculates the number of stars.
 
-## Solution 2: Using Nested Loops (Upper and Lower Halves)
+### Solution 2: Using Nested Loops (Upper and Lower Halves)
 
 This solution separates the diamond into two parts: an upper pyramid and a lower inverted pyramid.
 
@@ -999,14 +1005,14 @@ for i in range(1, 6):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 The diamond consists of two parts:
 
 1. **Upper half:** The number of stars increases on each row, while the leading spaces decrease.
 2. **Lower half:** The number of stars decreases on each row, while the leading spaces increase.
 
-#### Upper Half
+**Upper Half**
 
 ```python
 for i in range(6):
@@ -1025,7 +1031,7 @@ for i in range(6):
 - **`print("*", end=" ")`** prints stars on the same line, with a space after each star.
 - **`print()`** moves to the next row.
 
-#### Lower Half
+**Lower Half**
 
 ```python
 for i in range(1, 6):
@@ -1043,7 +1049,7 @@ for i in range(1, 6):
 - **`2 * (rows - i) - 1`** calculates the number of stars. They decrease by two on each row.
 - **`print()`** moves to the next row.
 
-### How the Pattern Changes
+**How the Pattern Changes**
 
 | Part | Row | Leading spaces | Number of stars |
 |---|---:|---:|---:|
@@ -1059,7 +1065,7 @@ for i in range(1, 6):
 | Lower | 4 | 9 | 3 |
 | Lower | 5 | 11 | 1 |
 
-## Solution 3: Using String Repetition and Slicing
+### Solution 3: Using String Repetition and Slicing
 
 This solution builds the upper half by adding stars and removing leading spaces. Then it builds the lower half by removing stars and adding leading spaces.
 
@@ -1084,9 +1090,9 @@ for row in range(5):
     print((spaces * " ") + stars)
 ```
 
-### Explanation
+#### Explanation
 
-#### Initial Values
+**Initial Values**
 
 ```python
 stars = "*"
@@ -1096,7 +1102,7 @@ spaces = 11
 - **`stars = "*"`** starts with one star.
 - **`spaces = 11`** starts with 11 leading spaces.
 
-#### Building the Upper Half
+**Building the Upper Half**
 
 ```python
 for row in range(6):
@@ -1126,7 +1132,7 @@ The upper half grows like this:
 | 5 | `* * * * * * * * *` | 3 |
 | 6 | `* * * * * * * * * * *` | 1 |
 
-#### Building the Lower Half
+**Building the Lower Half**
 
 ```python
 for row in range(5):
@@ -1149,7 +1155,7 @@ The lower half shrinks like this:
 | 4 | `* * *` | 9 |
 | 5 | `*` | 11 |
 
-## Connecting the Three Solutions
+**Connecting the Three Solutions**
 
 All three solutions follow the same mathematical pattern, even though they use different techniques.
 
@@ -1162,7 +1168,7 @@ All three solutions follow the same mathematical pattern, even though they use d
 
 The formulas in the first two solutions describe the same changes that the string-based solution performs step by step.
 
-## Key Takeaways
+### Key Takeaways
 
 - A diamond pattern consists of an upper pyramid and a lower inverted pyramid.
 - In the upper half, stars increase while leading spaces decrease.
@@ -1174,15 +1180,15 @@ The formulas in the first two solutions describe the same changes that the strin
 **Important:** Understanding how the formulas in the hint solution describe the changes in your string-based solution helps you develop a stronger understanding of loops, conditions, and pattern problems.
 
 
-# Right Direction Arrow
+## Right Direction Arrow
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **Right Direction Arrow** of stars as shown below. The pattern consists of **11 rows and 6 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * 
@@ -1198,7 +1204,7 @@ Write a program that prints a **Right Direction Arrow** of stars as shown below.
 * 
 ```
 
-## Hints
+#### Hints
 
 Use two loops—one for the upper half and one for the lower half—to create a symmetric pattern.
 
@@ -1206,7 +1212,7 @@ Use two loops—one for the upper half and one for the lower half—to create a 
 2. In the second loop (`for i in range(n - 1):`), decrease the number of stars per line using `"* " * (n - i - 1)`.
 3. Print stars using `"* "` to maintain alignment and create the desired pattern.
 
-## Solution 1: Using the Hint
+### Solution 1: Using the Hint
 
 ```python
 n = 6
@@ -1220,7 +1226,7 @@ for i in range(n - 1):
     print("* " * (n - i - 1))
 ```
 
-### Explanation
+#### Explanation
 
 We use two separate loops to create the arrow's symmetric shape.
 
@@ -1248,7 +1254,7 @@ for i in range(n - 1):
 
 The two loops produce 11 rows in total: 6 rows in the upper half and 5 in the lower half.
 
-## Solution 2: Using If Statements and a Counter
+### Solution 2: Using If Statements and a Counter
 
 ```python
 rows = 11
@@ -1264,7 +1270,7 @@ for i in range(rows):
         stars -= 1
 ```
 
-### Explanation
+#### Explanation
 
 This solution uses one loop, two `if` statements, and a variable named `stars` to control the number of stars printed.
 
@@ -1308,7 +1314,7 @@ The lower half prints 6, 5, 4, 3, 2, and 1 stars.
 
 **Note:** The middle row belongs to the second condition, which is why the first condition uses `i < 5` rather than `i <= 5`.
 
-## Key Takeaways
+### Key Takeaways
 
 - Use two loops when you want to build an increasing and decreasing pattern separately.
 - Use one loop with conditions when you want to control different stages of a pattern.
@@ -1317,15 +1323,15 @@ The lower half prints 6, 5, 4, 3, 2, and 1 stars.
 - Both solutions produce the same 11-row arrow pattern.
 
 
-# Left Direction Arrow
+## Left Direction Arrow
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **Left Direction Arrow** of stars as shown below. The pattern consists of **11 rows and 6 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
           * 
@@ -1341,7 +1347,7 @@ Write a program that prints a **Left Direction Arrow** of stars as shown below. 
           * 
 ```
 
-## Hints
+#### Hints
 
 **Hint 1: Use two loops**
 
@@ -1359,7 +1365,7 @@ Write a program that prints a **Left Direction Arrow** of stars as shown below. 
 - Decrease the number of stars as you move down the rows after the midpoint.
 - The lower half should be the reverse of the upper half, excluding the middle row.
 
-## Solution: Using Two Loops
+### Solution: Using Two Loops
 
 ```python
 n = 6
@@ -1373,14 +1379,14 @@ for i in range(n - 1):
     print("  " * (i + 1) + "* " * (n - i - 1))
 ```
 
-## Explanation
+#### Explanation
 
 The pattern is made up of two parts:
 
 1. **Upper half:** The number of stars increases from 1 to 6, while the number of leading spaces decreases.
 2. **Lower half:** The number of stars decreases from 5 to 1, while the number of leading spaces increases.
 
-### 1. Initialize the variable
+**1. Initialize the variable**
 
 ```python
 n = 6
@@ -1388,7 +1394,7 @@ n = 6
 
 The variable `n` represents the maximum number of stars in the middle row.
 
-### 2. Create the upper half
+**2. Create the upper half**
 
 ```python
 for i in range(n):
@@ -1410,7 +1416,7 @@ For example:
 | 4 | 1 pair | 5 |
 | 5 | 0 pairs | 6 |
 
-### 3. Create the lower half
+**3. Create the lower half**
 
 ```python
 for i in range(n - 1):
@@ -1423,7 +1429,7 @@ for i in range(n - 1):
 
 This produces 5, 4, 3, 2, and 1 stars.
 
-## Key Takeaways
+### Key Takeaways
 
 - Use two loops to create the increasing and decreasing halves of a pattern.
 - Use `"  "` to create two-character indentation spaces, keeping the stars aligned.
@@ -1432,15 +1438,15 @@ This produces 5, 4, 3, 2, and 1 stars.
 - The middle row is printed only once, so the final pattern contains exactly 11 rows.
 
 
-# Plus Pattern
+## Plus Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **Plus Pattern** of stars as shown below. The pattern consists of **7 rows and 7 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
    *   
@@ -1452,14 +1458,14 @@ Write a program that prints a **Plus Pattern** of stars as shown below. The patt
    *
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to iterate through rows and columns to control where stars (`*`) and spaces (`" "`) are placed.
 2. Use an `if` statement inside the inner loop to decide whether to print a star (`*`) or a space (`" "`).
 3. Adjust the loop variables (`row` and `col`) to control the size and shape of the pattern.
 4. Use `print()` with appropriate arguments to control new lines and ensure the pattern is formatted correctly.
 
-## Solution 1: Using the Hint (Nested Loops)
+### Solution 1: Using the Hint (Nested Loops)
 
 ```python
 size = 7
@@ -1473,7 +1479,7 @@ for row in range(size):
     print()
 ```
 
-### Explanation
+#### Explanation
 
 This solution uses two nested loops to create the plus sign.
 
@@ -1522,7 +1528,7 @@ print()
 
 This statement is outside the inner loop, so it runs after all 7 columns have been processed. It moves the output to the next line.
 
-## Solution 2: Using One Loop and If Statements
+### Solution 2: Using One Loop and If Statements
 
 ```python
 rows = 13
@@ -1538,7 +1544,7 @@ for i in range(rows, 0, -1):
         print("*******", end='')
 ```
 
-### Explanation
+#### Explanation
 
 This solution uses one loop, three `if` statements, and the remainder operator (`%`) to create the plus pattern.
 
@@ -1606,7 +1612,7 @@ This creates the horizontal part of the plus sign.
 
 The next iteration has `i = 6`, so the second condition executes and moves the output to a new line before the lower vertical stars are printed.
 
-### Understanding the Loop
+**Understanding the Loop**
 
 | Value of `i` | Action |
 |---:|---|
@@ -1626,7 +1632,7 @@ The next iteration has `i = 6`, so the second condition executes and moves the o
 
 The result is three vertical stars above the horizontal line, one horizontal line of seven stars, and three vertical stars below it.
 
-## Key Takeaways
+### Key Takeaways
 
 - Nested loops can be used to control the position of every character in a pattern.
 - The `or` operator allows a condition to be true when either of two expressions is true.
@@ -1636,15 +1642,15 @@ The result is three vertical stars above the horizontal line, one horizontal lin
 - Both solutions create the same plus pattern using different approaches.
 
 
-# X Pattern
+## X Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Medium
 
 Write a program that prints an **X Pattern** of stars as shown below. The pattern consists of **7 rows and 7 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 *     *
@@ -1656,7 +1662,7 @@ Write a program that prints an **X Pattern** of stars as shown below. The patter
 *     *
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops—one for rows and one for columns—to iterate through each position in the grid.
 2. Use an `if` statement inside the inner loop to determine when to print a star (`*`).
@@ -1666,7 +1672,7 @@ Write a program that prints an **X Pattern** of stars as shown below. The patter
 4. Inside the inner loop, print a star (`*`) when the condition is met; otherwise, print a space (`" "`).
 5. Adjust the `size` variable to control the dimensions of the pattern. Larger values will create larger X patterns.
 
-## Solution: Using Nested Loops
+### Solution: Using Nested Loops
 
 ```python
 size = 7
@@ -1681,11 +1687,11 @@ for row in range(size):
     print()  # Move to the next line after each row
 ```
 
-## Explanation
+#### Explanation
 
 This solution uses two nested loops to check every position in a 7 × 7 grid and decide whether to print a star or a space.
 
-### 1. Initialize the size
+**1. Initialize the size**
 
 ```python
 size = 7
@@ -1693,7 +1699,7 @@ size = 7
 
 The variable `size` determines the number of rows and columns. Since the challenge requires a 7 × 7 pattern, we set it to `7`.
 
-### 2. Iterate through the rows and columns
+**2. Iterate through the rows and columns**
 
 ```python
 for row in range(size):
@@ -1706,7 +1712,7 @@ for row in range(size):
 
 The variables `row` and `col` start at `0` and end at `6`.
 
-### 3. Identify the diagonal positions
+**3. Identify the diagonal positions**
 
 ```python
 if row == col or row + col == size - 1:
@@ -1758,7 +1764,7 @@ The `or` operator means that a star is printed if either condition is true.
 
 Notice that the middle position `(3, 3)` satisfies both conditions, but it is printed only once because both conditions are part of the same `if` statement.
 
-### 4. Print stars or spaces
+**4. Print stars or spaces**
 
 ```python
 if row == col or row + col == size - 1:
@@ -1773,7 +1779,7 @@ else:
 
 This allows all 7 characters of a row to be printed on the same line.
 
-### 5. Move to the next row
+**5. Move to the next row**
 
 ```python
 print()
@@ -1783,7 +1789,7 @@ This statement is outside the inner loop, so it executes after all 7 columns hav
 
 It moves the output to the next line, allowing the next row to be printed.
 
-## Key Takeaways
+### Key Takeaways
 
 - Nested loops allow us to examine every position in a two-dimensional grid.
 - `row == col` identifies the main diagonal.
@@ -1793,16 +1799,17 @@ It moves the output to the next line, allowing the next row to be printed.
 - An empty `print()` moves the output to the next line.
 - By changing `size`, we can create larger or smaller X patterns.
 
+# Advanced Level Pattern's
 
-# Upper Butterfly Pattern
+## Upper Butterfly Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints the **Upper part of a Butterfly Pattern** of stars as shown below. The pattern consists of **5 rows and 10 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 *                 * 
@@ -1812,13 +1819,13 @@ Write a program that prints the **Upper part of a Butterfly Pattern** of stars a
 * * * * * * * * * * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to manage rows and columns independently. The outer loop (`for i`) controls rows, while inner loops (`for j`) handle stars and spaces within each row.
 2. Inside loops, use `print('*', end=' ')` for stars and `print(' ', end=' ')` for spaces to control the pattern's layout.
 3. Use loop ranges like `range(i + 1)` and `range(2 * (n - i - 1))` to dynamically adjust the number of stars and spaces based on the current row (`i`).
 
-## Solution 1: Using the Hint
+### Solution 1: Using the Hint
 
 ```python
 n = 5
@@ -1840,11 +1847,11 @@ for i in range(n):
     print()
 ```
 
-## Explanation
+#### Explanation
 
 The upper butterfly pattern consists of two groups of stars that expand toward the center. The spaces between the groups decrease on each row.
 
-### 1. Initialize the number of rows
+**1. Initialize the number of rows**
 
 ```python
 n = 5
@@ -1852,7 +1859,7 @@ n = 5
 
 The variable `n` controls the number of rows. Since the pattern has 5 rows, we set `n = 5`.
 
-### 2. Loop through the rows
+**2. Loop through the rows**
 
 ```python
 for i in range(n):
@@ -1860,7 +1867,7 @@ for i in range(n):
 
 The outer loop runs 5 times. The value of `i` starts at `0` and increases to `4`.
 
-### 3. Print the left stars
+**3. Print the left stars**
 
 ```python
 for j in range(i + 1):
@@ -1877,7 +1884,7 @@ The expression `i + 1` determines the number of stars on the left side.
 
 The `end=" "` argument keeps the stars on the same line and adds a space after each star.
 
-### 4. Print the middle spaces
+**4. Print the middle spaces**
 
 ```python
 for j in range(2 * (n - i - 1)):
@@ -1894,7 +1901,7 @@ The expression `2 * (n - i - 1)` decreases the number of spaces as `i` increases
 - The fourth row has 2 pairs.
 - The fifth row has no middle spaces.
 
-### 5. Print the right stars
+**5. Print the right stars**
 
 ```python
 for j in range(i + 1):
@@ -1903,7 +1910,7 @@ for j in range(i + 1):
 
 This loop prints the same number of stars as the left side, creating a symmetrical pattern.
 
-### 6. Move to the next row
+**6. Move to the next row**
 
 ```python
 print()
@@ -1911,7 +1918,7 @@ print()
 
 After printing the left stars, middle spaces, and right stars, `print()` moves the output to the next line.
 
-## Solution 2: Using Counters and String Repetition
+### Solution 2: Using Counters and String Repetition
 
 ```python
 rows = 5
@@ -1932,11 +1939,11 @@ for i in range(rows):
     print()
 ```
 
-## Explanation
+#### Explanation
 
 This solution uses a single outer loop, a nested loop for the middle spaces, and two variables (`counter` and `stars`) to control the pattern.
 
-### 1. Initialize the variables
+**1. Initialize the variables**
 
 ```python
 rows = 5
@@ -1948,7 +1955,7 @@ stars = 1
 - `counter = 16` sets the initial number of spaces between the two star groups.
 - `stars = 1` sets the initial number of stars on each side.
 
-### 2. Print the left group of stars
+**2. Print the left group of stars**
 
 ```python
 print(stars * "* ", end="")
@@ -1966,7 +1973,7 @@ For example:
 
 The `end=""` argument prevents the output from moving to a new line.
 
-### 3. Print the middle spaces
+**3. Print the middle spaces**
 
 ```python
 for j in range(counter):
@@ -1983,7 +1990,7 @@ counter -= 4
 
 This gradually narrows the gap between the star groups.
 
-### 4. Print the right group of stars
+**4. Print the right group of stars**
 
 ```python
 print(stars * "* ", end="")
@@ -1994,7 +2001,7 @@ The right group uses the same `stars` value as the left group, keeping both side
 
 After printing the stars, `stars += 1` increases the number of stars for the next row.
 
-### 5. Move to the next row
+**5. Move to the next row**
 
 ```python
 print()
@@ -2002,7 +2009,7 @@ print()
 
 This moves the output to the next line after both star groups have been printed.
 
-## Key Takeaways
+### Key Takeaways
 
 - The outer loop controls the number of rows.
 - Nested loops can print stars and spaces separately.
@@ -2011,15 +2018,15 @@ This moves the output to the next line after both star groups have been printed.
 - Both solutions create the same upper butterfly pattern using different approaches.
 
 
-# Lower Butterfly Pattern
+## Lower Butterfly Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints the **Lower part of a Butterfly Pattern** of stars as shown below. The pattern consists of **5 rows and 10 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * * * * * * * * * * 
@@ -2029,13 +2036,13 @@ Write a program that prints the **Lower part of a Butterfly Pattern** of stars a
 *                 * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to manage different parts of the pattern.
 2. Inside each loop, use `print('*', end=' ')` for stars and `print(' ', end=' ')` for spaces.
 3. Adjust loop ranges like `range(n - i)` and `range(2 * i)` to control how many stars and spaces are printed in each row.
 
-### Hint Code
+**Hint Code**
 
 ```python id
 for j in range(n - i):
@@ -2048,7 +2055,7 @@ for j in range(n - i):
     print('*', end=' ')
 ```
 
-## Solution: Using Nested Loops
+### Solution: Using Nested Loops
 
 ```python
 n = 5
@@ -2070,11 +2077,11 @@ for i in range(n):
     print()
 ```
 
-## Explanation
+#### Explanation
 
 The lower butterfly pattern is the reverse of the upper butterfly pattern. The two groups of stars become smaller as the rows progress, while the middle gap becomes wider.
 
-### 1. Initialize the number of rows
+**1. Initialize the number of rows**
 
 ```python id="c5h6rf"
 n = 5
@@ -2082,7 +2089,7 @@ n = 5
 
 The variable `n` determines the number of rows. Since the pattern has 5 rows, we set `n = 5`.
 
-### 2. Loop through the rows
+**2. Loop through the rows**
 
 ```python id="v6gdw8"
 for i in range(n):
@@ -2090,7 +2097,7 @@ for i in range(n):
 
 The outer loop runs 5 times. The value of `i` starts at `0` and increases to `4`.
 
-### 3. Print the left stars
+**3. Print the left stars**
 
 ```python id="z8hwqy"
 for j in range(n - i):
@@ -2107,7 +2114,7 @@ The expression `n - i` determines the number of stars on the left side.
 
 The number of stars decreases by one each row.
 
-### 4. Print the middle spaces
+**4. Print the middle spaces**
 
 ```python id="xq4cwv"
 for j in range(2 * i):
@@ -2124,7 +2131,7 @@ The expression `2 * i` controls the width of the gap between the two groups of s
 
 Each iteration prints two spaces because of `end=" "` combined with the `" "` being printed.
 
-### 5. Print the right stars
+**5. Print the right stars**
 
 ```python id="p7k3rv"
 for j in range(n - i):
@@ -2133,7 +2140,7 @@ for j in range(n - i):
 
 This loop prints the same number of stars as the left side, keeping the pattern symmetrical.
 
-### 6. Move to the next row
+**6. Move to the next row**
 
 ```python id="q9x5ts"
 print()
@@ -2141,7 +2148,7 @@ print()
 
 After printing the left stars, middle spaces, and right stars, this statement moves the output to the next line.
 
-## Key Takeaways
+### Key Takeaways
 
 - `range(n - i)` decreases the number of stars in each row.
 - `range(2 * i)` increases the gap between the two groups.
@@ -2150,15 +2157,15 @@ After printing the left stars, middle spaces, and right stars, this statement mo
 - The lower butterfly pattern narrows the wings while widening the middle gap.
 
 
-# Full Butterfly Pattern
+## Full Butterfly Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **Full Butterfly Pattern** of stars as shown below. The pattern consists of **10 rows and 10 columns**.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 *                 * 
@@ -2173,14 +2180,14 @@ Write a program that prints a **Full Butterfly Pattern** of stars as shown below
 *                 * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to handle rows and columns separately for the upper and lower halves of the pattern.
 2. Inside loops, alternate between printing stars (`"* "`) and spaces (`" "`), adjusting loop ranges to control positions.
 3. Ensure symmetry by printing stars in increasing order in the upper half and decreasing order in the lower half, with spaces in the middle.
 4. Use variables (`i`, `j`, etc.) to control loop iterations and manage star and space printing effectively.
 
-## Solution: Using Nested Loops
+### Solution: Using Nested Loops
 
 ```python
 n = 5
@@ -2218,7 +2225,7 @@ for i in range(n):
     print()
 ```
 
-## Explanation
+#### Explanation
 
 The full butterfly pattern combines the upper and lower butterfly patterns.
 
@@ -2226,7 +2233,7 @@ The full butterfly pattern combines the upper and lower butterfly patterns.
 - The **lower half** starts with 5 stars on each side and decreases to 1 star.
 - The spaces between the wings decrease in the upper half and increase in the lower half.
 
-### 1. Initialize the number of rows
+**1. Initialize the number of rows**
 
 ```python
 n = 5
@@ -2238,7 +2245,7 @@ Each half contains 5 rows, so the total number of rows is:
 2 * n  # 10 rows
 ```
 
-### 2. Create the upper half
+**2. Create the upper half**
 
 ```python
 for i in range(n):
@@ -2258,7 +2265,7 @@ The expression `i + 1` increases the number of stars on each side.
 
 The expression `2 * (n - i - 1)` decreases the middle gap as the star groups grow.
 
-### 3. Create the lower half
+**3. Create the lower half**
 
 ```python
 for i in range(n):
@@ -2278,13 +2285,13 @@ The expression `n - i` decreases the number of stars on each side.
 
 The expression `2 * i` increases the middle gap as the star groups become smaller.
 
-### 4. Keep the pattern symmetrical
+**4. Keep the pattern symmetrical**
 
 Both halves use matching star counts on the left and right sides. The lower half reverses the progression of the upper half.
 
 The widest star row appears twice in the middle, creating the complete butterfly shape.
 
-## Key Takeaways
+### Key Takeaways
 
 - The full butterfly consists of an upper half and a lower half.
 - `range(i + 1)` increases the number of stars.
@@ -2294,15 +2301,15 @@ The widest star row appears twice in the middle, creating the complete butterfly
 - The two halves together produce 10 rows.
 
 
-# Inverted Butterfly Pattern
+## Inverted Butterfly Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Medium
 
 Write a program that prints an **inverted butterfly pattern** of stars as shown below. The pattern consists of 10 rows and 10 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * * * * * * * * * * 
@@ -2317,7 +2324,7 @@ Write a program that prints an **inverted butterfly pattern** of stars as shown 
 * * * * * * * * * * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to control printing stars and spaces in each row.
 
@@ -2334,7 +2341,7 @@ Write a program that prints an **inverted butterfly pattern** of stars as shown 
 
 ---
 
-## Solution
+### Solution
 
 ```python
 n = 5
@@ -2366,9 +2373,9 @@ for i in range(n):
     print()
 ```
 
-## Explanation
+#### Explanation
 
-### 1. Understanding `n`
+**1. Understanding `n`**
 
 ```python
 n = 5
@@ -2381,7 +2388,7 @@ The pattern contains 10 rows in total. We divide it into two halves:
 
 Therefore, `n` is set to `5`.
 
-### 2. Printing the upper half
+**2. Printing the upper half**
 
 ```python
 for i in range(n):
@@ -2408,7 +2415,7 @@ As `i` increases:
 - The number of stars on each side decreases by one.
 - The middle gap increases by four spaces.
 
-### 3. Printing the lower half
+**3. Printing the lower half**
 
 ```python
 for i in range(n):
@@ -2434,7 +2441,7 @@ As `i` increases:
 - The number of stars on each side increases by one.
 - The middle gap decreases by four spaces.
 
-### 4. Why the pattern is symmetrical
+**4. Why the pattern is symmetrical**
 
 Both halves use the same logic but in opposite directions:
 
@@ -2446,7 +2453,7 @@ Both halves use the same logic but in opposite directions:
 
 This creates the inverted butterfly shape.
 
-## Key Takeaways
+### Key Takeaways
 
 - Use nested loops to control stars and spaces independently.
 - Use `n - i` when the number of stars decreases.
@@ -2456,15 +2463,15 @@ This creates the inverted butterfly shape.
 - Splitting a complex pattern into upper and lower halves makes it easier to understand and solve.
 
 
-# Sand Glass Pattern
+## Sand Glass Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **sand glass pattern** of stars as shown below. The pattern consists of 9 rows and 9 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
  * * * * * * * * * 
@@ -2478,7 +2485,7 @@ Write a program that prints a **sand glass pattern** of stars as shown below. Th
  * * * * * * * * * 
 ```
 
-## Hints
+#### Hints
 
 1. Utilize nested loops—one for iterating through each row and another for managing columns—to control the placement of stars (`*`) and spaces.
 2. Calculate the number of leading spaces (`comp`) dynamically based on the current row index (`i`).
@@ -2487,7 +2494,7 @@ Write a program that prints a **sand glass pattern** of stars as shown below. Th
 
 ---
 
-## Solution
+### Solution
 
 ```python
 rows = 5
@@ -2504,9 +2511,9 @@ for i in range(2 * rows - 1):
     print(" " * spaces + "* " * stars)
 ```
 
-## Explanation
+### Explanation
 
-### 1. Understanding `rows`
+**1. Understanding `rows`**
 
 ```python
 rows = 5
@@ -2526,7 +2533,7 @@ For `rows = 5`:
 2 * 5 - 1 = 9
 ```
 
-### 2. Calculating `comp`
+**2. Calculating `comp`**
 
 ```python
 if i < rows:
@@ -2545,7 +2552,7 @@ For `rows = 5`, its values are:
 
 It increases in the upper half and decreases in the lower half.
 
-### 3. Calculating the leading spaces
+**3. Calculating the leading spaces**
 
 ```python
 spaces = 2 * comp + 1
@@ -2561,7 +2568,7 @@ Each increase in `comp` adds two leading spaces.
 
 The `+ 1` ensures that the widest rows begin with one leading space, matching the expected output.
 
-### 4. Calculating the number of stars
+**4. Calculating the number of stars**
 
 ```python
 stars = 2 * rows - 1 - 2 * comp
@@ -2575,7 +2582,7 @@ The number of star repetitions is:
 
 As the leading spaces increase, the number of stars decreases. The lower half reverses this behavior.
 
-### 5. Printing each row
+**5. Printing each row**
 
 ```python
 print(" " * spaces + "* " * stars)
@@ -2585,7 +2592,7 @@ print(" " * spaces + "* " * stars)
 - `"* " * stars` prints the stars.
 - `print()` moves to the next line.
 
-## Key Takeaways
+### Key Takeaways
 
 - Use `2 * rows - 1` to calculate the total number of rows.
 - Use `comp` to control the indentation symmetrically.
@@ -2594,15 +2601,15 @@ print(" " * spaces + "* " * stars)
 - Test the pattern against the exact expected output, because spaces are important in star-pattern challenges.
 
 
-# Heart Pattern
+## Heart Pattern
 
-## Challenge
+### Challenge
 
 **Difficulty:** Medium
 
 Write a program that prints a **heart pattern** of stars as shown below. The pattern consists of 8 rows and 11 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
  ***   ***
@@ -2615,7 +2622,7 @@ Write a program that prints a **heart pattern** of stars as shown below. The pat
      *
 ```
 
-## Hints
+#### Hints
 
 1. Utilize nested loops to handle different parts of the heart pattern: one for the upper part and another for the bottom part.
 2. Adjust loop ranges (`range()` or equivalent) to control the size and shape of the heart pattern.
@@ -2623,7 +2630,7 @@ Write a program that prints a **heart pattern** of stars as shown below. The pat
 
 ---
 
-## Solution 1: Using String Repetition
+### Solution 1: Using String Repetition
 
 ```python
 # Upper part of the heart
@@ -2636,7 +2643,7 @@ for i in range(5):
     print(" " * (i + 1) + "*" * (9 - 2 * i))
 ```
 
-### Explanation
+#### Explanation
 
 The upper part is printed directly because its three rows have a fixed structure.
 
@@ -2665,7 +2672,7 @@ As `i` increases:
 
 ---
 
-## Solution 2: Using Nested Loops
+### Solution 2: Using Nested Loops
 
 ```python
 # Upper part of the heart
@@ -2691,9 +2698,9 @@ for i in range(5):
     print()
 ```
 
-### Explanation
+#### Explanation
 
-### 1. Printing the upper part
+**1. Printing the upper part**
 
 ```python
 patterns = [
@@ -2722,7 +2729,7 @@ for char in pattern:
 
 After the inner loop finishes, `print()` moves to the next row.
 
-### 2. Printing the lower part
+**2. Printing the lower part**
 
 ```python
 for i in range(5):
@@ -2753,7 +2760,7 @@ for j in range(9 - 2 * i):
 
 The number of spaces increases while the number of stars decreases.
 
-### 3. Why use nested loops?
+**3. Why use nested loops?**
 
 Nested loops allow us to control each part of a row independently:
 
@@ -2766,7 +2773,7 @@ This approach is useful when you want to practice loop-based pattern constructio
 
 ---
 
-## Key Takeaways
+### Key Takeaways
 
 - The heart can be divided into an upper part and a lower part.
 - String repetition (`"*" * count`) is a concise way to print patterns.
@@ -2775,16 +2782,17 @@ This approach is useful when you want to practice loop-based pattern constructio
 - `9 - 2 * i` decreases the number of stars by 2 each row.
 - Both solutions produce the same expected output.
 
+# Hollow Pattern's
 
-# Hollow Square
+## Hollow Square
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **hollow square pattern** of stars as shown below. The pattern consists of 6 rows and 6 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
 * * * * * * 
@@ -2795,7 +2803,7 @@ Write a program that prints a **hollow square pattern** of stars as shown below.
 * * * * * * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops (`for` loops within `for` loops) to iterate through the rows and columns of the square.
 2. Use an `if` statement inside the inner loop to decide whether to print a star (`*`) or a space.
@@ -2816,7 +2824,7 @@ else:
 
 ---
 
-## Solution 1: Using Nested Loops (Intended Solution)
+### Solution 1: Using Nested Loops (Intended Solution)
 
 ```python
 size = 6
@@ -2830,9 +2838,9 @@ for i in range(size):
     print()
 ```
 
-### Explanation
+#### Explanation
 
-#### 1. Understanding the variables
+**1. Understanding the variables**
 
 ```python
 size = 6
@@ -2852,7 +2860,7 @@ for i in range(size):
 
 Both loops run 6 times, creating a 6 × 6 square.
 
-#### 2. Identifying the square's borders
+**2. Identifying the square's borders**
 
 ```python
 if i == 0 or i == size - 1 or j == 0 or j == size - 1:
@@ -2867,7 +2875,7 @@ This condition checks whether the current position is on one of the four edges.
 
 If any condition is true, we print a star.
 
-#### 3. Printing stars and spaces
+**3. Printing stars and spaces**
 
 ```python
 if i == 0 or i == size - 1 or j == 0 or j == size - 1:
@@ -2890,7 +2898,7 @@ Python moves to the next row.
 
 ---
 
-## Solution 2: Using String Repetition and a Loop
+### Solution 2: Using String Repetition and a Loop
 
 ```python
 side_length = 6
@@ -2907,9 +2915,9 @@ for j in range(side_length - 2):
 print("* " * side_length, end="")
 ```
 
-### Explanation
+#### Explanation
 
-#### 1. Understanding `side_length`
+**1. Understanding `side_length`**
 
 ```python
 side_length = 6
@@ -2917,7 +2925,7 @@ side_length = 6
 
 This variable determines the width and height of the square.
 
-#### 2. Printing the top border
+**2. Printing the top border**
 
 ```python
 print("* " * side_length, end="")
@@ -2934,7 +2942,7 @@ The result is:
 
 The second `print()` moves to the next line.
 
-#### 3. Printing the hollow middle rows
+**3. Printing the hollow middle rows**
 
 ```python
 for j in range(side_length - 2):
@@ -2973,7 +2981,7 @@ For a side length of 6:
 
 Therefore, we print 9 spaces between the two border stars.
 
-#### 4. Printing the bottom border
+**4. Printing the bottom border**
 
 ```python
 print("* " * side_length, end="")
@@ -2983,7 +2991,7 @@ This repeats the same operation used for the top border, completing the square.
 
 ---
 
-## Comparing Both Solutions
+**Comparing Both Solutions**
 
 | Solution 1 | Solution 2 |
 |---|---|
@@ -2992,7 +3000,7 @@ This repeats the same operation used for the top border, completing the square.
 | Uses conditions to identify edges | Uses formulas to calculate spaces |
 | Works for different square sizes | Works for different square sizes |
 
-## Key Takeaways
+### Key Takeaways
 
 - A hollow square contains stars only on its borders.
 - Nested loops allow you to inspect every position in a pattern.
@@ -3002,15 +3010,15 @@ This repeats the same operation used for the top border, completing the square.
 - Both solutions generate the same hollow square, but use different approaches.
 
 
-# Hollow Full Pyramid
+## Hollow Full Pyramid
 
-## Challenge
+### Challenge
 
 **Difficulty:** Easy
 
 Write a program that prints a **hollow full pyramid pattern** of stars as shown below. The pattern consists of 5 rows and 9 columns.
 
-### Expected Output Pattern
+#### Expected Output Pattern
 
 ```text
          * 
@@ -3020,7 +3028,7 @@ Write a program that prints a **hollow full pyramid pattern** of stars as shown 
  * * * * * * * * * 
 ```
 
-## Hints
+#### Hints
 
 1. Use nested loops to manage rows (`i`) and columns (`j` and `k`) independently.
 2. Adjust the number of leading spaces based on the current row index (`i`).
@@ -3029,7 +3037,7 @@ Write a program that prints a **hollow full pyramid pattern** of stars as shown 
 
 ---
 
-## Solution: Using Nested Loops (Hint-Based Solution)
+### Solution: Using Nested Loops (Hint-Based Solution)
 
 ```python
 rows = 5
@@ -3051,9 +3059,9 @@ for i in range(rows):
     print()
 ```
 
-## Explanation
+#### Explanation
 
-### 1. Understanding `rows`
+**1. Understanding `rows`**
 
 ```python
 rows = 5
@@ -3067,7 +3075,7 @@ The pattern has 5 rows, and the number of positions in each row increases by 2:
 1, 3, 5, 7, 9
 ```
 
-### 2. Printing the leading spaces
+**2. Printing the leading spaces**
 
 ```python
 for j in range(rows - i - 1):
@@ -3088,7 +3096,7 @@ The formula `rows - i - 1` calculates the number of leading-space pairs in each 
 
 Each iteration prints two spaces, so the actual leading spaces are `8, 6, 4, 2, 0`.
 
-### 3. Printing the pyramid positions
+**3. Printing the pyramid positions**
 
 ```python
 for k in range(2 * i + 1):
@@ -3106,7 +3114,7 @@ The formula `2 * i + 1` calculates how many positions each row contains.
 | 3 | `2 * 3 + 1` | 7 |
 | 4 | `2 * 4 + 1` | 9 |
 
-### 4. Identifying where to print stars
+**4. Identifying where to print stars**
 
 ```python
 if i == rows - 1:
@@ -3147,7 +3155,7 @@ else:
 
 All positions between the two edges are empty, creating the hollow area.
 
-### 5. Moving to the next row
+**5. Moving to the next row**
 
 ```python
 print()
@@ -3155,7 +3163,7 @@ print()
 
 After finishing the inner loop, `print()` moves to the next line.
 
-## Key Takeaways
+### Key Takeaways
 
 - Use nested loops to control the leading spaces and pyramid positions separately.
 - `rows - i - 1` calculates the number of leading-space pairs.
@@ -3164,3 +3172,131 @@ After finishing the inner loop, `print()` moves to the next line.
 - `k == 2 * i` identifies the right edge.
 - `i == rows - 1` identifies the bottom row, which must be completely filled with stars.
 - Combining conditions allows you to create hollow patterns without printing unnecessary characters.
+
+
+## Hollow Inverted Full Pyramid
+
+### Challenge
+
+**Beginner**
+
+Write a program that prints a **Hollow Inverted Full Pyramid pattern** of stars as shown below. The pattern consists of 5 rows and 9 columns.
+
+#### Expected Output Pattern
+
+```text
+* * * * * * * * * 
+  *           * 
+    *       * 
+      *   * 
+        * 
+```
+
+### Solution
+
+```python
+rows = 5
+
+for i in range(rows):
+    # Print leading spaces
+    for j in range(i):
+        print("  ", end="")
+
+    # Print the inverted pyramid
+    last = 2 * (rows - i) - 2
+
+    for j in range(last + 1):
+        if i == 0 or j == 0 or j == last:
+            if j == 0:
+                print(" *", end=" ")
+            else:
+                print("*", end=" ")
+        else:
+            print(" ", end=" ")
+
+    print()
+```
+
+#### Explanation
+
+**1. Outer loop — control the rows**
+
+```python
+for i in range(rows):
+```
+
+The outer loop runs 5 times, with `i` going from `0` to `4`.
+
+**2. Print leading spaces**
+
+```python
+for j in range(i):
+    print("  ", end="")
+```
+
+Each row starts with more spaces than the previous one. We print two spaces per iteration to keep the pyramid aligned.
+
+| Row (`i`) | Leading spaces |
+|---|---:|
+| 0 | 0 |
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 6 |
+| 4 | 8 |
+
+**3. Calculate the last position**
+
+```python
+last = 2 * (rows - i) - 2
+```
+
+This calculates the index of the last position in the current row.
+
+| Row (`i`) | Last index (`last`) | Positions |
+|---|---:|---:|
+| 0 | 8 | 9 |
+| 1 | 6 | 7 |
+| 2 | 4 | 5 |
+| 3 | 2 | 3 |
+| 4 | 0 | 1 |
+
+We use `last + 1` in `range()` because the ending value of `range()` is not included.
+
+**4. Print the inverted pyramid**
+
+```python
+for j in range(last + 1):
+    if i == 0 or j == 0 or j == last:
+        if j == 0:
+            print(" *", end=" ")
+        else:
+            print("*", end=" ")
+    else:
+        print(" ", end=" ")
+```
+
+The conditions determine whether to print a star or a space:
+
+- `i == 0`: Prints stars across the entire first row, creating the top border.
+- `j == 0`: Prints a star at the left edge of each row.
+- `j == last`: Prints a star at the right edge of each row.
+- Otherwise: Prints spaces to keep the pyramid hollow.
+
+The additional space in `print(" *", end=" ")` is important for aligning the left edge with the expected pattern.
+
+**5. Move to the next row**
+
+```python
+print()
+```
+
+After finishing each row, `print()` moves the cursor to the beginning of the next line.
+
+### Key Takeaway
+
+The pattern uses two different calculations:
+
+- **Leading spaces:** `i` iterations, printing two spaces each time.
+- **Positions in each row:** `last + 1`, where `last = 2 * (rows - i) - 2`.
+
+The leading spaces shift each row to the right, while the number of positions decreases by two on every new row. The conditions ensure that only the borders contain stars, except for the solid first row.
