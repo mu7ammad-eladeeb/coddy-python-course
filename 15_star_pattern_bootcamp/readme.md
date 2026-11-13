@@ -3300,3 +3300,122 @@ The pattern uses two different calculations:
 - **Positions in each row:** `last + 1`, where `last = 2 * (rows - i) - 2`.
 
 The leading spaces shift each row to the right, while the number of positions decreases by two on every new row. The conditions ensure that only the borders contain stars, except for the solid first row.
+
+
+## Hollow Arrow Pyramid Upward
+
+### Challenge
+
+**Easy**
+
+Write a program that prints a **Hollow Arrow Pyramid Upward pattern** of stars as shown below. The pattern consists of 6 rows and 11 columns.
+
+### Expected Output Pattern
+
+```text
+     *
+    * *
+   *   *
+  *     *
+ *       *
+*         *
+```
+
+### Solution
+
+```python
+rows = 6
+
+for i in range(rows):
+    # Print leading spaces
+    for j in range(rows - i - 1):
+        print(" ", end="")
+
+    # Print the hollow pyramid
+    for j in range(2 * i + 1):
+        if j == 0 or j == 2 * i:
+            print("*", end="")
+        else:
+            print(" ", end="")
+
+    print()
+```
+
+### Explanation
+
+**1. Outer loop — control the rows**
+
+```python
+for i in range(rows):
+```
+
+The outer loop runs 6 times, with `i` going from `0` to `5`.
+
+**2. Print leading spaces**
+
+```python
+for j in range(rows - i - 1):
+    print(" ", end="")
+```
+
+This loop prints spaces before the stars to shift each row into the correct position.
+
+The number of leading spaces decreases by one on each row:
+
+| Row (`i`) | Leading spaces |
+|---|---:|
+| 0 | 5 |
+| 1 | 4 |
+| 2 | 3 |
+| 3 | 2 |
+| 4 | 1 |
+| 5 | 0 |
+
+**3. Print the pyramid**
+
+```python
+for j in range(2 * i + 1):
+```
+
+This formula calculates the number of positions in each row. The number increases by two on every new row.
+
+| Row (`i`) | Positions |
+|---|---:|
+| 0 | 1 |
+| 1 | 3 |
+| 2 | 5 |
+| 3 | 7 |
+| 4 | 9 |
+| 5 | 11 |
+
+**4. Decide where to print stars**
+
+```python
+if j == 0 or j == 2 * i:
+    print("*", end="")
+else:
+    print(" ", end="")
+```
+
+The conditions determine whether to print a star or a space:
+
+- `j == 0`: Prints a star at the left edge of the row.
+- `j == 2 * i`: Prints a star at the right edge of the row.
+- Otherwise: Prints a space to keep the pyramid hollow.
+
+**5. Move to the next row**
+
+```python
+print()
+```
+
+After the inner loop finishes printing a row, `print()` moves the cursor to the beginning of the next line.
+
+### Key Takeaway
+
+The pattern uses two formulas:
+
+- **Leading spaces:** `rows - i - 1`
+- **Positions in each row:** `2 * i + 1`
+
+The leading spaces decrease by one while the number of positions increases by two. The two conditions ensure that only the left and right edges contain stars, creating the hollow pyramid.
