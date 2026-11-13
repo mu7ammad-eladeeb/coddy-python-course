@@ -711,3 +711,16 @@ In 1999, the JPython project—originally created by Jim Hugunin in 1997 to run 
 * **Jim Hugunin:** An American software engineer who created JPython (and later IronPython for Microsoft's .NET framework) to enable high-level scripting languages within strongly typed virtual machine platforms.
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
+
+## 2007
+
+### **PyPy: High-Speed Python Written in Python**
+
+In 2007, following significant research and development funding from the European Union, the PyPy project reached its official 1.0 release. Written in RPython (a restricted, statically analyzable subset of Python), PyPy serves as a fast, compliant alternative to the standard CPython interpreter. Its standout feature is a built-in Just-In-Time (JIT) compiler that optimizes hot code paths at runtime, allowing many pure Python applications to execute dramatically faster while consuming less memory on long-running processes.
+
+* **PyPy:** An alternative, high-performance Python interpreter and runtime environment capable of executing Python code significantly faster than standard CPython through dynamic compilation.
+* **RPython (Restricted Python):** A statically typed subset of the Python language used to write the PyPy interpreter itself, enabling automated translation into low-level C code.
+* **Just-In-Time (JIT) Compilation:** A runtime execution technique that translates frequently executed bytecode segments ("hot loops") directly into native machine code during program execution.
+* **Meta-Tracing JIT:** The specialized compiler architecture used by PyPy, which traces the execution of the interpreter loop rather than individual user programs to automatically generate runtime optimizations.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
