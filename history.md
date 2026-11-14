@@ -682,6 +682,19 @@ Python 3.4, released in March 2014, officially introduced the `statistics` modul
 
 **Source:** peps.python.org (Added details by Gemini AI)
 
+## 2016
+
+### **The `secrets` Module: Cryptographically Strong Randomness**
+
+Python 3.6, released in December 2016, introduced the `secrets` module into the standard library via PEP 506. While Python's existing `random` module uses a deterministic Mersenne Twister pseudorandom number generator suitable for modeling and simulations, its outputs can be predicted if enough values are observed—making it unsafe for security applications. The `secrets` module was designed to provide an easy, standardized interface for generating cryptographically strong random numbers suitable for managing passwords, account authentication, security tokens, and password reset URLs.
+
+* **`secrets` Module:** A standard library module added in Python 3.6 that generates cryptographically secure random numbers by leveraging the operating system's highest-quality entropy source.
+* **PEP 506 (Adding A Secrets Module To The Standard Library):** The Python Enhancement Proposal authored by Steven D'Aprano to give developers a safe, intuitive alternative to `random` for security-sensitive tasks.
+* **CSPRNG (Cryptographically Secure Pseudorandom Number Generator):** A random number generator with properties that make it suitable for use in cryptography, ensuring outputs are statistically indistinguishable from true randomness and computationally infeasible to predict.
+* **Mersenne Twister:** The deterministic pseudorandom number generator algorithm used by Python's default `random` module, optimized for speed and statistical uniformity rather than cryptographic security.
+
+**Source:** peps.python.org (Added details by Gemini AI)
+
 # pip, PyPI and Packages
 
 ## 2008
